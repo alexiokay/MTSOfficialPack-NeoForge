@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/alexispace/Desktop/webdev/minecraft/MinecraftTransportSimulator-1.21.1/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

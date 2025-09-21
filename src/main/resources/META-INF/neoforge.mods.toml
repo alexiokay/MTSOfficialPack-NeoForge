@@ -1,9 +1,9 @@
-# File required to load packs as Forge mods.
+# File required to load packs as NeoForge mods.
 # Find more information on toml format v0.5.0 here:  https://github.com/toml-lang/toml
 
-# Forge settings, don't touch!
+# NeoForge settings
 modLoader="javafml"
-loaderVersion="[36,)"
+loaderVersion="[4,)"
 
 # The license for your pack. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
@@ -28,8 +28,22 @@ Credits go to Don Bruce, Limit, Wolfvanox, Cactus, Fsendventd, and last, but cer
 '''
 
 [[dependencies.mtsofficialpack]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21.1,1.22)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.mtsofficialpack]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.1.0,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.mtsofficialpack]]
     modId="mts"
-    mandatory=true
+    type="required"
     versionRange="[22.6.0,)"
     ordering="NONE"
     side="BOTH"
