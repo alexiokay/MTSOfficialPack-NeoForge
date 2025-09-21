@@ -8,6 +8,7 @@
   },
   "interactable": {
     "interactionType": "crate",
+    "inventoryTexture": "mtsofficialpack:textures/guis/inventory_bellcrate.png",
     "inventoryUnits": 2.0
   },
   "definitions": [

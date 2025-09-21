@@ -1,6 +1,7 @@
 {
   "generic": {
     "type": "interactable_crate",
+    "forwardsDamageMultiplier": 0.0,
     "width": 0.1,
     "height": 0.1
   },

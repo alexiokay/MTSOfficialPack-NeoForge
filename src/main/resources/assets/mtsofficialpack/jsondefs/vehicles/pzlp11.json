@@ -2,14 +2,14 @@
   "motorized": {
     "isAircraft": true,
     "hasOpenTop": true,
-    "emptyMass": 1400,
+    "emptyMass": 1300,
     "waterBallastFactor": 0.5,
     "fuelCapacity": 7000,
     "brakingFactor": 0.4,
     "dragCoefficient": 0.03,
     "tailDistance": 7.0,
     "wingSpan": 11.0,
-    "wingArea": 18.0,
+    "wingArea": 18.6,
     "aileronArea": 3.6,
     "elevatorArea": 3.0,
     "rudderArea": 1.5,
@@ -26,6 +26,7 @@
       "rot": [0.0,0.0,0.0],
       "dismountPos": [1.5,0.0,-1.5],
       "isController": true,
+      "isExterior": true,
       "types": [
         "seat",
         "seat_pilot"
@@ -72,7 +73,7 @@
     },
     {
       "pos": [-0.8125,0.3125,0.25],
-      "rot": [0.0,0.0,0.0],
+      "rot": [-2.55,0.0,0.0],
       "maxValue": 20.0,
       "types": [
         "gun_fixed"
@@ -86,7 +87,7 @@
     },
     {
       "pos": [0.8125,0.3125,0.25],
-      "rot": [0.0,0.0,0.0],
+      "rot": [-2.55,0.0,0.0],
       "maxValue": 20.0,
       "types": [
         "gun_fixed"
@@ -100,7 +101,7 @@
     },
     {
       "pos": [-2.5,1.0625,0.25],
-      "rot": [0.0,2.5,0.0],
+      "rot": [-2.15,2.15,0.0],
       "maxValue": 20.0,
       "types": [
         "gun_fixed"
@@ -114,7 +115,7 @@
     },
     {
       "pos": [2.5,1.0625,0.25],
-      "rot": [0.0,-2.5,0.0],
+      "rot": [-2.15,-2.15,0.0],
       "maxValue": 20.0,
       "types": [
         "gun_fixed"
@@ -171,6 +172,42 @@
         "engine_aircraft_radial"
       ],
       "linkedParts": []
+    },
+    //smokecans 12-13
+    {
+      "pos": [5.5,1.124,0.0],
+      "maxValue": 3.0,
+      "slotHeight": 0.75,
+      "slotWidth": 0.75,
+      "types": [
+        "generic"
+      ],
+      "customTypes": [
+        "smokecan"
+      ],
+      "linkedParts": []
+    },
+    {
+      "pos": [-5.5,1.124,0.0],
+      "maxValue": 3.0,
+      "slotHeight": 0.75,
+      "slotWidth": 0.75,
+      "types": [
+        "generic"
+      ],
+      "customTypes": [
+        "smokecan"
+      ],
+      "linkedParts": []
+    },
+    //salesign 14
+    {
+      "pos": [0.766625,-0.375,-1.0625],
+      "partScale": [1.6,1.6,1.6],
+      "rot": [0,90,0],
+      "types": [
+        "generic_sale_sign"
+      ]
     }
   ],
   "collisionGroups": [
@@ -378,6 +415,10 @@
     {
       "subName": "_green",
       "name": "Green PZL P11.c",
+      "textureNames": [
+      "pzlp11_green",
+      "pzlp11_green_burnt"
+      ],
       "extraMaterialLists": [
         [
           "tags:dyes/green:2",
@@ -388,6 +429,10 @@
     {
       "subName": "_brown",
       "name": "Brown PZL P11.c",
+      "textureNames": [
+      "pzlp11_brown",
+      "pzlp11_brown_burnt"
+      ],
       "extraMaterialLists": [
         [
           "tags:dyes/brown:2",
@@ -398,6 +443,10 @@
     {
       "subName": "_tan",
       "name": "Tan PZL P11.c",
+      "textureNames": [
+      "pzlp11_tan",
+      "pzlp11_tan_burnt"
+      ],
       "extraMaterialLists": [
         [
           "tags:dyes/yellow:2",
@@ -412,6 +461,10 @@
       "partTones": [],
       "secondaryTextColors": [],
       "name": "Gray PZL P11.c",
+      "textureNames": [
+      "pzlp11",
+      "pzlp11_burnt"
+      ],
       "extraMaterialLists": [
         [
           "tags:dyes/gray:2",
@@ -423,54 +476,14 @@
   "constantValues": {},
   "initialVariables": [],
   "variableModifiers": [
-  //total area loss VMs
-  	{
-      "variable": "wingArea",
-      "animations": [
-      {
-          "animationType": "translation",
-          "variable": "!damage_totaled",
-          "axis": [1.0,0.0,0.0]
-        }
-      ]
-    },
+  //totaled texture
     {
-      "variable": "elevatorArea",
+      "variable": "textureIndex",
       "animations": [
-      {
+        {
           "animationType": "translation",
-          "variable": "!damage_totaled",
-          "axis": [1.0,0.0,0.0]
-        }
-      ]
-    },
-    {
-      "variable": "aileronArea",
-      "animations": [
-      {
-          "animationType": "translation",
-          "variable": "!damage_totaled",
-          "axis": [1.0,0.0,0.0]
-        }
-      ]
-    },
-    {
-      "variable": "dragCoefficient",
-      "animations": [
-      {
-          "animationType": "translation",
-          "variable": "!damage_totaled",
-          "axis": [1.0,0.0,0.0]
-        }
-      ]
-    },
-    {
-      "variable": "rudderArea",
-      "animations": [
-      {
-          "animationType": "translation",
-          "variable": "!damage_totaled",
-          "axis": [1.0,0.0,0.0]
+          "variable": "damage_totaled",
+          "axis": [0.0,0.0,1.0]
         }
       ]
     }
@@ -917,6 +930,7 @@
         "pos": [0.0,-2.0,-1.5],
         "soundVariations": [
           "mtsofficialpack:wind_med_outisde",
+          "mtsofficialpack:wind_med_outisde2",
           "mtsofficialpack:wind_on_outside"
         ],
         "activeAnimations": [
@@ -948,6 +962,7 @@
         "name": "mtsofficialpack:wind_high_outside",
         "soundVariations": [
           "mtsofficialpack:wind_high_outside",
+          "mtsofficialpack:wind_high_outside2",
           "mtsofficialpack:wind_high_inside"
         ],
         "pos": [0.0,-2.0,-1.5],
@@ -1612,7 +1627,7 @@
         "distance": 4,
         "duration": 50,
         "transparency": 0.3,
-        "fadeTransparencyTime": 30,
+        "fadeOutTransparencyTime": 30,
         "scale": 13.0,
         "toScale": 25,
         "ignoreCollision": true,
@@ -1808,7 +1823,7 @@
         "quantity": 1,
         "duration": 100,
         "transparency": 0.5,
-        "fadeTransparencyTime": 50,
+        "fadeOutTransparencyTime": 50,
         "scale": 7.2,
         "toScale": 20,
         "ignoreCollision": true,
@@ -1861,7 +1876,7 @@
         "movementDuration": 205,
         "transparency": 0.05,
         "toTransparency": 0.3,
-        "fadeTransparencyTime": 200,
+        "fadeOutTransparencyTime": 200,
         "scale": 20.0,
         "toScale": 55.0,
         "hitboxSize": 0.2,
@@ -1940,7 +1955,7 @@
         "movementDuration": 205,
         "transparency": 0.05,
         "toTransparency": 0.3,
-        "fadeTransparencyTime": 200,
+        "fadeOutTransparencyTime": 200,
         "scale": 20.0,
         "toScale": 55.0,
         "hitboxSize": 0.2,
@@ -2341,7 +2356,7 @@
         "movementDuration": 25,
         "transparency": 1.0,
         "toTransparency": 0.0,
-        "fadeTransparencyTime": 15,
+        "fadeOutTransparencyTime": 15,
         "scale": 5.8,
         "toScale": 10.5,
         "ignoreCollision": true,
@@ -2387,7 +2402,7 @@
         "movementDuration": 35,
         "transparency": 1.0,
         "toTransparency": 0.0,
-        "fadeTransparencyTime": 25,
+        "fadeOutTransparencyTime": 25,
         "scale": 4.8,
         "toScale": 10.5,
         "ignoreCollision": true,
@@ -2632,9 +2647,9 @@
         "renderingOrientation": "fixed",
         "quantity": 6,
         "duration": 315,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 1.2,
-        "fadeScaleTime": 100,
+        "fadeOutScaleTime": 100,
         "hitboxSize": 0.1,
         "textureList": [
           "mtsofficialpack:textures/bullets/3dscrap/metalscrap1.png",
@@ -2749,7 +2764,7 @@
         "duration": 40,
         "scale": 7.0,
         "toScale": 10.0,
-        "fadeTransparencyTime": 25,
+        "fadeOutTransparencyTime": 25,
         "ignoreCollision": true,
         "hitboxSize": 0.1,
         "textureList": [
@@ -2856,9 +2871,9 @@
         "renderingOrientation": "fixed",
         "quantity": 16,
         "duration": 315,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 1.2,
-        "fadeScaleTime": 100,
+        "fadeOutScaleTime": 100,
         "hitboxSize": 0.1,
         "textureList": [
           "mtsofficialpack:textures/bullets/3dscrap/metalscrap1.png",
@@ -2910,7 +2925,7 @@
         "renderingOrientation": "fixed",
         "quantity": 1,
         "duration": 315,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 1.0,
         "hitboxSize": 0.1,
         "texture": "mtsofficialpack:textures/bullets/3dscrap/groundglass.png",
@@ -2952,7 +2967,7 @@
         "renderingOrientation": "fixed",
         "quantity": 2,
         "duration": 315,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 1.0,
         "hitboxSize": 0.23,
         "textureList": [
@@ -3001,7 +3016,7 @@
         "duration": 100,
         "scale": 12.0,
         "toScale": 19.0,
-        "fadeTransparencyTime": 55,
+        "fadeOutTransparencyTime": 55,
         "ignoreCollision": true,
         "hitboxSize": 0.1,
         "textureList": [
@@ -3243,7 +3258,7 @@
         "renderingOrientation": "fixed",
         "quantity": 6,
         "duration": 420,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 1.7,
         "hitboxSize": 0.23,
         "textureList": [
@@ -3289,9 +3304,9 @@
         "renderingOrientation": "fixed",
         "quantity": 20,
         "duration": 420,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 1.8,
-        "fadeScaleTime": 100,
+        "fadeOutScaleTime": 100,
         "hitboxSize": 0.1,
         "textureList": [
           "mtsofficialpack:textures/bullets/3dscrap/metalscrap1.png",
@@ -3403,7 +3418,7 @@
             "clampMax": 1
           }
         ]
-      },
+      }, //main
       	{
         "type": "generic",
         "spawnEveryTick": true,
@@ -3470,7 +3485,7 @@
             "clampMax": 1
           }
         ]
-      },
+      }, //local
       	{
         "type": "generic",
         "spawnEveryTick": true,
@@ -3529,7 +3544,76 @@
             "clampMax": 1
           }
         ]
-      },
+      }, //fire
+        {
+        "type": "generic",
+        "spawnEveryTick": true,
+        "isBright": true,
+        "spawningOrientation": "world",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 75,
+        "transparency": 1.0,
+        "scale": 0.5,
+        "toScale": 0.01,
+        "hitboxSize": 0.1,
+        "ignoreCollision": true,
+        "textureList": [
+          "mtsofficialpack:textures/bullets/bang0.png",
+          "mtsofficialpack:textures/bullets/bang0d.png",
+          "mtsofficialpack:textures/bullets/bang0b.png",
+          "mtsofficialpack:textures/bullets/bang0a.png",
+          "mtsofficialpack:textures/bullets/bang0c.png"
+        ],
+        "randomTexture": true,
+        "pos": [0,0.2,0.0],
+        "spreadRandomness": [0.4,0.2,0.4],
+        "initialVelocity": [0.0,0.5,0.0],
+        "movementVelocity": [0.0,0.001,-0.001],
+        "relativeMovementVelocity": [0.0035,0.0001,0.0035],
+        "terminalVelocity": [20.0,20,20.0],
+        "spawningAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "random",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [2.0,0.0,0.0],
+            "offset": 0.0
+          },
+          {
+            "animationType": "translation",
+            "variable": "random",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0.0,0.0,1.5],
+            "offset": 0.0
+          }
+        ],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "blockmaterial_water",
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "damage_totaled",
+            "forwardsDelay": 1400
+          },
+          {
+            "animationType": "visibility",
+            "variable": "damage_totaled",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "terrain_distance",
+            "clampMin": -1,
+            "clampMax": 3
+          }
+        ]
+      }, //embers
       
       //scraptrails main
       	{
@@ -3540,9 +3624,9 @@
         "renderingOrientation": "fixed",
         "quantity": 1,
         "duration": 50,
-        "fadeTransparencyTime": 40,
+        "fadeOutTransparencyTime": 40,
         "scale": 1.0,
-        "fadeScaleTime": 40,
+        "fadeOutScaleTime": 40,
         "hitboxSize": 0.1,
         "textureList": [
           "mtsofficialpack:textures/bullets/3dscrap/metalscrap1.png",
@@ -3675,9 +3759,9 @@
         "renderingOrientation": "fixed",
         "quantity": 3,
         "duration": 100,
-        "fadeTransparencyTime": 40,
+        "fadeOutTransparencyTime": 40,
         "scale": 1.0,
-        "fadeScaleTime": 40,
+        "fadeOutScaleTime": 40,
         "hitboxSize": 0.1,
         "textureList": [
           "mtsofficialpack:textures/bullets/3dscrap/metalscrap1.png",
@@ -3801,9 +3885,9 @@
         "renderingOrientation": "fixed",
         "quantity": 5,
         "duration": 100,
-        "fadeTransparencyTime": 40,
+        "fadeOutTransparencyTime": 40,
         "scale": 1.0,
-        "fadeScaleTime": 40,
+        "fadeOutScaleTime": 40,
         "hitboxSize": 0.1,
         "textureList": [
           "mtsofficialpack:textures/bullets/3dscrap/metalscrap1.png",

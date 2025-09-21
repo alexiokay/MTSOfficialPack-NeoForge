@@ -73,9 +73,9 @@
     "health": 100,
     "materialLists": [
       [
-        "mts:mtsofficialpack.barrel:1",
+        "mts:mtsofficialpack.auxiliary_tank:1",
         "mts:mtsofficialpack.screws:4",
-        "mts:mtsofficialpack.metaltube:1"
+        "mts:mtsofficialpack.metaltube:6"
       ]
     ],
     "radarWidth": 0.0,

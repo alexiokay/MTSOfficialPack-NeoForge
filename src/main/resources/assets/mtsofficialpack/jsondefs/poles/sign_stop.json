@@ -18,7 +18,7 @@
   },
   "general": {
     "name": "Stop",
-    "stackSize": 32,
+    "stackSize": 64,
     "description": "Stop it. Get some help.",
     "materialLists": [
       [

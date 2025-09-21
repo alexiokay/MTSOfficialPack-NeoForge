@@ -70,6 +70,7 @@
     },
     {
       "pos": [0.0,1.54636,1.10717],
+      "applyAfter": "body",
       "minValue": 8.0,
       "maxValue": 37.0,
       "types": [
@@ -111,6 +112,7 @@
     },
     {
       "pos": [0.0,-0.125,0.5],
+      "applyAfter": "body",
       "maxValue": 2.0,
       "types": [
         "interactable_crate"
@@ -119,6 +121,7 @@
     },
     {
       "pos": [0.0,0.3,-0.838408],
+      "applyAfter": "body",
       "maxValue": 1.25,
       "intakeOffset": 0.75,
       "types": [
@@ -127,7 +130,8 @@
       "linkedParts": [1,2]
     },
     {
-      "pos": [0,1.078125,1.9375],
+      "pos": [0,0.85,2.1],
+      "applyAfter": "body",
       "rot": [-40,0,0],
       "types": [
         "generic_sale_sign"
@@ -614,6 +618,33 @@
       ]
     },
     {
+      "collisionTypes": [
+        "bullet"
+      ],
+      "collisions": [
+      {
+          "pos": [0.0,0.5,1.75],
+          "width": 0.5,
+          "height": 0.5
+        },
+        {
+          "pos": [0.0,0.7,1.25],
+          "width": 0.7,
+          "height": 0.7
+        },
+        {
+          "pos": [0.0,0.75,0.5],
+          "width": 0.9,
+          "height": 0.9
+        },
+        {
+          "pos": [0.0,0.75,-0.5],
+          "width": 0.9,
+          "height": 0.9
+        }
+	  ]
+	},
+    {
       "collisions": [
         {
           "pos": [0.850915,0.31398,2.75806],
@@ -682,6 +713,10 @@
     {
       "subName": "_olive",
       "name": "Olive Renault FT",
+      "textureNames": [
+      "ft17_olive",
+      "ft17_olive_burnt"
+      ],
       "extraMaterialLists": [
         [
           "tags:dyes/green:3"
@@ -691,6 +726,10 @@
     {
       "subName": "_tan",
       "name": "Tan Renault FT",
+      "textureNames": [
+      "ft17_tan",
+      "ft17_tan_burnt"
+      ],
       "extraMaterialLists": [
         [
           "tags:dyes/yellow:3",
@@ -701,6 +740,10 @@
     {
       "subName": "_gray",
       "name": "Gray Renault FT",
+      "textureNames": [
+      "ft17_gray",
+      "ft17_gray_burnt"
+      ],
       "extraMaterialLists": [
         [
           "tags:dyes/gray:3"
@@ -710,6 +753,10 @@
     {
       "subName": "_blue",
       "name": "Blue Renault FT",
+      "textureNames": [
+      "ft17_blue",
+      "ft17_blue_burnt"
+      ],
       "extraMaterialLists": [
         [
           "tags:dyes/light_blue:3"
@@ -802,6 +849,17 @@
         }
       ]
     },
+    //totaled texture
+    {
+      "variable": "textureIndex",
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "damage_totaled",
+          "axis": [0.0,0.0,1.0]
+        }
+      ]
+    },
   
     //soundPass
     {
@@ -819,13 +877,201 @@
           "axis": [0.0,1.0,0.0]
         }
       ]
-    }
+    },
+    
+    //bodyroll system
+    {
+      "variable": "acceleration_modified",
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "acceleration",
+          "axis": [0.0,0.75,0.0],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        },
+        {
+          "animationType": "translation",
+          "variable": "acceleration_modified",
+          "axis": [0.0,-0.75,0.0],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        }
+      ]
+    },//accel mod
+    {
+      "variable": "acceleration_math",
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "acceleration_modified",
+          "axis": [0.0,0.0,1.0],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        },
+        {
+          "animationType": "translation",
+          "variable": "engine_reversed_1",
+          "axis": [-2.0,0.0,0.0],
+          "offset": 1.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        }
+      ]
+    },//accel math
+    {
+      "variable": "sideways_movement_math",
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "slip_degreesnt",
+          "axis": [0.0,0.0,0.011],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        },
+        {
+          "animationType": "translation",
+          "variable": "lateral_acceleration",
+          "axis": [0.0,-0.5,0.0],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        },
+        {
+          "animationType": "translation",
+          "variable": "turn_indicator",
+          "axis": [0.0,0.005,0.0],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        }
+      ]
+    },//side mov math
+    {
+      "variable": "body_roll",
+      "minValue": -12,
+      "maxValue": 12,
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "body_roll",
+          "axis": [0.0,-0.25,0.0],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        },
+        {
+          "animationType": "translation",
+          "variable": "sideways_movement_math",
+          "axis": [0.0,-0.25,0.0],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        }
+      ]
+    },//core roll
+    {
+      "variable": "body_pitch",
+      "minValue": -12,
+      "maxValue": 12,
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "body_pitch",
+          "axis": [0.0,-0.25,0.0],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        },
+        {
+          "animationType": "translation",
+          "variable": "acceleration_math",
+          "axis": [0.0,-2,0.0],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        }
+      ]
+    } //core pitch
   ],
   "rendering": {
     "textObjects": [],
     "animatedObjects": [
+    {
+        "objectName": "recoilsystem",
+        "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "pitch",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-1.0,0.0,0.0],
+            "clampMin": -2.0,
+            "clampMax": 2.0
+          },
+          {
+            "animationType": "rotation",
+            "variable": "gun_yaw_1",
+            "centerPoint": [0.0,0.375,1.109375],//<- turret ring center position
+            "axis": [0.0,1.0,0.0]
+          },
+          {
+            "animationType": "rotation",
+            "variable": "gun_cooldown_1",
+            "centerPoint": [0.0,0.0,0.0],//rcol center
+            "axis": [-1.75, 0.0, -0.2],
+            "duration": 30,//rcol dur
+            "forwardsEasing": "easeoutelastic",
+            "skipReverseMovement": true
+          },//rcol rotation forward
+          {
+            "animationType": "rotation",
+            "variable": "gun_cooldown_1",
+            "centerPoint": [0.0,0.0,0.0],//rcol center
+            "axis": [1.75, 0.0, 0.2],
+            "duration": 30,//rcol dur
+            "forwardsEasing": "easeoutbounce",
+            "skipReverseMovement": true
+          }//rcol rot re
+        ]
+      },//core recoil system
+    {
+        "objectName": "body",
+        "applyAfter": "recoilsystem",
+        "animations": [
+        {
+            "animationType": "rotation",
+            "variable": "gun_yaw_1",
+            "centerPoint": [0.0,0.375,1.109375],//turret ring center pos
+            "axis": [0.0,-1.0,0.0]
+          },
+          
+          {
+            "animationType": "rotation",
+            "variable": "body_roll",
+            "centerPoint": [0.0,0.3,0.75],
+            "axis": [0.0,0.0,-0.6],
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          },
+          {
+            "animationType": "rotation",
+            "variable": "body_pitch",
+            "centerPoint": [0.0,0.3,0.75],
+            "axis": [5.0,0.0,0.0],
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          }
+        ]
+      },//body + recoil
+      
+      
       {
         "objectName": "#translucent_mudAcc_main",
+        "applyAfter": "body",
         "blendedAnimations": true,
         "animations": [
           {
@@ -859,6 +1105,7 @@
       },
       {
         "objectName": "exhaustpipe",
+        "applyAfter": "body",
         "animations": [
           {
             "animationType": "rotation",
@@ -870,6 +1117,7 @@
       },
       {
         "objectName": "#$translucent_mudAcc_exh",
+        "applyAfter": "body",
         "blendedAnimations": true,
         "animations": [
           {
@@ -887,6 +1135,7 @@
       },
       {
         "objectName": "$left_door",
+        "applyAfter": "body",
         "animations": [
           {
             "animationType": "rotation",
@@ -899,6 +1148,7 @@
       },
       {
         "objectName": "#$translucent_mudAcc_door_l",
+        "applyAfter": "body",
         "blendedAnimations": true,
         "animations": [
           {
@@ -917,6 +1167,7 @@
       },
       {
         "objectName": "$right_door",
+        "applyAfter": "body",
         "animations": [
           {
             "animationType": "rotation",
@@ -929,6 +1180,7 @@
       },
       {
         "objectName": "#$translucent_mudAcc_door_r",
+        "applyAfter": "body",
         "blendedAnimations": true,
         "animations": [
           {
@@ -947,6 +1199,7 @@
       },
       {
         "objectName": "$center_door",
+        "applyAfter": "body",
         "animations": [
           {
             "animationType": "rotation",
@@ -959,6 +1212,7 @@
       },
       {
         "objectName": "#$translucent_mudAcc_centerdoor",
+        "applyAfter": "body",
         "blendedAnimations": true,
         "animations": [
           {
@@ -977,27 +1231,22 @@
       },
       {
         "objectName": "$left_hood",
+        "applyAfter": "body",
         "animations": [
           {
             "animationType": "rotation",
-            "variable": "part_present_6",
+            "variable": "!part_present_6",
             "centerPoint": [0.3033,1.39617,-0.67974],
-            "axis": [-72.793,0.0,0.0],
-            "offset": -72.793,
-            "duration": 10
-          },
-          {
-            "animationType": "rotation",
-            "variable": "part_present_6",
-            "centerPoint": [0.3033,1.39617,-0.67974],
-            "axis": [0.0,23.952,0.0],
-            "offset": -23.952,
+            "axis": [85.490858,-28.130291,0.0],
+            "clampMin": 0.0,
+            "clampMax": 0.0,
             "duration": 10
           }
         ]
       },
       {
         "objectName": "#$translucent_mudAcc_hood_l",
+        "applyAfter": "body",
         "blendedAnimations": true,
         "animations": [
           {
@@ -1025,27 +1274,22 @@
       },
       {
         "objectName": "$right_hood",
+        "applyAfter": "body",
         "animations": [
           {
             "animationType": "rotation",
-            "variable": "part_present_6",
+            "variable": "!part_present_6",
             "centerPoint": [-0.3033,1.39617,-0.67974],
-            "axis": [-72.793,0.0,0.0],
-            "offset": -72.793,
-            "duration": 10
-          },
-          {
-            "animationType": "rotation",
-            "variable": "part_present_6",
-            "centerPoint": [-0.3033,1.39617,-0.67974],
-            "axis": [0.0,-23.952,0.0],
-            "offset": -23.952,
+            "axis": [85.490858,28.130291,0.0],
+            "clampMin": 0.0,
+            "clampMax": 0.0,
             "duration": 10
           }
         ]
       },
       {
         "objectName": "#$translucent_mudAcc_hood_r",
+        "applyAfter": "body",
         "blendedAnimations": true,
         "animations": [
           {
@@ -1073,6 +1317,7 @@
       },
       {
         "objectName": "$center_hood",
+        "applyAfter": "body",
         "animations": [
           {
             "animationType": "rotation",
@@ -1086,6 +1331,7 @@
       },
       {
         "objectName": "#$translucent_mudAcc_centerhood",
+        "applyAfter": "body",
         "blendedAnimations": true,
         "animations": [
           {
@@ -2280,7 +2526,7 @@
         "duration": 30,
         "movementDuration": 25,
         "transparency": 1.0,
-        "fadeTransparencyTime": 15,
+        "fadeOutTransparencyTime": 15,
         "scale": 5.8,
         "toScale": 10.5,
         "hitboxSize": 0.1,
@@ -2324,7 +2570,7 @@
         "duration": 50,
         "movementDuration": 35,
         "transparency": 1.0,
-        "fadeTransparencyTime": 25,
+        "fadeOutTransparencyTime": 25,
         "scale": 4.8,
         "toScale": 10.5,
         "hitboxSize": 0.1,
@@ -2941,7 +3187,7 @@
         "distance": 2.0,
         "duration": 100,
         "transparency": 0.5,
-        "fadeTransparencyTime": 50,
+        "fadeOutTransparencyTime": 50,
         "scale": 3.2,
         "toScale": 15.0,
         "hitboxSize": 0.1,
@@ -3081,7 +3327,7 @@
         "movementDuration": 205,
         "transparency": 0.05,
         "toTransparency": 0.4,
-        "fadeTransparencyTime": 300,
+        "fadeOutTransparencyTime": 300,
         "scale": 20.0,
         "toScale": 55.0,
         "hitboxSize": 0.2,
@@ -3152,7 +3398,7 @@
         "movementDuration": 205,
         "transparency": 0.05,
         "toTransparency": 0.4,
-        "fadeTransparencyTime": 300,
+        "fadeOutTransparencyTime": 300,
         "scale": 20.0,
         "toScale": 55.0,
         "hitboxSize": 0.2,

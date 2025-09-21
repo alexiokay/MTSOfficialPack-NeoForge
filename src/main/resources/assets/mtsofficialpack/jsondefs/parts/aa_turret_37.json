@@ -249,7 +249,7 @@
         "maxDistanceVolume": 0.0
       },
       
-    {
+      {
         "name": "mtsofficialpack:triggerclick",
         "activeAnimations": [
           {
@@ -265,7 +265,7 @@
         "middleDistanceVolume": 0.0,
         "maxDistance": 16.0,
         "maxDistanceVolume": 0.0
-      },
+      },//trigger
       {
         "name": "mtsofficialpack:aa_yawservo",
         "activeAnimations": [
@@ -283,7 +283,7 @@
         "middleDistanceVolume": 0.0,
         "maxDistance": 25.0,
         "maxDistanceVolume": 0.0
-      },
+      },//servo
       {
         "name": "mtsofficialpack:aa_pitchwheel",
         "activeAnimations": [
@@ -301,7 +301,25 @@
         "middleDistanceVolume": 0.0,
         "maxDistance": 25.0,
         "maxDistanceVolume": 0.0
-      },
+      },//pitch
+      {
+        "name": "mtsofficialpack:gunaa37_reloading",
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "gun_reload",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 3.0,
+        "middleDistanceVolume": 0.8,
+        "maxDistance": 16.0,
+        "maxDistanceVolume": 0.0
+      },//reload
+      
       {
         "name": "mtsofficialpack:aa37mm_fire_01",
         "soundVariations": [
@@ -321,26 +339,9 @@
         "minDistanceVolume": 1.0,
         "middleDistance": 0.0,
         "middleDistanceVolume": 0.0,
-        "maxDistance": 100.0,
+        "maxDistance": 130.0,
         "maxDistanceVolume": 0.0
-      },
-      {
-        "name": "mtsofficialpack:gunaa37_reloading",
-        "activeAnimations": [
-          {
-            "animationType": "visibility",
-            "variable": "gun_reload",
-            "clampMin": 1.0,
-            "clampMax": 1.0
-          }
-        ],
-        "minDistance": 0.0,
-        "minDistanceVolume": 1.0,
-        "middleDistance": 3.0,
-        "middleDistanceVolume": 0.8,
-        "maxDistance": 16.0,
-        "maxDistanceVolume": 0.0
-      },
+      },//fire
       {
         "name": "mtsofficialpack:aa37_distant",
         "activeAnimations": [
@@ -354,11 +355,11 @@
         "forceSound": true,
         "minDistance": 0.0,
         "minDistanceVolume": 0.0,
-        "middleDistance": 40.0,
+        "middleDistance": 90.0,
         "middleDistanceVolume": 0.6,
-        "maxDistance": 150.0,
+        "maxDistance": 200.0,
         "maxDistanceVolume": 0.0
-      },
+      },//dis
       {
         "name": "mtsofficialpack:aa37_distant_reverb",
         "activeAnimations": [
@@ -374,11 +375,11 @@
         ],
         "minDistance": 0.0,
         "minDistanceVolume": 0.0,
-        "middleDistance": 40.0,
+        "middleDistance": 90.0,
         "middleDistanceVolume": 0.6,
-        "maxDistance": 150.0,
+        "maxDistance": 200.0,
         "maxDistanceVolume": 0.0
-      },
+      },//dis rev
       {
         "name": "mtsofficialpack:aa37_more_distant",
         "activeAnimations": [
@@ -399,11 +400,11 @@
         ],
         "minDistance": 40.0,
         "minDistanceVolume": 0.0,
-        "middleDistance": 130.0,
-        "middleDistanceVolume": 0.3,
+        "middleDistance": 150.0,
+        "middleDistanceVolume": 0.45,
         "maxDistance": 350.0,
         "maxDistanceVolume": 0.0
-      },
+      },//mdis
       {
         "name": "mtsofficialpack:aa37_more_distant_reverb",
         "activeAnimations": [
@@ -419,11 +420,11 @@
         ],
         "minDistance": 40.0,
         "minDistanceVolume": 0.0,
-        "middleDistance": 130.0,
-        "middleDistanceVolume": 0.15,
+        "middleDistance": 150.0,
+        "middleDistanceVolume": 0.2,
         "maxDistance": 350.0,
         "maxDistanceVolume": 0.0
-      }
+      }//mdis rev
     ],
     "particles": [
     {
@@ -600,9 +601,9 @@
         "quantity": 1,
         "duration": 1500,
         "transparency": 1.0,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 1.0,
-        "fadeScaleTime": 100,
+        "fadeOutScaleTime": 100,
         "hitboxSize": 0.2,
         "pos": [-0.0625,1.3,0.8],
         "rot": [180.0,0.0,0.0],
@@ -742,9 +743,9 @@
         "quantity": 1,
         "duration": 1500,
         "transparency": 1.0,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 1.0,
-        "fadeScaleTime": 100,
+        "fadeOutScaleTime": 100,
         "hitboxSize": 0.2,
         "pos": [-0.0625,1.3,0.8],
         "rot": [180.0,0.0,0.0],
@@ -861,9 +862,9 @@
         "quantity": 1,
         "duration": 500,
         "transparency": 1.0,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 1.0,
-        "fadeScaleTime": 100,
+        "fadeOutScaleTime": 100,
         "hitboxSize": 0.2,
         "pos": [-0.0625,1.3,0.8],
         "rot": [180.0,0.0,0.0],
@@ -954,9 +955,9 @@
         "quantity": 1,
         "duration": 1500,
         "transparency": 1.0,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 1.0,
-        "fadeScaleTime": 100,
+        "fadeOutScaleTime": 100,
         "hitboxSize": 0.1,
         "texture": "mtsofficialpack:textures/bullets/magazine37solid.png",
         "model": "mtsofficialpack:objmodels/bullets/magazine37solid.obj",

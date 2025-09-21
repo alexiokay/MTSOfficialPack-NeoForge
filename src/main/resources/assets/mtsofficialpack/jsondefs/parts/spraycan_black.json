@@ -3,6 +3,7 @@
     "type": "gun_hand_extinguisher",
     "canBeRemovedByHand": true,
 	"canBePlacedOnGround": true,
+	"destroyable": true,
     "width": 0.185896,
     "height": 0.5
   },
@@ -315,6 +316,49 @@
             "variable": "gun_ammo_count",
             "clampMin": 0.01,
             "clampMax": 12000.0
+          }
+        ]
+      },
+      {
+        "type": "generic",
+        "stopsOnGround": true,
+        "spawningOrientation": "entity",
+        "renderingOrientation": "player",
+        "quantity": 10,
+        "duration": 100,
+        "movementDuration": 6,
+        "transparency": 0.8,
+        "toTransparency": 0.001,
+        "scale": 4,
+        "toScale": 10.5,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "textureList": [
+          "mts:textures/particles/big_smoke_0.png",
+          "mts:textures/particles/big_smoke_1.png",
+          "mts:textures/particles/big_smoke_2.png",
+          "mts:textures/particles/big_smoke_3.png",
+          "mts:textures/particles/big_smoke_4.png",
+          "mts:textures/particles/big_smoke_5.png",
+          "mts:textures/particles/big_smoke_6.png",
+          "mts:textures/particles/big_smoke_7.png",
+          "mts:textures/particles/big_smoke_8.png",
+          "mts:textures/particles/big_smoke_9.png",
+          "mts:textures/particles/big_smoke_10.png",
+          "mts:textures/particles/big_smoke_11.png"
+        ],
+        "randomTexture": true,
+        "color": "1a181d",
+        "pos": [0.0,0.62,-0.1],
+         "spreadRandomness": [10.0,5.0,10.0],
+        "initialVelocity": [0.0,5.0,0.0],
+        "movementVelocity": [0.0,-0.001,-0.0],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "damage_totaled",
+            "clampMin": 1.0,
+            "clampMax": 1.0
           }
         ]
       }

@@ -16,7 +16,7 @@
     "isWheel": true,
     "width": 0.5,
     "height": 1.0,
-    "flatHeight": 0.4375,
+    "flatHeight": 0.5,
     "climbHeight": 1.5,
     "motiveFriction": 0.65,
     "lateralFriction": 0.85,
@@ -35,111 +35,103 @@
       "wood": -0.05
     }
   },
-   "variableModifiers":[
-    //mudAcc system
-    {
-      "variable": "mudAcc",
-      "minValue": 0,
-      "maxValue": 100,
-      "animations": [
-      	//mud addition logic gate
-        {
-          "animationType": "inhibitor",
-          "variable": "speed",
-          "clampMin": 0,
-          "clampMax": 5
-        },
-        //rain + speed addition
-        {
-          "animationType": "translation",
-          "variable": "rain_strength",
-          "axis": [0.0,0.025,0.0]
-        },
-        //mud-adding blocks
-        {
-          "animationType": "translation",
-          "variable": "terrain_blockmaterial_grass",
-          "axis": [0.0,0.01,0.0]
-        },
-        {
-          "animationType": "translation",
-          "variable": "terrain_blockmaterial_dirt",
-          "axis": [0.0,0.02,0.0]
-        },
-        {
-          "animationType": "translation",
-          "variable": "terrain_blockmaterial_clay",
-          "axis": [0.0,0.05,0.0]
-        },
-        //water + speed cleaning
-        {
-          "animationType": "translation",
-          "variable": "blockmaterial_water",
-          "axis": [0.0,-0.8,0.0]
-        },
-        //mud reduction logic gate
-        {
-          "animationType": "inhibitor",
-          "variable": "speed",
-          "clampMin": 5,
-          "clampMax": 100
-        },
-        {
-          "animationType": "activator",
-          "variable": "speed",
-          "clampMin": 0,
-          "clampMax": 5
-        },
-        //rain cleaning
-        {
-          "animationType": "translation",
-          "variable": "rain_strength",
-          "axis": [0.0,-0.01,0.0]
-        },
-        //water cleaning
-        {
-          "animationType": "translation",
-          "variable": "blockmaterial_water",
-          "axis": [0.0,-0.5,0.0]
-        },
-        //sub 50% passive inhibitor gate
-        {
-          "animationType": "inhibitor",
-          "variable": "mudAcc",
-          "clampMin": 0,
-          "clampMax": 50
-        },
-        //passive reduction
-        {
-          "animationType": "translation",
-          "variable": "!piss",
-          "axis": [0.0,-0.00185,0.0]
-        }
-      ]
-    },
-  
-    //soundPass
-    {
-      "variable": "soundPass",
-      "maxValue": 1,
-      "animations": [
-        {
-          "animationType": "translation",
-          "variable": "door_r",
-          "axis": [0.0,0.0,1]
-        },
-        {
-          "animationType": "translation",
-          "variable": "door_l",
-          "axis": [0.0,1.0,0.0]
-        }
-      ]
-    }
-  ],
+   "variableModifiers":[],
   "definitions": [
     {
       "subName": "",
       "name": "Large Wheel",
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_holes",
+      "name": "Large Wheel (Holes)",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_holering",
+      "name": "Large Wheel (Hole Ring)",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_spokes",
+      "name": "Large Wheel (Spokes)",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_whitewall",
+      "name": "Large Wheel (Whitewall)",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_whiterim",
+      "name": "Large Wheel (White Rim)",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_rusty",
+      "name": "Large Wheel (Rusty)",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_spokes2",
+      "name": "Large Wheel (Spokes 2)",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_gold",
+      "name": "Large Wheel (Gold)",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        "tags:ingots/gold:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_spokescopper",
+      "name": "Large Wheel (Copper)",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        "tags:ingots/gold:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_legacy",
+      "name": "Large Wheel (Legacy)",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_goth",
+      "name": "Large Wheel (Dark)",
+      "hideOnCreativeTab": true,
       "extraMaterialLists": [
         []
       ]
@@ -189,8 +181,8 @@
     ],
     "lightObjects": [],
     "sounds": [
-    //place-remove
-    	{
+      //place-remove
+      {
         "name": "mtsofficialpack:placesound/wheel_place0",
         "soundVariations": [
         	"mtsofficialpack:placesound/wheel_place0",
@@ -220,7 +212,7 @@
         "maxDistance": 24.0,
         "maxDistanceVolume": 0.0
       },
-      	{
+      {
         "name": "mtsofficialpack:placesound/wheel_remove0",
         "soundVariations": [
         	"mtsofficialpack:placesound/wheel_remove0",
@@ -248,8 +240,8 @@
         "maxDistanceVolume": 0.0
       },
       
-    //wheelimpactlow - OUT
-    {
+      //wheelimpactlow - OUT
+      {
         "name": "mtsofficialpack:wheelimpact_low0",
         "soundVariations": [
         "mtsofficialpack:wheelimpact_low6",
@@ -287,7 +279,7 @@
           {
             "animationType": "translation",
             "variable": "vertical_speed",
-            "axis": [0.0,-0.8,0.0],
+            "axis": [0.0,-0.35,0.0],
             "offset": -0.15
           }
         ],
@@ -300,8 +292,8 @@
         "maxDistanceVolume": 0.0
         
       },
-    //wheelimpactlow - OUT IN
-    {
+      //wheelimpactlow - OUT IN
+      {
         "name": "mtsofficialpack:wheelimpact_low0",
         "soundVariations": [
         "mtsofficialpack:wheelimpact_low6",
@@ -345,7 +337,7 @@
           {
             "animationType": "translation",
             "variable": "vertical_speed",
-            "axis": [0.0,-0.8,0.0],
+            "axis": [0.0,-0.35,0.0],
             "offset": -0.15
           }
         ],
@@ -358,8 +350,8 @@
         "maxDistanceVolume": 0.0
         
       },
-    //wheelimpactlow - IN
-    {
+      //wheelimpactlow - IN
+      {
         "name": "mtsofficialpack:wheelimpact_low_inside0",
         "soundVariations": [
         "mtsofficialpack:wheelimpact_low_inside6",
@@ -403,7 +395,7 @@
           {
             "animationType": "translation",
             "variable": "vertical_speed",
-            "axis": [0.0,-0.8,0.0],
+            "axis": [0.0,-0.265,0.0],
             "offset": -0.15
           }
         ],
@@ -417,8 +409,8 @@
         
       },
       
-    //wheelimpact medium
-    {
+      //wheelimpact medium
+      {
         "name": "mtsofficialpack:wheelimpact_medium0",
         "soundVariations": [
         	"mtsofficialpack:wheelimpact_medium0",
@@ -449,6 +441,14 @@
             "offset": 0.75
           }
         ],
+        "volumeAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "vertical_speed",
+            "axis": [0.0,-0.5,0.0],
+            "offset": -0.15
+          }
+        ],
         "minDistance": 0.0,
         "minDistanceVolume": 1.0,
         "middleDistance": 8.0,
@@ -456,8 +456,8 @@
         "maxDistance": 15.0,
         "maxDistanceVolume": 0.0
       },
-    //gearimpact hard
-    {
+      //gearimpact hard
+      {
         "name": "mtsofficialpack:gearimpact_break1",
         "soundVariations": [
         	"mtsofficialpack:gearimpact_break1",
@@ -488,6 +488,14 @@
             "offset": 0.75
           }
         ],
+        "volumeAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "vertical_speed",
+            "axis": [0.0,-0.5,0.0],
+            "offset": -0.15
+          }
+        ],
         "minDistance": 0.0,
         "minDistanceVolume": 1.0,
         "middleDistance": 8.0,
@@ -495,8 +503,8 @@
         "maxDistance": 18.0,
         "maxDistanceVolume": 0.0
       },
-    //whelpop
-    {
+      //whelpop
+      {
         "name": "mts:wheel_blowout",
         "activeAnimations": [
           {
@@ -524,13 +532,7 @@
           },
           {
             "animationType": "visibility",
-            "variable": "speed",
-            "clampMin": 16.0,
-            "clampMax": 300.0
-          },
-          {
-            "animationType": "visibility",
-            "variable": "brake",
+            "variable": "p_brake",
             "clampMin": 1,
             "clampMax": 1
           },
@@ -593,11 +595,24 @@
         "volumeAnimations": [
           {
             "animationType": "translation",
-            "variable": "speed",
-            "axis": [0.0,0.29,0.0],
-            "offset": -0.2
+            "variable": "velocity",
+            "absolute": true,
+            "axis": [0.0,0.1,0.0],
+            "offset": -1
           }
         ],
+		"pitchAnimations": [
+		  {
+            "animationType": "translation",
+            "variable": "velocity",
+			"absolute": true,
+            "axis": [0,0.022,0],
+			"offset": 0.5,
+			"clampMin": 0.0,
+            "clampMax": 1001.0
+          }
+        ],
+        "isExterior":true,
         "looping": true,
         "minDistance": 0.0,
         "minDistanceVolume": 0.0,
@@ -605,7 +620,107 @@
         "middleDistanceVolume": 0.0,
         "maxDistance": 0.0,
         "maxDistanceVolume": 0.0
-      },
+      },//out
+      {
+        "name": "mtsofficialpack:wheel_skidding_inside",
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "terrain_distance",
+            "clampMin": 0.0,
+            "clampMax": 0.6
+          },
+          {
+            "animationType": "visibility",
+            "variable": "p_brake",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+          //blacklisting every soft block
+          {
+            "animationType": "visibility",
+            "variable": "terrain_blockmaterial_water",
+            "clampMin": 0,
+            "clampMax": 0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "terrain_blockmaterial_clay",
+            "clampMin": 0,
+            "clampMax": 0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "terrain_blockmaterial_dirt",
+            "clampMin": 0,
+            "clampMax": 0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "terrain_blockmaterial_grass",
+            "clampMin": 0,
+            "clampMax": 0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "terrain_blockmaterial_gravel",
+            "clampMin": 0,
+            "clampMax": 0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "terrain_blockmaterial_leaves",
+            "clampMin": 0,
+            "clampMax": 0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "terrain_blockmaterial_snow",
+            "clampMin": 0,
+            "clampMax": 0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "terrain_blockmaterial_sand",
+            "clampMin": 0,
+            "clampMax": 0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "terrain_blockmaterial_wool",
+            "clampMin": 0,
+            "clampMax": 0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "velocity",
+            "absolute": true,
+            "axis": [0.0,0.1,0.0],
+            "offset": -1
+          }
+        ],
+		"pitchAnimations": [
+		  {
+            "animationType": "translation",
+            "variable": "velocity",
+			"absolute": true,
+            "axis": [0,0.022,0],
+			"offset": 0.5,
+			"clampMin": 0.0,
+            "clampMax": 1001.0
+          }
+        ],
+        "isInterior":true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 0.0,
+        "middleDistance": 0.0,
+        "middleDistanceVolume": 0.0,
+        "maxDistance": 0.0,
+        "maxDistanceVolume": 0.0
+      },//in
       
       //SNOW - OUT
       {
@@ -675,6 +790,12 @@
             "variable": "slip",
 			"absolute": true,
             "clampMin": 2,
+            "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
             "clampMax": 1000
           }
         ],
@@ -797,6 +918,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -918,6 +1045,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -1028,6 +1161,12 @@
             "variable": "slip",
 			"absolute": true,
             "clampMin": 2,
+            "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
             "clampMax": 1000
           }
         ],
@@ -1150,6 +1289,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -1264,6 +1409,12 @@
             "variable": "slip",
 			"absolute": true,
             "clampMin": 2,
+            "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
             "clampMax": 1000
           }
         ],
@@ -1677,6 +1828,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -1804,6 +1961,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -1925,6 +2088,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -2038,6 +2207,12 @@
             "variable": "slip",
 			"absolute": true,
             "clampMin": 2,
+            "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
             "clampMax": 1000
           }
         ],
@@ -2170,6 +2345,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -2295,6 +2476,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -2403,6 +2590,12 @@
             "variable": "slip",
 			"absolute": true,
             "clampMin": 2,
+            "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
             "clampMax": 1000
           }
         ],
@@ -2530,6 +2723,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -2650,6 +2849,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -2763,6 +2968,12 @@
             "variable": "slip",
 			"absolute": true,
             "clampMin": 2,
+            "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
             "clampMax": 1000
           }
         ],
@@ -2895,6 +3106,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -3019,6 +3236,12 @@
             "variable": "slip",
 			"absolute": true,
             "clampMin": 2,
+            "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
             "clampMax": 1000
           }
         ],
@@ -3757,6 +3980,187 @@
         "maxDistanceVolume": 0.0
       },
       
+      //NORMAL - OUT
+      {
+        "name": "mts:wheel_skidding",
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "ground_onground",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+          {
+            "animationType": "visibility",
+            "variable": "ground_blockmaterial_normal",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "slip",
+			"absolute": true,
+            "clampMin": 2,
+            "clampMax": 1000
+          }
+        ],
+		"volumeAnimations": [
+		  {
+            "animationType": "translation",
+            "variable": "slip",
+			"absolute": true,
+            "axis": [0,0.03,0],
+			"clampMax": 0.9
+          }
+        ],
+		"pitchAnimations": [
+		  {
+            "animationType": "translation",
+            "variable": "slip",
+			"absolute": true,
+            "axis": [0,0.002,0],
+			"offset": 0.8,
+			"clampMin": 0.8,
+            "clampMax": 1001.0
+          },
+		  {
+            "animationType": "translation",
+            "variable": "slip",
+			"absolute": true,
+            "axis": [0,0.003,0],
+			"offset": -0.05,
+			"clampMin": 0.01,
+			"clampMax": 1001.0
+          }
+        ],
+        "looping": true,
+        "isExterior": true
+      },
+      //NORMAL - OUT IN
+      {
+        "name": "mts:wheel_skidding",
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "ground_onground",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+          {
+            "animationType": "visibility",
+            "variable": "parent_soundPass",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "ground_blockmaterial_normal",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "slip",
+			"absolute": true,
+            "clampMin": 2,
+            "clampMax": 1000
+          }
+        ],
+		"volumeAnimations": [
+		  {
+            "animationType": "translation",
+            "variable": "slip",
+			"absolute": true,
+            "axis": [0,0.03,0],
+			"clampMax": 0.9
+          }
+        ],
+		"pitchAnimations": [
+		  {
+            "animationType": "translation",
+            "variable": "slip",
+			"absolute": true,
+            "axis": [0,0.002,0],
+			"offset": 0.8,
+			"clampMin": 0.8,
+            "clampMax": 1001.0
+          },
+		  {
+            "animationType": "translation",
+            "variable": "slip",
+			"absolute": true,
+            "axis": [0,0.003,0],
+			"offset": -0.05,
+			"clampMin": 0.01,
+			"clampMax": 1001.0
+          }
+        ],
+        "looping": true,
+        "isInterior": true
+      },
+      //NORMAL - IN
+      {
+        "name": "mtsofficialpack:wheel_skidding_inside",
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "ground_onground",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+          {
+            "animationType": "visibility",
+            "variable": "parent_soundPass",
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "ground_blockmaterial_normal",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "slip",
+			"absolute": true,
+            "clampMin": 2,
+            "clampMax": 1000
+          }
+        ],
+		"volumeAnimations": [
+		  {
+            "animationType": "translation",
+            "variable": "slip",
+			"absolute": true,
+            "axis": [0,0.03,0],
+			"clampMax": 0.9
+          }
+        ],
+		"pitchAnimations": [
+		  {
+            "animationType": "translation",
+            "variable": "slip",
+			"absolute": true,
+            "axis": [0,0.002,0],
+			"offset": 0.8,
+			"clampMin": 0.8,
+            "clampMax": 1001.0
+          },
+		  {
+            "animationType": "translation",
+            "variable": "slip",
+			"absolute": true,
+            "axis": [0,0.003,0],
+			"offset": -0.05,
+			"clampMin": 0.01,
+			"clampMax": 1001.0
+          }
+        ],
+        "looping": true,
+        "isInterior": true
+      },
+      
       //SAND - OUT
       {
         "name": "mtsofficialpack:ground_sand",
@@ -3825,6 +4229,12 @@
             "variable": "slip",
 			"absolute": true,
             "clampMin": 2,
+            "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
             "clampMax": 1000
           }
         ],
@@ -3947,6 +4357,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -4062,6 +4478,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -4107,7 +4529,7 @@
         "quantity": 5,
         "duration": 100,
         "scale": 0.5,
-        "fadeScaleTime": 20,
+        "fadeOutScaleTime": 20,
         "hitboxSize": 0.2,
         "texture": "mtsofficialpack:textures/bullets/lugnut.png",
         "pos": [0.0,0.1,0.0],
@@ -4270,7 +4692,7 @@
             "clampMax": 1
           }
         ]
-      },
+      },//stone
       {
         "type": "generic",
         "spawnEveryTick": true,
@@ -4343,7 +4765,7 @@
             "clampMax": 1
           }
         ]
-      },
+      },//metal
       {
         "type": "generic",
         "spawnEveryTick": true,
@@ -4416,7 +4838,80 @@
             "clampMax": 1
           }
         ]
-      },
+      },//wood
+      {
+        "type": "generic",
+        "spawnEveryTick": true,
+        "spawningOrientation": "entity",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 120,
+        "movementDuration": 55,
+        "transparency": 0.15,
+        "toTransparency": -0.001,
+        "scale": 2.0,
+        "toScale": 10.0,
+        "hitboxSize": 0.2,
+        "textureList": [
+          "mts:textures/particles/big_smoke_0.png",
+          "mts:textures/particles/big_smoke_1.png",
+          "mts:textures/particles/big_smoke_2.png",
+          "mts:textures/particles/big_smoke_3.png",
+          "mts:textures/particles/big_smoke_4.png",
+          "mts:textures/particles/big_smoke_5.png",
+          "mts:textures/particles/big_smoke_6.png",
+          "mts:textures/particles/big_smoke_7.png",
+          "mts:textures/particles/big_smoke_8.png",
+          "mts:textures/particles/big_smoke_9.png",
+          "mts:textures/particles/big_smoke_10.png",
+          "mts:textures/particles/big_smoke_11.png"
+        ],
+        "textureDelays": [10,10,10,10,10,10,10,10,10,10,10,10],
+        "color": "FFFFFF",
+        "toColor": "FFFFFF",
+        "pos": [0.0,0.1,0.0],
+        "spreadRandomness": [1.0E-4,1.0E-5,0.7],
+        "initialVelocity": [1.0E-4,1.0E-4,-0.8],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "ground_blockmaterial_normal",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+        {
+            "animationType": "visibility",
+            "variable": "ground_isflat",
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "ground_onground",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 2.5,
+            "clampMax": 999
+          },
+          {
+            "animationType": "visibility",
+            "variable": "slip",
+            "clampMin": 6.0,
+            "clampMax": 999,
+            "absolute": true
+          },
+          {
+            "animationType": "visibility",
+            "variable": "0_4_2_cycle",
+            "clampMin": 1,
+            "clampMax": 1
+          }
+        ]
+      },//normal
       //driftmark
       {
         "type": "generic",
@@ -4426,7 +4921,7 @@
         "distance": 0.5,
         "duration": 260,
         "transparency": 0.5,
-        "fadeTransparencyTime": 60,
+        "fadeOutTransparencyTime": 60,
         "scale": 0.666,
         "ignoreCollision": true,
         "hitboxSize": 0.1,
@@ -4451,7 +4946,7 @@
           },
           {
             "animationType": "visibility",
-            "variable": "speed",
+            "variable": "velocity",
             "clampMin": 0.5,
             "clampMax": 999
           },
@@ -4463,7 +4958,7 @@
             "absolute": true
           }
         ]
-      },
+      },//stone
       {
         "type": "generic",
         "spawningOrientation": "world",
@@ -4472,7 +4967,7 @@
         "distance": 0.5,
         "duration": 260,
         "transparency": 0.5,
-        "fadeTransparencyTime": 60,
+        "fadeOutTransparencyTime": 60,
         "scale": 0.666,
         "ignoreCollision": true,
         "hitboxSize": 0.1,
@@ -4497,7 +4992,7 @@
           },
           {
             "animationType": "visibility",
-            "variable": "speed",
+            "variable": "velocity",
             "clampMin": 0.5,
             "clampMax": 999
           },
@@ -4509,7 +5004,7 @@
             "absolute": true
           }
         ]
-      },
+      },//metal
       {
         "type": "generic",
         "spawningOrientation": "world",
@@ -4518,7 +5013,7 @@
         "distance": 0.5,
         "duration": 260,
         "transparency": 0.5,
-        "fadeTransparencyTime": 60,
+        "fadeOutTransparencyTime": 60,
         "scale": 0.666,
         "ignoreCollision": true,
         "hitboxSize": 0.1,
@@ -4543,7 +5038,7 @@
           },
           {
             "animationType": "visibility",
-            "variable": "speed",
+            "variable": "velocity",
             "clampMin": 0.5,
             "clampMax": 999
           },
@@ -4555,7 +5050,53 @@
             "absolute": true
           }
         ]
-      },
+      },//wood
+      {
+        "type": "generic",
+        "spawningOrientation": "world",
+        "renderingOrientation": "fixed",
+        "quantity": 1,
+        "distance": 0.5,
+        "duration": 260,
+        "transparency": 0.5,
+        "fadeOutTransparencyTime": 60,
+        "scale": 0.666,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "texture": "mtsofficialpack:textures/bullets/skid3_translucent.png",
+        "pos": [0.0,-0.46,0.0],
+        "rot": [-90.0,0.0,0.0],
+        "initialVelocity": [0.0,0.0,0.0],
+        "movementVelocity": [0.0,0.0,0.0],
+        "terminalVelocity": [0.0,0.0,0.0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "ground_onground",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "ground_blockmaterial_normal",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "velocity",
+            "clampMin": 0.5,
+            "clampMax": 999
+          },
+          {
+            "animationType": "visibility",
+            "variable": "slip",
+            "clampMin": 6.0,
+            "clampMax": 999,
+            "absolute": true
+          }
+        ]
+      },//normal
       
       //drivemarks
       	//CLAY
@@ -4586,7 +5127,7 @@
           },
           {
             "animationType": "visibility",
-            "variable": "speed",
+            "variable": "velocity",
             "clampMin": 0.1,
             "clampMax": 999
           },
@@ -4666,7 +5207,7 @@
           },
           {
             "animationType": "visibility",
-            "variable": "speed",
+            "variable": "velocity",
             "clampMin": 0.1,
             "clampMax": 999
           },
@@ -4687,7 +5228,7 @@
         "distance": 0.5,
         "duration": 260,
         "transparency": 0.5,
-        "fadeTransparencyTime": 60,
+        "fadeOutTransparencyTime": 60,
         "scale": 0.666,
         "ignoreCollision": true,
         "hitboxSize": 0.1,
@@ -4716,12 +5257,6 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
-          },
-          {
-            "animationType": "visibility",
-            "variable": "speed",
-            "clampMin": 0.1,
-            "clampMax": 999
           },
           {
             "animationType": "visibility",
@@ -5356,7 +5891,7 @@
         "quantity": 1,
         "duration": 10,
         "transparency": 1.0,
-        "fadeTransparencyTime": 4,
+        "fadeOutTransparencyTime": 4,
         "scale": 1.2,
         "toScale": 1,
         "ignoreCollision": true,
@@ -5402,7 +5937,7 @@
         "quantity": 1,
         "duration": 10,
         "transparency": 1.0,
-        "fadeTransparencyTime": 4,
+        "fadeOutTransparencyTime": 4,
         "scale": 1.3,
         "toScale": 1,
         "ignoreCollision": false,
@@ -5457,7 +5992,7 @@
         "quantity": 1,
         "duration": 10,
         "transparency": 1.0,
-        "fadeTransparencyTime": 4,
+        "fadeOutTransparencyTime": 4,
         "scale": 1.3,
         "toScale": 1,
         "ignoreCollision": false,
@@ -5565,7 +6100,7 @@
         "quantity": 1,
         "duration": 8,
         "transparency": 1.0,
-        "fadeTransparencyTime": 5,
+        "fadeOutTransparencyTime": 5,
         "scale": 1.2,
         "toScale": 1,
         "ignoreCollision": true,
@@ -5618,7 +6153,7 @@
         "quantity": 1,
         "duration": 8,
         "transparency": 1.0,
-        "fadeTransparencyTime": 5,
+        "fadeOutTransparencyTime": 5,
         "scale": 1.2,
         "toScale": 1,
         "ignoreCollision": true,
@@ -5672,7 +6207,7 @@
         "quantity": 1,
         "duration": 8,
         "transparency": 1.0,
-        "fadeTransparencyTime": 5,
+        "fadeOutTransparencyTime": 5,
         "scale": 1.2,
         "toScale": 1,
         "ignoreCollision": true,
@@ -5717,7 +6252,7 @@
         "quantity": 1,
         "duration": 8,
         "transparency": 1.0,
-        "fadeTransparencyTime": 5,
+        "fadeOutTransparencyTime": 5,
         "scale": 1.2,
         "toScale": 1,
         "ignoreCollision": true,
@@ -5763,7 +6298,7 @@
         "quantity": 1,
         "duration": 10,
         "transparency": 1.0,
-        "fadeTransparencyTime": 4,
+        "fadeOutTransparencyTime": 4,
         "scale": 1.5,
         "toScale": 1,
         "ignoreCollision": false,
@@ -5810,7 +6345,7 @@
         "quantity": 1,
         "duration": 10,
         "transparency": 1.0,
-        "fadeTransparencyTime": 4,
+        "fadeOutTransparencyTime": 4,
         "scale": 1.7,
         "toScale": 1,
         "ignoreCollision": false,
@@ -5857,7 +6392,7 @@
         "quantity": 1,
         "duration": 10,
         "transparency": 1.0,
-        "fadeTransparencyTime": 4,
+        "fadeOutTransparencyTime": 4,
         "scale": 1.3,
         "toScale": 1,
         "ignoreCollision": false,
@@ -5913,7 +6448,7 @@
         "quantity": 1,
         "duration": 10,
         "transparency": 1.0,
-        "fadeTransparencyTime": 4,
+        "fadeOutTransparencyTime": 4,
         "scale": 1.2,
         "toScale": 1,
         "ignoreCollision": true,
@@ -5958,7 +6493,7 @@
         "quantity": 1,
         "duration": 10,
         "transparency": 1.0,
-        "fadeTransparencyTime": 4,
+        "fadeOutTransparencyTime": 4,
         "scale": 1.3,
         "toScale": 1,
         "ignoreCollision": false,
@@ -6013,7 +6548,7 @@
         "distance": 2,
         "duration": 50,
         "transparency": 0.5,
-        "fadeTransparencyTime": 15,
+        "fadeOutTransparencyTime": 15,
         "scale": 1.2,
         "toScale": 5,
         "ignoreCollision": true,
@@ -6210,7 +6745,7 @@
         "distance": 0.5,
         "duration": 260,
         "transparency": 0.5,
-        "fadeTransparencyTime": 60,
+        "fadeOutTransparencyTime": 60,
         "scale": 0.666,
         "ignoreCollision": true,
         "hitboxSize": 0.1,

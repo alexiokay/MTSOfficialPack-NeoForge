@@ -42,6 +42,14 @@
       "extraMaterialLists": [
         []
       ]
+    },
+    {
+      "subName": "_legacy",
+      "name": "Small Wheel (Legacy)",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        []
+      ]
     }
   ],
   "rendering": {
@@ -311,13 +319,12 @@
         "maxDistance": 25.0,
         "maxDistanceVolume": 0.0
       },
-      //wheelroll
+      //wheelroll even 
       {
-        "name": "mtsofficialpack:wheelroll_inside2",
+        "name": "mtsofficialpack:uneven_terrain1",
         "soundVariations": [
-        "mtsofficialpack:wheelroll_inside2",
-        "mtsofficialpack:wheelroll_inside1",
-        "mtsofficialpack:wheel_roll"
+        "mtsofficialpack:uneven_terrain1",
+        "mtsofficialpack:uneven_terrain2"
         ],
         "activeAnimations": [
           {
@@ -331,6 +338,66 @@
             "variable": "speed",
             "clampMin": 1.0,
             "clampMax": 300.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "ground_blockmaterial_stone",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "speed",
+            "axis": [0.0,0.08,0.0],
+            "offset": -0.1
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "speed",
+            "axis": [0.0,0.04,0.0],
+            "offset": 0.5
+          }
+        ],
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 8.0,
+        "middleDistanceVolume": 0.2,
+        "maxDistance": 25.0,
+        "maxDistanceVolume": 0.0
+      },
+      //wheelroll uneven
+      {
+        "name": "mtsofficialpack:wheelroll_inside2",
+        "soundVariations": [
+        "mtsofficialpack:wheelroll_inside2",
+        "mtsofficialpack:wheelroll_inside1",
+        "mtsofficialpack:wheel_roll",
+        "mtsofficialpack:ground_roll_inside5",
+        "mtsofficialpack:ground_roll_inside6"
+        ],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "ground_onground",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 1.0,
+            "clampMax": 300.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "ground_blockmaterial_stone",
+            "clampMin": 0.0,
+            "clampMax": 0.0
           }
         ],
         "volumeAnimations": [
@@ -538,6 +605,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -658,6 +731,12 @@
             "variable": "slip",
 			"absolute": true,
             "clampMin": 2,
+            "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
             "clampMax": 1000
           }
         ],
@@ -780,6 +859,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -883,6 +968,12 @@
             "variable": "slip",
 			"absolute": true,
             "clampMin": 2,
+            "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
             "clampMax": 1000
           }
         ],
@@ -1005,6 +1096,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -1119,6 +1216,12 @@
             "variable": "slip",
 			"absolute": true,
             "clampMin": 2,
+            "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
             "clampMax": 1000
           }
         ],
@@ -1532,6 +1635,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -1659,6 +1768,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -1780,6 +1895,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -1893,6 +2014,12 @@
             "variable": "slip",
 			"absolute": true,
             "clampMin": 2,
+            "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
             "clampMax": 1000
           }
         ],
@@ -2025,6 +2152,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -2150,6 +2283,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -2258,6 +2397,12 @@
             "variable": "slip",
 			"absolute": true,
             "clampMin": 2,
+            "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
             "clampMax": 1000
           }
         ],
@@ -2385,6 +2530,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -2505,6 +2656,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -2618,6 +2775,12 @@
             "variable": "slip",
 			"absolute": true,
             "clampMin": 2,
+            "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
             "clampMax": 1000
           }
         ],
@@ -2750,6 +2913,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -2874,6 +3043,12 @@
             "variable": "slip",
 			"absolute": true,
             "clampMin": 2,
+            "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
             "clampMax": 1000
           }
         ],
@@ -3612,6 +3787,187 @@
         "maxDistanceVolume": 0.0
       },
       
+      //NORMAL - OUT
+      {
+        "name": "mts:wheel_skidding",
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "ground_onground",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+          {
+            "animationType": "visibility",
+            "variable": "ground_blockmaterial_normal",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "slip",
+			"absolute": true,
+            "clampMin": 2,
+            "clampMax": 1000
+          }
+        ],
+		"volumeAnimations": [
+		  {
+            "animationType": "translation",
+            "variable": "slip",
+			"absolute": true,
+            "axis": [0,0.03,0],
+			"clampMax": 0.9
+          }
+        ],
+		"pitchAnimations": [
+		  {
+            "animationType": "translation",
+            "variable": "slip",
+			"absolute": true,
+            "axis": [0,0.002,0],
+			"offset": 0.8,
+			"clampMin": 0.8,
+            "clampMax": 1001.0
+          },
+		  {
+            "animationType": "translation",
+            "variable": "slip",
+			"absolute": true,
+            "axis": [0,0.003,0],
+			"offset": -0.05,
+			"clampMin": 0.01,
+			"clampMax": 1001.0
+          }
+        ],
+        "looping": true,
+        "isExterior": true
+      },
+      //NORMAL - OUT IN
+      {
+        "name": "mts:wheel_skidding",
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "ground_onground",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+          {
+            "animationType": "visibility",
+            "variable": "parent_soundPass",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "ground_blockmaterial_normal",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "slip",
+			"absolute": true,
+            "clampMin": 2,
+            "clampMax": 1000
+          }
+        ],
+		"volumeAnimations": [
+		  {
+            "animationType": "translation",
+            "variable": "slip",
+			"absolute": true,
+            "axis": [0,0.03,0],
+			"clampMax": 0.9
+          }
+        ],
+		"pitchAnimations": [
+		  {
+            "animationType": "translation",
+            "variable": "slip",
+			"absolute": true,
+            "axis": [0,0.002,0],
+			"offset": 0.8,
+			"clampMin": 0.8,
+            "clampMax": 1001.0
+          },
+		  {
+            "animationType": "translation",
+            "variable": "slip",
+			"absolute": true,
+            "axis": [0,0.003,0],
+			"offset": -0.05,
+			"clampMin": 0.01,
+			"clampMax": 1001.0
+          }
+        ],
+        "looping": true,
+        "isInterior": true
+      },
+      //NORMAL - IN
+      {
+        "name": "mtsofficialpack:wheel_skidding_inside",
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "ground_onground",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+          {
+            "animationType": "visibility",
+            "variable": "parent_soundPass",
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "ground_blockmaterial_normal",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "slip",
+			"absolute": true,
+            "clampMin": 2,
+            "clampMax": 1000
+          }
+        ],
+		"volumeAnimations": [
+		  {
+            "animationType": "translation",
+            "variable": "slip",
+			"absolute": true,
+            "axis": [0,0.03,0],
+			"clampMax": 0.9
+          }
+        ],
+		"pitchAnimations": [
+		  {
+            "animationType": "translation",
+            "variable": "slip",
+			"absolute": true,
+            "axis": [0,0.002,0],
+			"offset": 0.8,
+			"clampMin": 0.8,
+            "clampMax": 1001.0
+          },
+		  {
+            "animationType": "translation",
+            "variable": "slip",
+			"absolute": true,
+            "axis": [0,0.003,0],
+			"offset": -0.05,
+			"clampMin": 0.01,
+			"clampMax": 1001.0
+          }
+        ],
+        "looping": true,
+        "isInterior": true
+      },
+      
       //SAND - OUT
       {
         "name": "mtsofficialpack:ground_sand",
@@ -3680,6 +4036,12 @@
             "variable": "slip",
 			"absolute": true,
             "clampMin": 2,
+            "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
             "clampMax": 1000
           }
         ],
@@ -3802,6 +4164,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -3917,6 +4285,12 @@
 			"absolute": true,
             "clampMin": 2,
             "clampMax": 1000
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0.01,
+            "clampMax": 1000
           }
         ],
 		"volumeAnimations": [
@@ -3962,7 +4336,7 @@
         "quantity": 3,
         "duration": 100,
         "scale": 0.5,
-        "fadeScaleTime": 20,
+        "fadeOutScaleTime": 20,
         "hitboxSize": 0.2,
         "texture": "mtsofficialpack:textures/bullets/lugnut.png",
         "pos": [0.0,0.1,0.0],
@@ -4216,7 +4590,7 @@
         "distance": 0.38,
         "duration": 260,
         "transparency": 0.5,
-        "fadeTransparencyTime": 60,
+        "fadeOutTransparencyTime": 60,
         "scale": 0.466,
         "ignoreCollision": true,
         "hitboxSize": 0.1,
@@ -4299,7 +4673,7 @@
         "distance": 0.38,
         "duration": 260,
         "transparency": 0.3,
-        "fadeTransparencyTime": 60,
+        "fadeOutTransparencyTime": 60,
         "scale": 0.466,
         "ignoreCollision": true,
         "hitboxSize": 0.1,
@@ -4518,7 +4892,7 @@
         "distance": 0.38,
         "duration": 260,
         "transparency": 0.5,
-        "fadeTransparencyTime": 60,
+        "fadeOutTransparencyTime": 60,
         "scale": 0.466,
         "ignoreCollision": true,
         "hitboxSize": 0.1,
@@ -4592,7 +4966,7 @@
           },
           {
             "animationType": "visibility",
-            "variable": "speed",
+            "variable": "velocity",
             "clampMin": 0.5,
             "clampMax": 999
           },
@@ -4635,7 +5009,7 @@
           },
           {
             "animationType": "visibility",
-            "variable": "speed",
+            "variable": "velocity",
             "clampMin": 0.1,
             "clampMax": 999
           },
@@ -4715,7 +5089,7 @@
           },
           {
             "animationType": "visibility",
-            "variable": "speed",
+            "variable": "velocity",
             "clampMin": 0.1,
             "clampMax": 999
           },
@@ -4736,7 +5110,7 @@
         "distance": 0.38,
         "duration": 260,
         "transparency": 0.5,
-        "fadeTransparencyTime": 60,
+        "fadeOutTransparencyTime": 60,
         "scale": 0.5,
         "ignoreCollision": true,
         "hitboxSize": 0.1,
@@ -4808,7 +5182,7 @@
           },
           {
             "animationType": "visibility",
-            "variable": "speed",
+            "variable": "velocity",
             "clampMin": 0.5,
             "clampMax": 999
           },
@@ -5411,7 +5785,7 @@
         "quantity": 1,
         "duration": 10,
         "transparency": 1.0,
-        "fadeTransparencyTime": 4,
+        "fadeOutTransparencyTime": 4,
         "scale": 1.2,
         "toScale": 1,
         "ignoreCollision": true,
@@ -5457,7 +5831,7 @@
         "quantity": 1,
         "duration": 10,
         "transparency": 1.0,
-        "fadeTransparencyTime": 4,
+        "fadeOutTransparencyTime": 4,
         "scale": 1.3,
         "toScale": 1,
         "ignoreCollision": false,
@@ -5512,7 +5886,7 @@
         "quantity": 1,
         "duration": 10,
         "transparency": 1.0,
-        "fadeTransparencyTime": 4,
+        "fadeOutTransparencyTime": 4,
         "scale": 1.3,
         "toScale": 1,
         "ignoreCollision": false,
@@ -5620,7 +5994,7 @@
         "quantity": 1,
         "duration": 8,
         "transparency": 1.0,
-        "fadeTransparencyTime": 5,
+        "fadeOutTransparencyTime": 5,
         "scale": 1.2,
         "toScale": 1,
         "ignoreCollision": true,
@@ -5673,7 +6047,7 @@
         "quantity": 1,
         "duration": 8,
         "transparency": 1.0,
-        "fadeTransparencyTime": 5,
+        "fadeOutTransparencyTime": 5,
         "scale": 1.2,
         "toScale": 1,
         "ignoreCollision": true,
@@ -5727,7 +6101,7 @@
         "quantity": 1,
         "duration": 8,
         "transparency": 1.0,
-        "fadeTransparencyTime": 5,
+        "fadeOutTransparencyTime": 5,
         "scale": 1.2,
         "toScale": 1,
         "ignoreCollision": true,
@@ -5772,7 +6146,7 @@
         "quantity": 1,
         "duration": 8,
         "transparency": 1.0,
-        "fadeTransparencyTime": 5,
+        "fadeOutTransparencyTime": 5,
         "scale": 1.2,
         "toScale": 1,
         "ignoreCollision": true,
@@ -5818,7 +6192,7 @@
         "quantity": 1,
         "duration": 10,
         "transparency": 1.0,
-        "fadeTransparencyTime": 4,
+        "fadeOutTransparencyTime": 4,
         "scale": 1.5,
         "toScale": 1,
         "ignoreCollision": false,
@@ -5865,7 +6239,7 @@
         "quantity": 1,
         "duration": 10,
         "transparency": 1.0,
-        "fadeTransparencyTime": 4,
+        "fadeOutTransparencyTime": 4,
         "scale": 1.7,
         "toScale": 1,
         "ignoreCollision": false,
@@ -5912,7 +6286,7 @@
         "quantity": 1,
         "duration": 10,
         "transparency": 1.0,
-        "fadeTransparencyTime": 4,
+        "fadeOutTransparencyTime": 4,
         "scale": 1.3,
         "toScale": 1,
         "ignoreCollision": false,
@@ -5968,7 +6342,7 @@
         "quantity": 1,
         "duration": 10,
         "transparency": 1.0,
-        "fadeTransparencyTime": 4,
+        "fadeOutTransparencyTime": 4,
         "scale": 1.2,
         "toScale": 1,
         "ignoreCollision": true,
@@ -6013,7 +6387,7 @@
         "quantity": 1,
         "duration": 10,
         "transparency": 1.0,
-        "fadeTransparencyTime": 4,
+        "fadeOutTransparencyTime": 4,
         "scale": 1.3,
         "toScale": 1,
         "ignoreCollision": false,
@@ -6068,7 +6442,7 @@
         "distance": 2,
         "duration": 50,
         "transparency": 0.5,
-        "fadeTransparencyTime": 15,
+        "fadeOutTransparencyTime": 15,
         "scale": 1.2,
         "toScale": 5,
         "ignoreCollision": true,

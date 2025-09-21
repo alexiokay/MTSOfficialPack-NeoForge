@@ -7,7 +7,8 @@
   },
   "interactable": {
     "interactionType": "crate",
-    "inventoryUnits": 0.35
+    "inventoryUnits": 0.35,
+    "inventoryTexture": "mtsofficialpack:textures/guis/inventory_glovebox.png"
   },
   "definitions": [
     {
@@ -30,6 +31,7 @@
           {
             "animationType": "visibility",
             "variable": "player_interacting",
+            "reverseDelay": 6,
             "clampMin": 0.0,
             "clampMax": 0.0
           }

@@ -100,21 +100,7 @@
   ],
   "rendering": {
     "lightObjects": [],
-    "animatedObjects": [
-      {
-        "objectName": "translucent_blackout",
-        "blendedAnimations": true,
-        "animations": [
-          {
-            "animationType": "visibility",
-            "variable": "acceleration",
-            "clampMin": 0.0,
-            "clampMax": 0.5
-          }
-        ]
-      }
-      
-    ],
+    "animatedObjects": [],
     "sounds": [
     //place-remove
       	{

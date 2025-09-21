@@ -11,7 +11,7 @@
     "reloadTime": 60,
     //reduce hypersonic muzzle velocity to something more reasonable
     //yes daddy
-    "muzzleVelocity": 250,
+    "muzzleVelocity": 290,
     "fireDelay": 2.0,
     "bulletSpreadFactor": 1.3,
     "diameter": 7.62,
@@ -286,9 +286,9 @@
         "quantity": 1,
         "duration": 50,
         "transparency": 1.0,
-        "fadeTransparencyTime": 25,
+        "fadeOutTransparencyTime": 25,
         "scale": 0.85,
-        "fadeScaleTime": 25,
+        "fadeOutScaleTime": 25,
         "hitboxSize": 0.185,
         "texture": "mtsofficialpack:textures/bullets/casing762.png",
         "model": "mtsofficialpack:objmodels/bullets/casing762.obj",

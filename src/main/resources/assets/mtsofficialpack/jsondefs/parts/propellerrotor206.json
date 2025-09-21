@@ -1,0 +1,146 @@
+{
+  "generic": {
+    "type": "propeller_rotor",
+    "useVehicleTexture": true,
+    "forwardsDamageMultiplier": 0.5,
+    "destroyable": true,
+    "movementAnimations": [
+      {
+        "animationType": "rotation",
+        "variable": "propeller_rotation",
+        "centerPoint": [0.0,0.0,0.0],
+        "axis": [0.0,0.0,1.0]
+      }
+    ]
+  },
+  "propeller": {
+    "isDynamicPitch": true,
+    "isRotor": true,
+    "pitch": 120,
+    "diameter": 570
+  },
+  "definitions": [
+    {
+      "subName": "",
+      "name": "Medium Helicopter Rotor",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {
+    "animatedObjects": [
+    //blur
+      {
+        "objectName": "translucent_propblur",
+        "blendedAnimations": true,
+        "animations": [
+          {
+            "animationType": "visibility",
+            "variable": "propeller_rpm",
+            "clampMin": 200.0,
+            "clampMax": 800.0
+          }
+        ]
+      },
+    //droop
+      {
+        "objectName": "blade2",
+        "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "propeller_rpm",
+            "centerPoint": [0.0,0.0,0.0],
+        	"axis": [-0.05,0.0,0.0],
+            "clampMin": -3.0,
+            "clampMax": 0.01,
+            "offset": -3
+          }
+        ]
+      },
+      {
+        "objectName": "blade1",
+        "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "propeller_rpm",
+            "centerPoint": [0.0,0.0,0.0],
+        	"axis": [0.05,0.0,0.0],
+            "clampMin": -3.0,
+            "clampMax": 0.01,
+            "offset": -3
+          }
+        ]
+      }
+      
+    ],
+    "lightObjects": [],
+    "sounds": [
+    //place-remove
+      	{
+        "name": "mtsofficialpack:placesound/prop_place0",
+        "soundVariations": [
+        	"mtsofficialpack:placesound/prop_place0",
+        	"mtsofficialpack:placesound/prop_place1"
+        ],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "part_added_vehicle",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "maxDistance": 24.0,
+        "maxDistanceVolume": 0.0
+      },
+      	{
+        "name": "mtsofficialpack:placesound/prop_remove0",
+        "soundVariations": [
+        	"mtsofficialpack:placesound/prop_remove0",
+        	"mtsofficialpack:placesound/prop_remove1"
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "random",
+            "axis": [0.0,0.1,0.0],
+            "offset": 1.0
+          }
+        ],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "part_removed_vehicle",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "maxDistance": 16.0,
+        "maxDistanceVolume": 0.0
+      }
+    ],
+    "particles": [],
+    "modelType": "obj"
+  },
+  "general": {
+    "name": "Medium Helicopter Rotor",
+    "description": "A bigger rotor for real helicopters. Two large blades provide enough lift to keep your obese gluteal region in the air.",
+    "health": 35,
+    "materialLists": [
+      [
+        "tags:ingots/iron:4",
+        "mts:mtsofficialpack.plating:20",
+        "mts:mtsofficialpack.metaltube:6",
+        "mts:mtsofficialpack.hydraulics:1",
+        "minecraft:iron_bars:2"
+      ]
+    ],
+    "radarWidth": 0.0,
+    "radarRange": 0.0
+  }
+}

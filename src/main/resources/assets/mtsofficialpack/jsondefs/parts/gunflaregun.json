@@ -280,16 +280,16 @@
         "quantity": 1, 
         "duration": 1000,
         "transparency": 1.0,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 0.85,
-        "fadeScaleTime": 100,
+        "fadeOutScaleTime": 100,
         "hitboxSize": 0.2,
         "pos": [0.0,0.0,0.0],
         "rot": [180.0,0.0,90.0],
         "rotationRandomness": [70.0,0.0,0.0],
         "rotationVelocity": [20.0,0.0,0.0],
         "spreadRandomness": [0.5,0.2,0.8],
-        "initialVelocity": [0.0,0.5,-0.95],
+        "initialVelocity": [0.0,1.7,-0.95],
         "movementVelocity": [0.0,-0.05,0.0],
         "terminalVelocity": [5700.0,6000.0,6200.0],
         "spawningAnimations": [
@@ -303,7 +303,7 @@
         "activeAnimations": [
           {
             "animationType": "visibility",
-            "variable": "gaysex", //CHANGE TO "gun_reload"
+            "variable": "gun_reload", //CHANGE TO "gun_reload"
             "clampMin": 1,
             "clampMax": 1,
             "forwardsDelay": 8
@@ -362,11 +362,11 @@
         "isBright": true,
         "spawningOrientation": "entity",
         "renderingOrientation": "player",
-        "quantity": 5,
-        "duration": 20,
+        "quantity": 10,
+        "duration": 50,
         "movementDuration": 10,
         "transparency": 1.0,
-        "scale": 1.0,
+        "scale": 1.4,
         "toScale": 0.001,
         "hitboxSize": 0.2,
         "textureList": [
@@ -378,7 +378,7 @@
         ],
         "randomTexture": true,
         "pos": [0.0,0.18,1],
-        "spreadRandomness": [4.0,4.0,13.0],
+        "spreadRandomness": [4.0,4.0,8.0],
         "movementVelocity": [0.0,-0.008,0.0],
         "initialVelocity": [0.0,0.0,20.0],
         "spawningAnimations": [

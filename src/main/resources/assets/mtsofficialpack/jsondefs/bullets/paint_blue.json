@@ -59,7 +59,7 @@
         "quantity": 1,
         "duration": 2500,
         "transparency": 0.55,
-        "fadeTransparencyTime": 500,
+        "fadeOutTransparencyTime": 500,
         "ignoreCollision": true,
         "scale": 0.45,
         "hitboxSize": 0.2,

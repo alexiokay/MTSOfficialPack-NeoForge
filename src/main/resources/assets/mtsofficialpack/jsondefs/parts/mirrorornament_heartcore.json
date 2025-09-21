@@ -1,0 +1,423 @@
+{
+  "generic": {
+    "type": "generic_ornament_mirror",
+    "width": 0.1,
+    "height": 0.25,
+    "movementAnimations": [
+      {
+        "animationType": "rotation",
+        "variable": "springpositionae",
+        "centerPoint": [0.0,0.0,0.0],
+        "axis": [1.0,0.0,0.0]
+      },
+	  {
+        "animationType": "rotation",
+        "variable": "springpositionae2",
+        "centerPoint": [0.0,0.0,0.0],
+        "axis": [0,0,1]
+      }
+    ]
+  },
+  "variableModifiers": [
+  //ALL CREDITS FOR ROPE & SPRING SIMULATION GO TO 
+  //=====>  BLAZEWOLF1122  <======
+  //DO NOT USE HIS PHYSICS CODE WITHOUT PERMISSION
+    {
+      "variable": "springpullae",
+	  "minValue" : -1000,
+	  "maxValue" : 1000,
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "parent_acceleration",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,0,10]
+        },
+		{
+          "animationType": "translation",
+          "variable": "parent_pitch",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,-0.05,0]
+        }
+      ]
+    },
+	{
+      "variable": "springpositionae",
+	  "clampMin": -180,
+	  "clampMax": 180,
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "springae",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,1,0]
+        }
+      ]
+    },
+	{
+      "variable": "springae",
+	  //"minValue" : -10,
+	  //"maxValue" : 10,
+      "animations": [
+		{
+          "animationType": "translation",
+          "variable": "springpositionae",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,-0.02,0] //0. 
+        },
+		{
+          "animationType": "translation",
+          "variable": "springpullae",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,1,0] //this can basically be considered a "global force multiplier" for the entries youve made. if youve made something too strong or too weak but dont wanna have to change a bunch of values, just tweak it here
+        },
+		{
+          "animationType": "translation",
+          "variable": "springae",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0.0,-0.02,0] //7. 
+        },
+		{
+          "animationType": "inhibitor", 
+          "variable": "springpositionae",
+		  "clampMax": 1, 
+		  "clampMin": 0.15 
+        },
+		{
+          "animationType": "inhibitor",
+          "variable": "springpositionae",
+		  "clampMax": -0.15, 
+          "clampMin": -1 
+        },
+		{
+          "animationType": "translation",
+          "variable": "springae",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0.0,-0.02,0]
+        }
+		
+      ]
+    },
+
+    {
+      "variable": "springpullae2",
+	  "minValue" : -1000,
+	  "maxValue" : 1000,
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "lateral_acceleration",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,0,0.03]
+        },
+		{
+          "animationType": "translation",
+          "variable": "parent_roll",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,-0.05,0]
+        }
+      ]
+    },
+	{
+      "variable": "springpositionae2",
+	  "clampMin": -180,
+	  "clampMax": 180,
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "springae2",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,1,0]
+        }
+      ]
+    },
+	{
+      "variable": "springae2",
+	  //"minValue" : -10,
+	  //"maxValue" : 10,
+      "animations": [
+		{
+          "animationType": "translation",
+          "variable": "springpositionae2",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,-0.02,0]
+        },	
+		{
+          "animationType": "translation",
+          "variable": "springpullae2",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,1,0] 
+        },
+		{
+          "animationType": "translation",
+          "variable": "springae2",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0.0,-0.02,0] 
+        },
+		{
+          "animationType": "inhibitor", 
+          "variable": "springpositionae2",
+		  "clampMax": 1, 
+		  "clampMin": 0.15
+        },
+		{
+          "animationType": "inhibitor",
+          "variable": "springpositionae2",
+		  "clampMax": -0.15,
+          "clampMin": -1
+        },
+		{
+          "animationType": "translation",
+          "variable": "springae2",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0.0,-0.02,0]
+        }
+		
+      ]
+    } 
+  ],
+  "collisionGroups": [],
+  "definitions": [
+    {
+      "subName": "",
+      "name": "Heartcore Ornament",
+      "description": "Our love is complicated...",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:heart_of_the_sea:1"
+        ]
+      ]
+    }
+  ],
+  "rendering": {
+  	"sounds":[],
+  	"animatedObjects": [
+      //clock dial
+      {
+        "objectName": "core",
+        "animations": [
+    	  {
+        	"animationType": "rotation",
+        	"variable": "tick",
+        	"centerPoint": [0.0,-0.1875,0.0],
+        	"axis": [2.0,0.0,2.0]
+      	  }
+        ]
+      }
+    ],
+    "lightObjects": [
+      {
+        "objectName": "sphere",
+        "emissive": true,
+        "color": "c10b00",
+        "brightnessAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "!piss",
+            "axis": [0.0,0.5,0.0]
+          },
+          {
+            "animationType": "translation",
+            "variable": "0_80_80_cycle",
+            "axis": [0.0,0.225,0.0],
+            "offset": 0.0,
+            "clampMin": 0.0,
+            "clampMax": 0.0,
+            "duration": 80
+          }
+        ],
+        "blendableComponents": []
+      },
+      {
+        "objectName": "core",
+        "emissive": false,
+        "covered": false,
+        "isElectric": false,
+        "brightnessAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "piss",
+            "clampMin": 0.0,
+            "clampMax": 1.0
+          }
+        ],
+        "blendableComponents": []
+      }
+    ],
+    "particles": [
+    {
+        "type": "generic",
+        "isBright": true,
+        "isBlended": true,
+        "spawnEveryTick":true,
+        "color": "FFFFFF",
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 2,
+        "duration": 3,
+        "transparency": 1.0,
+        "toTransparency": 0.1,
+        "scale": 0.2,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "textureList": [
+          "mtsofficialpack:textures/bullets/flareflare2_translucent.png",
+          "mtsofficialpack:textures/bullets/flareflare1_translucent.png",
+          "mtsofficialpack:textures/bullets/flareflare0_translucent.png"
+        ],
+        "randomTexture": true,
+        "pos": [0.0,-0.1875,0.0],
+        "initialVelocity": [0.00001,0.00001,0.00001],
+        "movementVelocity": [0.00001,0.00001,0.00001],
+        "terminalVelocity": [0.00001,0.00001,0.00001],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "!w",
+            "clampMin": 0,
+            "clampMax": 1
+          }
+        ]
+      },//blending flareflare 
+    {
+        "type": "generic",
+        "isBright": true,
+        "isBlended": false,
+        "spawnEveryTick":true,
+        "color": "ffffff",
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 10,
+        "transparency": 1.0,
+        "toTransparency": 1.0,
+        "scale": 0.2,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "textureList": [
+          "mtsofficialpack:textures/bullets/flareflare2_translucent.png"
+        ],
+        "randomTexture": true,
+        "pos": [0.0,-0.1875,0],
+        "initialVelocity": [0.00001,0.00001,0.00001],
+        "movementVelocity": [0.00001,0.00001,0.00001],
+        "terminalVelocity": [0.00001,0.00001,0.00001],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "!w",
+            "clampMin": 0,
+            "clampMax": 1
+          },
+          {
+            "animationType": "visibility",
+            "variable": "0_2_7_cycle",
+            "clampMin": 1,
+            "clampMax": 1
+          }
+        ]
+      },//blending flareflare substitute
+    {
+    
+        "type": "generic",
+        "spawningOrientation": "entity",
+        "renderingOrientation": "player",
+        "isBright": true,
+        "quantity": 1,
+        "duration": 40,
+        "transparency": 1,
+        "fadeScaleTime": 20,
+        "scale": 0.02,
+        "toScale": 0.001,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "texture":"mtsofficialpack:textures/bullets/raindrop.png",
+        "pos": [0.0,-0.1875,0.0],
+        "spreadRandomness": [0.02,0.02,0.02],
+        "initialVelocity": [0.0,0.0,0.0],
+        "movementVelocity": [0.0,0.0,0.0],
+        "spawningAnimations": [],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "random",
+            "clampMin": 0.01,
+            "clampMax": 1.0
+          }
+        ]
+      },//passive sparks
+    {
+        "type": "generic",
+        "spawnEveryTick": true,
+        "isBright": true,
+        "isBlended": true,
+        "color": "FFFFFF",
+        "daytimeReductionFactor": 0.5,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 2,
+        "transparency": 1.0,
+        "toTransparency": 0.0,
+        "scale": 0.75,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "texture": "mtsofficialpack:textures/bullets/flash64_translucent.png",
+        "pos": [0.0,-0.1875,0.0],
+        "initialVelocity": [0.00001,0.00001,0.00001],
+        "movementVelocity": [0.00001,0.00001,0.00001],
+        "terminalVelocity": [0.00001,0.00001,0.00001],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "piss",
+            "clampMin": 0,
+            "clampMax": 1
+          }
+        ]
+      },//glow 
+    {
+        "type": "generic",
+        "spawnEveryTick": true,
+        "isBright": true,
+        "color": "FF0000",
+        "daytimeReductionFactor": 0.5,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 2,
+        "transparency": 0.55,
+        "toTransparency": 0.55,
+        "scale": 0.75,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "texture": "mtsofficialpack:textures/bullets/flash64_translucent.png",
+        "pos": [0.0,-0.1875,0.035],
+        "initialVelocity": [0.00001,0.00001,0.00001],
+        "movementVelocity": [0.00001,0.00001,0.00001],
+        "terminalVelocity": [0.00001,0.00001,0.00001],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "piss",
+            "clampMin": 0,
+            "clampMax": 1
+          }
+        ]
+      }//glow substitute
+      
+    ],
+    "modelType": "obj"
+  },
+  "general": {
+    "name": "Heartcore Ornament",
+    "description": "",
+     "stackSize": 64,
+    "materialLists": [
+      [
+        "minecraft:string:1"
+      ]
+    ]
+  }
+} 

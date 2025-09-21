@@ -318,7 +318,7 @@
         "maxDistanceVolume": 0.0
       },
       
-    {
+      {
         "name": "mtsofficialpack:triggerclick",
         "activeAnimations": [
           {
@@ -419,7 +419,8 @@
         "middleDistanceVolume": 0.0,
         "maxDistance": 100.0,
         "maxDistanceVolume": 0.0
-      },      {
+      },      
+      {
         "name": "mtsofficialpack:aa762_firing_reverb1",
         "soundVariations": [
           "mtsofficialpack:aa762_firing_reverb2",
@@ -659,9 +660,9 @@
         "quantity": 1,
         "duration": 400,
         "transparency": 1.0,
-        "fadeTransparencyTime": 65,
+        "fadeOutTransparencyTime": 65,
         "scale": 1.0,
-        "fadeScaleTime": 65,
+        "fadeOutScaleTime": 65,
         "hitboxSize": 0.185,
         "texture": "mtsofficialpack:textures/bullets/casing762.png",
         "model": "mtsofficialpack:objmodels/bullets/casing762.obj",
@@ -705,9 +706,9 @@
         "quantity": 2,
         "duration": 1500,
         "transparency": 1.0,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 1.0,
-        "fadeScaleTime": 100,
+        "fadeOutScaleTime": 100,
         "hitboxSize": 0.2,
         "texture": "mtsofficialpack:textures/bullets/magazine762.png",
         "model": "mtsofficialpack:objmodels/bullets/magazine762.obj",

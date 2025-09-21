@@ -1,0 +1,2359 @@
+{
+  "generic": {
+    "type": "engine_car",  //NEW SCOUT ENGINE SOUNDS GAY SEX
+    "forwardsDamageMultiplier": 1.0,
+    "destroyable": true,
+    "width": 0.6,
+    "height": 0.9,
+    "movementAnimations": [
+      {
+        "animationType": "translation",
+        "variable": "engine_piston_0_1_0_crank",
+        "centerPoint": [0.0,0.0,0.0],
+        "axis": [0.0,0.00625,0.0]
+      },
+      {
+        "animationType": "rotation",
+        "variable": "engine_cos",
+        "centerPoint": [0.0,0.0,0.0],
+        "axis": [0.0,0.0,1.0]
+      },
+      {
+        "animationType": "rotation",
+        "variable": "engine_rpm_percent",
+        "centerPoint": [0.0,0.0,0.0],
+        "axis": [0.0,0.0,-3.0],
+        "clampMin": -3.0,
+        "clampMax": 3.0
+      },
+      {
+        "animationType": "inhibitor",
+        "variable": "engine_running"
+      },
+      {
+        "animationType": "rotation",
+        "variable": "throttle",
+        "centerPoint": [0.0,0.0,0.0],
+        "axis": [0.0,0.0,1.0]
+      },
+      {
+        "animationType": "rotation",
+        "variable": "throttle",
+        "centerPoint": [0.0,0.0,0.0],
+        "axis": [0.0,0.0,1.0],
+        "duration": 5
+      }
+    ]
+  },
+  "engine": {
+    "type": "normal",
+    "isAutomatic": true,
+    "starterPower": 150,
+    "shiftSpeed": 20,
+    "clutchTime": 5,
+    "revResistance": 7,
+    "maxRPM": 7100,
+    "maxSafeRPM": 5600,
+    "idleRPM": 750,
+    "startRPM": 800,
+    "revlimitRPM": 5500,
+    "revlimitBounce": 17,
+    "stallRPM": 450,
+    "engineWinddownRate": 30,
+    "heatingCoefficient": 1.0,
+    "coolingCoefficient": 1.0,
+    "engineWearFactor": 1.0,
+    "fuelConsumption": 0.9,
+    "gearRatios": [-2.47,0.0,2.0,1.3,1.0,0.7],
+    "fuelType": "gasoline"
+  },
+  "definitions": [
+    {
+      "subName": "",
+      "name": "M102 i4 Mercedes Engine",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {
+    "animatedObjects": [
+      {
+        "objectName": "fan",
+        "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm",
+            "centerPoint": [0.0,0.3125,1.4067],
+            "axis": [0.0,0.0,0.3]
+          },
+          {
+            "animationType": "inhibitor",
+            "variable": "!engines_running",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "rotation",
+            "variable": "tick",
+            "centerPoint": [0.0,0.3125,1.4067],
+            "axis": [0.0,0.0,-75.0]
+          }
+        ]
+      },
+      {
+        "objectName": "wheeltrans",
+        "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm",
+            "centerPoint": [0.0,0.0,1.25],
+            "axis": [0.0,0.0,0.3]
+          },
+          {
+            "animationType": "inhibitor",
+            "variable": "!engines_running",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "rotation",
+            "variable": "tick",
+            "centerPoint": [0.0,0.0,1.25],
+            "axis": [0.0,0.0,-75.0]
+          }
+        ]
+      },
+      {
+        "objectName": "wheelside",
+        "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm",
+            "centerPoint": [0.28125,0.09375,1.25],
+            "axis": [0.0,0.0,0.3]
+          },
+          {
+            "animationType": "inhibitor",
+            "variable": "!engines_running",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "rotation",
+            "variable": "tick",
+            "centerPoint": [0.28125,0.09375,1.25],
+            "axis": [0.0,0.0,-75.0]
+          }
+        ]
+      }
+    ],
+    "lightObjects": [],
+    "sounds": [
+    //place-remove
+      	{
+        "name": "mtsofficialpack:placesound/engine_place0",
+        "soundVariations": [
+        	"mtsofficialpack:placesound/engine_place0",
+        	"mtsofficialpack:placesound/engine_place1"
+        ],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "part_added_vehicle",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "maxDistance": 24.0,
+        "maxDistanceVolume": 0.0
+      },
+      	{
+        "name": "mtsofficialpack:placesound/engine_remove0",
+        "soundVariations": [
+        	"mtsofficialpack:placesound/engine_remove0",
+        	"mtsofficialpack:placesound/engine_remove1",
+        	"mtsofficialpack:placesound/engine_remove2"
+        ],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "part_removed_vehicle",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "maxDistance": 16.0,
+        "maxDistanceVolume": 0.0
+      },
+      
+    //engine cooling
+      {
+        "name": "mtsofficialpack:engine_cooling",
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_temp",
+            "clampMin": 50.0,
+            "clampMax": 1000.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "engine_running",
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_temp",
+            "axis": [0.0,0.03,0.0],
+            "offset": -1.9
+          }
+        ],
+        "looping": true,
+        "isExterior": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 5.0,
+        "middleDistanceVolume": 0.2,
+        "maxDistance": 16.0,
+        "maxDistanceVolume": 0.0
+      },
+      
+    //CLUTCHSOUND
+    {
+        "name": "mtsofficialpack:230ce/230c_gearshift0",
+        "soundVariations": [
+        	"mtsofficialpack:230ce/230c_gearshift0",
+        	"mtsofficialpack:230ce/230c_gearshift1",
+        	"mtsofficialpack:230ce/230c_gearshift2",
+        	"mtsofficialpack:230ce/230c_gearshift3"
+        ],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_clutch_upshift",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "engine_gear",
+            "clampMin": -1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "isInterior": true
+      },
+    {
+        "name": "mtsofficialpack:230ce/230c_gearshift0",
+        "soundVariations": [
+        	"mtsofficialpack:230ce/230c_gearshift0",
+        	"mtsofficialpack:230ce/230c_gearshift1",
+        	"mtsofficialpack:230ce/230c_gearshift2",
+        	"mtsofficialpack:230ce/230c_gearshift3"
+        ],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_clutch_downshift",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "engine_gear",
+            "clampMin": -1.0,
+            "clampMax": 0.0
+          }
+        ],
+        "isInterior": true
+      },
+      
+	  //basics
+	  //crankintro
+      {
+        "name": "mtsofficialpack:230ce/engine_230c_crankintro",
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "electric_power",
+            "clampMin": 0.001,
+            "clampMax": 50.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "engine_starter",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "looping": false,
+        "isExterior": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 0.0,
+        "middleDistance": 0.0,
+        "middleDistanceVolume": 0.0,
+        "maxDistance": 0.0,
+        "maxDistanceVolume": 0.0
+      },//OUT
+      {
+        "name": "mtsofficialpack:230ce/engine_230c_crankintro",
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "parent_soundPass",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+        {
+            "animationType": "visibility",
+            "variable": "electric_power",
+            "clampMin": 0.001,
+            "clampMax": 50.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "engine_starter",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "looping": false,
+        "isInterior": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 0.0,
+        "middleDistance": 0.0,
+        "middleDistanceVolume": 0.0,
+        "maxDistance": 0.0,
+        "maxDistanceVolume": 0.0
+      },//OUT IN
+      {
+        "name": "mtsofficialpack:230ce/engine_230c_crankintro_inside",
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "electric_power",
+            "clampMin": 0.001,
+            "clampMax": 50.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "engine_starter",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "looping": false,
+        "isInterior": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 0.0,
+        "middleDistance": 0.0,
+        "middleDistanceVolume": 0.0,
+        "maxDistance": 0.0,
+        "maxDistanceVolume": 0.0
+      },//IN
+      //cranking
+      {
+        "name": "mtsofficialpack:230ce/engine_230c_cranking",
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_starter",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "electric_power",
+            "axis": [0.0,0.1,0.0],
+            "offset": 0.3,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [],
+        "looping": true,
+        "isExterior": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 0.0,
+        "middleDistance": 0.0,
+        "middleDistanceVolume": 0.0,
+        "maxDistance": 0.0,
+        "maxDistanceVolume": 0.0
+      },//OUT
+      {
+        "name": "mtsofficialpack:230ce/engine_230c_cranking",
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "parent_soundPass",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "engine_starter",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "electric_power",
+            "axis": [0.0,0.1,0.0],
+            "offset": 0.3,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [],
+        "looping": true,
+        "isInterior": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 0.0,
+        "middleDistance": 0.0,
+        "middleDistanceVolume": 0.0,
+        "maxDistance": 0.0,
+        "maxDistanceVolume": 0.0
+      },//OUT IN
+      {
+        "name": "mtsofficialpack:230ce/engine_230c_cranking_inside",
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_starter",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "electric_power",
+            "axis": [0.0,0.1,0.0],
+            "offset": 0.3,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [],
+        "looping": true,
+        "isInterior": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 0.0,
+        "middleDistance": 0.0,
+        "middleDistanceVolume": 0.0,
+        "maxDistance": 0.0,
+        "maxDistanceVolume": 0.0
+      },//IN
+      //starting
+      {
+        "name": "mtsofficialpack:230ce/engine_230c_starting1",
+        "soundVariations": [
+          "mtsofficialpack:230ce/engine_230c_starting0",
+          "mtsofficialpack:230ce/engine_230c_starting1"
+        ],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_running",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "!null",
+            "axis": [0.0,0.5,0.0]
+          }
+        ],
+        "isExterior": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 0.0,
+        "middleDistance": 0.0,
+        "middleDistanceVolume": 0.0,
+        "maxDistance": 0.0,
+        "maxDistanceVolume": 0.0
+      },//OUT
+      {
+        "name": "mtsofficialpack:230ce/engine_230c_starting1",
+        "soundVariations": [
+          "mtsofficialpack:230ce/engine_230c_starting0",
+          "mtsofficialpack:230ce/engine_230c_starting1"
+        ],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "parent_soundPass",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "engine_running",
+            "forwardsDelay": 2
+          },
+          {
+            "animationType": "visibility",
+            "variable": "engine_running",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "!null",
+            "axis": [0.0,0.15,0.0]
+          }
+        ],
+        "isInterior": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 0.0,
+        "middleDistance": 0.0,
+        "middleDistanceVolume": 0.0,
+        "maxDistance": 0.0,
+        "maxDistanceVolume": 0.0
+      },//OUT IN
+      {
+        "name": "mtsofficialpack:230ce/engine_230c_starting_inside1",
+        "soundVariations": [
+          "mtsofficialpack:230ce/engine_230c_starting_inside0",
+          "mtsofficialpack:230ce/engine_230c_starting_inside1"
+        ],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_running",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "isInterior": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 0.0,
+        "middleDistance": 0.0,
+        "middleDistanceVolume": 0.0,
+        "maxDistance": 0.0,
+        "maxDistanceVolume": 0.0
+      },//IN
+      //stopping
+      {
+        "name": "mtsofficialpack:230ce/engine_230c_stopping",
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_running"
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "!null",
+            "axis": [0.0,0.15,0.0]
+          }
+        ],
+        "isExterior": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 0.0,
+        "middleDistance": 0.0,
+        "middleDistanceVolume": 0.0,
+        "maxDistance": 0.0,
+        "maxDistanceVolume": 0.0
+      },//OUT
+      {
+        "name": "mtsofficialpack:230ce/engine_230c_stopping",
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "parent_soundPass",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "engine_running",
+            "clampMin": 1.0,
+            "clampMax": 1.0,
+            "reverseDelay": 2
+          },
+          {
+            "animationType": "visibility",
+            "variable": "engine_running"
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "!null",
+            "axis": [0.0,0.15,0.0]
+          }
+        ],
+        "isInterior": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 0.0,
+        "middleDistance": 0.0,
+        "middleDistanceVolume": 0.0,
+        "maxDistance": 0.0,
+        "maxDistanceVolume": 0.0
+      },//OUT IN
+      {
+        "name": "mtsofficialpack:230ce/engine_230c_starting_inside1",
+        "soundVariations": [
+          "mtsofficialpack:230ce/engine_230c_stopping_inside0",
+          "mtsofficialpack:230ce/engine_230c_stopping_inside1"
+        ],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_running"
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "!null",
+            "axis": [0.0,0.15,0.0]
+          }
+        ],
+        "isInterior": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 0.0,
+        "middleDistance": 0.0,
+        "middleDistanceVolume": 0.0,
+        "maxDistance": 0.0,
+        "maxDistanceVolume": 0.0
+      },//IN
+      
+      {
+        "name": "mtsofficialpack:230ce/engine_230c_sputter",
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_backfired",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "forceSound": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 0.0,
+        "middleDistance": 0.0,
+        "middleDistanceVolume": 0.0,
+        "maxDistance": 0.0,
+        "maxDistanceVolume": 0.0
+      },
+      {
+        "name": "mts:engine_shifting_grinding",
+        "soundVariations": [
+          "mtsofficialpack:engine_shifting_grinding1",
+          "mtsofficialpack:engine_shifting_grinding2",
+          "mtsofficialpack:engine_shifting_grinding3",
+          "mtsofficialpack:engine_shifting_grinding4"
+        ],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_badshift",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "forceSound": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 0.0,
+        "middleDistance": 0.0,
+        "middleDistanceVolume": 0.0,
+        "maxDistance": 0.0,
+        "maxDistanceVolume": 0.0
+      },
+      
+      //0 OUT 
+      {
+        "name": "mtsofficialpack:230ce/engine_230c_0",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.125],
+            "offset": 0.3,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.1,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,5,0.0]
+          }
+        ],
+        "isExterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //1 OUT 
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_1",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.25],
+            "offset": 0.3,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.1,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,4,0.0]
+          }
+        ],
+        "isExterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //2 OUT 
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_2",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.375],
+            "offset": 0.35,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.1,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,3.48,0.0]
+          }
+        ],
+        "isExterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //3 OUT 
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_3",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.5],
+            "offset": 0.4,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.1,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,1.92,0.0]
+          }
+        ],
+        "isExterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //4 OUT 
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_4",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.625],
+            "offset": 0.4,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.5,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,1.83,0.0]
+          }
+        ],
+        "isExterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //5 OUT 
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_5",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.75],
+            "offset": 0.5,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.1,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,1.7,0.0]
+          }
+        ],
+        "isExterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //6 OUT 
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_6",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.875],
+            "offset": 0.5,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.9,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,1.5,0.0]
+          }
+        ],
+        "isExterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //7 OUT 
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_7",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.99],
+            "offset": 0.6,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,1.23,0.0]
+          }
+        ],
+        "isExterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //8 OUT 
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_8",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,1.0,0],
+            "offset": -0.5,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.5,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,1,0.0]
+          }
+        ],
+        "isExterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      
+      //0 OUT IN
+      {
+        "name": "mtsofficialpack:230ce/engine_230c_0",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "parent_soundPass",
+            "reverseDelay": 10,
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.125],
+            "offset": 0.3,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.1,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,5,0.0]
+          }
+        ],
+        "isInterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //1 OUT IN 
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_1",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "parent_soundPass",
+            "reverseDelay": 10,
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.25],
+            "offset": 0.3,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.1,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,4,0.0]
+          }
+        ],
+        "isInterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //2 OUT IN
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_2",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "parent_soundPass",
+            "reverseDelay": 10,
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.375],
+            "offset": 0.35,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.1,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,3.48,0.0]
+          }
+        ],
+        "isInterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //3 OUT IN 
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_3",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "parent_soundPass",
+            "reverseDelay": 10,
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.5],
+            "offset": 0.4,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.1,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,1.92,0.0]
+          }
+        ],
+        "isInterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //4 OUT IN 
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_4",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "parent_soundPass",
+            "reverseDelay": 10,
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.625],
+            "offset": 0.4,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.5,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,1.83,0.0]
+          }
+        ],
+        "isInterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //5 OUT IN 
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_5",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "parent_soundPass",
+            "reverseDelay": 10,
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.75],
+            "offset": 0.5,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.1,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,1.7,0.0]
+          }
+        ],
+        "isInterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //6 OUT IN 
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_6",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "parent_soundPass",
+            "reverseDelay": 10,
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.875],
+            "offset": 0.5,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.9,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,1.5,0.0]
+          }
+        ],
+        "isInterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //7 OUT IN 
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_7",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "parent_soundPass",
+            "reverseDelay": 10,
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.99],
+            "offset": 0.6,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,1.23,0.0]
+          }
+        ],
+        "isInterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //8 OUT IN 
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_8",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "parent_soundPass",
+            "reverseDelay": 10,
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,1.0,0],
+            "offset": -0.5,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.5,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,1,0.0]
+          }
+        ],
+        "isInterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      }, 
+	  
+	  //0 IN
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_0_inside",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.125],
+            "offset": 0.4,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.1,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,5,0.0]
+          }
+        ],
+        "isInterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //1 IN
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_1_inside",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.25],
+            "offset": 0.4,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.1,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,4,0.0]
+          }
+        ],
+        "isInterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //2 IN
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_2_inside",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.375],
+            "offset": 0.4,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.1,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,3.48,0.0]
+          }
+        ],
+        "isInterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //3 IN
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_3_inside",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.5],
+            "offset": 0.4,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.1,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,1.92,0.0]
+          }
+        ],
+        "isInterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //4 IN
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_4_inside",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.625],
+            "offset": 0.4,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.5,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,1.83,0.0]
+          }
+        ],
+        "isInterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //5 IN
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_5_inside",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.75],
+            "offset": 0.5,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.1,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,1.7,0.0]
+          }
+        ],
+        "isInterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //6 IN
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_6_inside",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.875],
+            "offset": 0.5,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.9,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,1.5,0.0]
+          }
+        ],
+        "isInterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //7 IN
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_7_inside",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-15,1,0.99],
+            "offset": 0.6,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,1.23,0.0]
+          }
+        ],
+        "isInterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      },
+      //8 IN
+	  {
+        "name": "mtsofficialpack:230ce/engine_230c_8_inside",
+		"pos": [0,1,0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_powered",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,1.0,0],
+            "offset": -0.5,
+            "clampMax": 1
+          },
+		  {
+            "animationType": "translation",
+            "variable": "throttle",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0,0.5,0],
+            "duration": 2
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "engine_rpm_percent_safe",
+            "axis": [0.0,1,0.0]
+          }
+        ],
+        "isInterior": true,
+        "looping": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 15.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 45.0,
+        "maxDistanceVolume": 0.0
+      }
+    ],
+    "particles": [
+      {
+        "type": "generic",
+        "spawnEveryTick": true,
+        "isBright": true,
+        "spawningOrientation": "entity",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 20,
+        "movementDuration": 14,
+        "transparency": 1.0,
+        "scale": 0.4,
+        "toScale": 0.020000001,
+        "hitboxSize": 0.2,
+        "textureList": [
+          "mtsofficialpack:textures/bullets/bang0.png",
+          "mtsofficialpack:textures/bullets/bang0d.png",
+          "mtsofficialpack:textures/bullets/bang0b.png",
+          "mtsofficialpack:textures/bullets/bang0a.png",
+          "mtsofficialpack:textures/bullets/bang0c.png"
+        ],
+        "randomTexture": true,
+        "pos": [0.0,0.0,0.0],
+        "spreadRandomness": [2.0,2.0,2.0],
+        "initialVelocity": [0.0,3.0,0.0],
+        "movementVelocity": [0.0,-0.008,0.0],
+        "terminalVelocity": [5700.0,6000.0,6200.0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_running",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "damage",
+            "clampMin": 30.0,
+            "clampMax": 45.0
+          }
+        ]
+      },
+      //tempsmoke
+      {
+        "type": "generic",
+        "spawnEveryTick": true,
+        "spawningOrientation": "entity",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 40,
+        "transparency": 0.1,
+        "toTransparency": 0.000001,
+        "movementDuration": 6,
+        "scale": 0.5,
+        "toScale": 3.0,
+        "hitboxSize": 0.2,
+        "textureList": [
+          "mts:textures/particles/big_smoke_0.png",
+          "mts:textures/particles/big_smoke_1.png",
+          "mts:textures/particles/big_smoke_2.png",
+          "mts:textures/particles/big_smoke_3.png",
+          "mts:textures/particles/big_smoke_4.png",
+          "mts:textures/particles/big_smoke_5.png",
+          "mts:textures/particles/big_smoke_6.png",
+          "mts:textures/particles/big_smoke_7.png",
+          "mts:textures/particles/big_smoke_8.png",
+          "mts:textures/particles/big_smoke_9.png",
+          "mts:textures/particles/big_smoke_10.png",
+          "mts:textures/particles/big_smoke_11.png"
+        ],
+        "randomTexture": true,
+        "color": "e7e9ea",
+        "pos": [0,0,1],
+         "spreadRandomness": [0.3,0.3,0.3],
+        "initialVelocity": [0.0,0.0,0.0],
+        "movementVelocity": [0.0,0.006,-0.0],
+        "terminalVelocity": [0.0,0.3,-0.0],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "engine_temp",
+            "clampMin": 100.0,
+            "clampMax": 111.0
+          }
+        ]
+      },
+      {
+        "type": "generic",
+        "spawnEveryTick": true,
+        "spawningOrientation": "entity",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 40,
+        "transparency": 0.2,
+        "toTransparency": 0.000001,
+        "movementDuration": 6,
+        "scale": 0.8,
+        "toScale": 5.0,
+        "hitboxSize": 0.2,
+        "textureList": [
+          "mts:textures/particles/big_smoke_0.png",
+          "mts:textures/particles/big_smoke_1.png",
+          "mts:textures/particles/big_smoke_2.png",
+          "mts:textures/particles/big_smoke_3.png",
+          "mts:textures/particles/big_smoke_4.png",
+          "mts:textures/particles/big_smoke_5.png",
+          "mts:textures/particles/big_smoke_6.png",
+          "mts:textures/particles/big_smoke_7.png",
+          "mts:textures/particles/big_smoke_8.png",
+          "mts:textures/particles/big_smoke_9.png",
+          "mts:textures/particles/big_smoke_10.png",
+          "mts:textures/particles/big_smoke_11.png"
+        ],
+        "randomTexture": true,
+        "color": "e7e9ea",
+        "pos": [0,0,1],
+         "spreadRandomness": [0.3,0.3,0.3],
+        "initialVelocity": [0.0,0.0,0.0],
+        "movementVelocity": [0.0,0.006,-0.0],
+        "terminalVelocity": [0.0,0.3,-0.0],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "engine_temp",
+            "clampMin": 111.0,
+            "clampMax": 121.0
+          }
+        ]
+      },
+      {
+        "type": "generic",
+        "spawnEveryTick": true,
+        "spawningOrientation": "entity",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 40,
+        "transparency": 0.1,
+        "toTransparency": 0.000001,
+        "movementDuration": 6,
+        "scale": 0.8,
+        "toScale": 8.0,
+        "hitboxSize": 0.2,
+        "textureList": [
+          "mts:textures/particles/big_smoke_0.png",
+          "mts:textures/particles/big_smoke_1.png",
+          "mts:textures/particles/big_smoke_2.png",
+          "mts:textures/particles/big_smoke_3.png",
+          "mts:textures/particles/big_smoke_4.png",
+          "mts:textures/particles/big_smoke_5.png",
+          "mts:textures/particles/big_smoke_6.png",
+          "mts:textures/particles/big_smoke_7.png",
+          "mts:textures/particles/big_smoke_8.png",
+          "mts:textures/particles/big_smoke_9.png",
+          "mts:textures/particles/big_smoke_10.png",
+          "mts:textures/particles/big_smoke_11.png"
+        ],
+        "randomTexture": true,
+        "color": "2a2d31",
+        "pos": [0,0,1],
+         "spreadRandomness": [0.3,0.3,0.3],
+        "initialVelocity": [0.0,0.0,0.0],
+        "movementVelocity": [0.0,0.006,-0.0],
+        "terminalVelocity": [0.0,0.4,-0.0],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "engine_temp",
+            "clampMin": 121.0,
+            "clampMax": 1001.0
+          }
+        ]
+      },
+      {
+        "type": "generic",
+        "spawnEveryTick": true,
+        "isBright": true,
+        "spawningOrientation": "entity",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 28,
+        "movementDuration": 28,
+        "transparency": 1.0,
+        "scale": 2.0,
+        "toScale": 0.020000001,
+        "hitboxSize": 0.2,
+        "textureList": [
+          "mtsofficialpack:textures/bullets/fire0.png",
+          "mtsofficialpack:textures/bullets/fire1.png",
+          "mtsofficialpack:textures/bullets/fire2.png",
+          "mtsofficialpack:textures/bullets/fire3.png",
+          "mtsofficialpack:textures/bullets/fire4.png",
+          "mtsofficialpack:textures/bullets/fire5.png",
+          "mtsofficialpack:textures/bullets/fire6.png"
+        ],
+        "textureDelays": [4,4,4,4,4,4,4],
+        "randomTexture": true,
+        "pos": [0.0,0.5,0.0],
+        "spreadRandomness": [0.6,1.0,0.6],
+        "initialVelocity": [0.0,1.5,0.0],
+        "relativeInheritedVelocityFactor": [0.7,0.7,0.7],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_temp",
+            "clampMin": 128.0,
+            "clampMax": 1001.0
+          }
+        ]
+      }, //fire
+      
+      //fastspark
+      {
+        "type": "generic",
+        "isBright": true,
+        "spawningOrientation": "entity",
+        "renderingOrientation": "player",
+        "quantity": 20,
+        "duration": 20,
+        "transparency": 1.0,
+        "scale": 2.0,
+        "toScale": 2.0000001E-4,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "textureList": [
+          "mtsofficialpack:textures/bullets/bang0.png",
+          "mtsofficialpack:textures/bullets/bang0d.png",
+          "mtsofficialpack:textures/bullets/bang0b.png",
+          "mtsofficialpack:textures/bullets/bang0a.png",
+          "mtsofficialpack:textures/bullets/bang0c.png"
+        ],
+        "randomTexture": true,
+        "pos": [0.0,0.5,0.0],
+        "spreadRandomness": [6.0,5.0,6.0],
+        "initialVelocity": [0.0,6.0,0.0],
+        "movementVelocity": [0.0,-0.06,0.0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_temp",
+            "clampMin": 131.8,
+            "clampMax": 1001.0
+          }
+        ]
+      },
+      {
+        "type": "generic",
+        "daytimeReductionFactor": 0.2,
+        "isBright": true,
+        "isBlended": true,
+        "color": "FFFFFF",
+        "spawningOrientation": "facing",
+        "renderingOrientation": "player",
+        "quantity": 2,
+        "duration": 4,
+        "transparency": 1.0,
+        "toTransparency": 0.1,
+        "scale": 62.0,
+        "toScale": 1.2,
+        "hitboxSize": 0.2,
+        "texture": "mtsofficialpack:textures/bullets/flash64_translucent.png",
+        "pos": [0.0,0.0,0.0],
+        "initialVelocity": [0.0,1.0,0.0],
+        "movementVelocity": [0.0,0.0,0.0],
+        
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_temp",
+            "clampMin": 131.8,
+            "clampMax": 1001.0
+          }
+        ]
+      },//blending flare
+      {
+        "type": "generic",
+        "daytimeReductionFactor": 0.4,
+        "isBright": true,
+        "isBlended": false,
+        "color": "FAB774",
+        "spawningOrientation": "entity",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 4,
+        "transparency": 1.0,
+        "toTransparency": 0.1,
+        "scale": 62.0,
+        "toScale": 1.2,
+        "hitboxSize": 0.2,
+        "texture": "mtsofficialpack:textures/bullets/flash64_translucent.png",
+        "pos": [0.0,0.0,0.0],
+        "initialVelocity": [0.0,1.0,0.0],
+        "movementVelocity": [0.0,0.0,0.0],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_temp",
+            "clampMin": 131.8,
+            "clampMax": 1001.0
+          }
+        ]
+      },//blending flare substitute
+      //mainexplosion
+      {
+        "type": "generic",
+        "isBright": true,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 8,
+        "transparency": 1.0,
+        "scale": 8.5,
+        "toScale": 1.2,
+        "hitboxSize": 0.2,
+        "textureList": [
+          "mtsofficialpack:textures/bullets/bang0.png",
+          "mtsofficialpack:textures/bullets/bang1.png",
+          "mtsofficialpack:textures/bullets/bang2.png",
+          "mtsofficialpack:textures/bullets/bang3.png"
+        ],
+        "textureDelays": [2,2,2,2],
+        "pos": [0.0,0.5,0.0],
+        "initialVelocity": [0.0,1.0,0.0],
+        "movementVelocity": [0.0,-0.1,0.0],
+        
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "engine_temp",
+            "clampMin": 131.8,
+            "clampMax": 1001.0
+          }
+        ]
+      },
+      {
+        "type": "generic",
+        "stopsOnGround": true,
+        "spawningOrientation": "world",
+        "renderingOrientation": "fixed",
+        "quantity": 10,
+        "duration": 115,
+        "fadeOutTransparencyTime": 40,
+        "scale": 1.3,
+        "fadeOutScaleTime": 40,
+        "hitboxSize": 0.1,
+        "textureList": [
+          "mtsofficialpack:textures/bullets/3dscrap/metalscrap1.png",
+          "mtsofficialpack:textures/bullets/3dscrap/metalscrap2.png",
+          "mtsofficialpack:textures/bullets/3dscrap/metalscrap3.png",
+          "mtsofficialpack:textures/bullets/3dscrap/metalscrap4.png",
+          "mtsofficialpack:textures/bullets/3dscrap/metalscrap5.png",
+          "mtsofficialpack:textures/bullets/3dscrap/metalscrap6.png",
+          "mtsofficialpack:textures/bullets/3dscrap/metalscrap7.png",
+          "mtsofficialpack:textures/bullets/3dscrap/metalscrap8.png",
+          "mtsofficialpack:textures/bullets/3dscrap/metalscrap9.png",
+          "mtsofficialpack:textures/bullets/3dscrap/metalscrap10.png"
+        ],
+        "randomTexture": true,
+        "model": "mtsofficialpack:objmodels/bullets/3dscrap/metalscrap1.obj",
+        "rot": [0.0,0.0,0.0],
+        "rotationRandomness": [60.0,60.0,60.0],
+        "rotationVelocity": [20.0,20.0,20.0],
+        "pos": [0.0,0.2,0.0],
+        "spreadRandomness": [4.0,4.5,4.0],
+        "initialVelocity": [0.0,5.0,0.0],
+        "movementVelocity": [0.0,-0.06,0.0],
+        "terminalVelocity": [20.0,20.0,20.0],
+        "relativeInheritedVelocityFactor": [0.8,0.8,0.8],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "engine_temp",
+            "clampMin": 131.8,
+            "clampMax": 1001.0
+          }
+        ]
+      }//scrap
+    ],
+    "modelType": "obj"
+  },
+  "general": {
+    "name": "M102 i4 Mercedes Engine",
+    "description": "A sturdy engine used in many Mercedes cars from the 1980s. Reliable, easy to maintain, and surprisingly durable, although she is a thirsty one.",
+    "health": 45,
+    "materialLists": [
+      [
+        "mts:mtsofficialpack.plating:2",
+        "mts:mtsofficialpack.screws:6",
+        "mts:mtsofficialpack.copperwire:2",
+        "mts:mtsofficialpack.sparkplug:4",
+        "mts:mtsofficialpack.piston:4",
+        "mts:mtsofficialpack.metaltube:4",
+        "minecraft:obsidian:4",
+        "minecraft:iron_block:1",
+        "mts:mtsofficialpack.plastic:2"
+      ]
+    ],
+    "radarWidth": 0.0,
+    "radarRange": 0.0
+  }
+}

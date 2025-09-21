@@ -16,7 +16,7 @@
   "propeller": {
     "isDynamicPitch": true,
     "isRotor": true,
-    "pitch": 120,
+    "pitch": 60,
     "diameter": 446
   },
   "definitions": [
@@ -99,6 +99,7 @@
   },
   "general": {
     "name": "Small Helicopter Rotor",
+    "description": "A small rotor for lighter helicopters. Could double as a ceiling fan...",
     "health": 35,
     "materialLists": [
       [

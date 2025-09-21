@@ -109,6 +109,51 @@
       "customTypes": [
         "testingmodule"
       ]
+    },
+    //smokecans
+    {
+      "pos": [4.25,1.6245,0.0],
+      "maxValue": 3.0,
+      "slotHeight": 0.75,
+      "slotWidth": 0.75,
+      "types": [
+        "generic"
+      ],
+      "customTypes": [
+        "smokecan"
+      ],
+      "linkedParts": []
+    },
+    {
+      "pos": [-4.25,1.6245,0.0],
+      "maxValue": 3.0,
+      "slotHeight": 0.75,
+      "slotWidth": 0.75,
+      "types": [
+        "generic"
+      ],
+      "customTypes": [
+        "smokecan"
+      ],
+      "linkedParts": []
+    },
+    //ornament 
+    {
+      "pos": [0.0,1.625,0.75],
+      "partScale": [1.0,1.0,1.0],
+      "rot": [0.0,0.0,0],
+      "types": [
+        "generic_ornament_mirror"
+      ]
+    },
+    //salesign 
+    {
+      "pos": [0.85,-0.34375,1.62388125],
+      "partScale": [1.8,1.8,1.8],
+      "rot": [0,76,0],
+      "types": [
+        "generic_sale_sign"
+      ]
     }
   ],
   "variableModifiers":[
@@ -192,6 +237,18 @@
           "animationType": "translation",
           "variable": "!damage_totaled",
           "axis": [1.0,0.0,0.0]
+        }
+      ]
+    },
+    
+    //totaled texture
+    {
+      "variable": "textureIndex",
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "damage_totaled",
+          "axis": [0.0,0.0,1.0]
         }
       ]
     }
@@ -321,6 +378,10 @@
     {
       "subName": "_oak",
       "name": "Oak MC-172",
+      "textureNames": [
+      "mc172_oak",
+      "mc172_oak_burnt"
+      ],
       "extraMaterialLists": [
         [
           "tags:wooden_slabs:24",
@@ -332,6 +393,10 @@
     {
       "subName": "_spruce",
       "name": "Spruce MC-172",
+      "textureNames": [
+      "mc172_spruce",
+      "mc172_spruce_burnt"
+      ],
       "extraMaterialLists": [
         [
           "minecraft:spruce_slab:24",
@@ -343,6 +408,10 @@
     {
       "subName": "_birch",
       "name": "Birch MC-172",
+      "textureNames": [
+      "mc172_birch",
+      "mc172_birch_burnt"
+      ],
       "extraMaterialLists": [
         [
           "minecraft:birch_slab:24",
@@ -354,6 +423,10 @@
     {
       "subName": "_jungle",
       "name": "Jungle MC-172",
+      "textureNames": [
+      "mc172_jungle",
+      "mc172_jungle_burnt"
+      ],
       "extraMaterialLists": [
         [
           "minecraft:jungle_slab:24",
@@ -365,6 +438,10 @@
     {
       "subName": "_acacia",
       "name": "Acacia MC-172",
+      "textureNames": [
+      "mc172_acacia",
+      "mc172_acacia_burnt"
+      ],
       "extraMaterialLists": [
         [
           "minecraft:acacia_slab:24",
@@ -376,6 +453,10 @@
     {
       "subName": "_darkoak",
       "name": "Dark Oak MC-172",
+      "textureNames": [
+      "mc172_darkoak",
+      "mc172_darkoak_burnt"
+      ],
       "extraMaterialLists": [
         [
           "minecraft:dark_oak_slab:24",
@@ -919,13 +1000,30 @@
         "maxDistanceVolume": 0.0
       },
       {
-        "name": "mtsofficialpack:flapsloop_inside",
+        "name": "mtsofficialpack:flapsstart_inside",
         "activeAnimations": [
           {
             "animationType": "visibility",
             "variable": "flaps_moving",
             "clampMin": 1.0,
             "clampMax": 1.0
+          }
+        ],
+        "isInterior": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "maxDistance": 16.0,
+        "maxDistanceVolume": 0.0
+      },
+      {
+        "name": "mtsofficialpack:flapsloop_inside",
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "flaps_moving",
+            "clampMin": 1.0,
+            "clampMax": 1.0,
+            "forwardsDelay": 5
           }
         ],
         "looping": true,
@@ -1013,6 +1111,7 @@
         "name": "mtsofficialpack:wind_on_outside",
         "soundVariations": [
           "mtsofficialpack:wind_med_outisde",
+          "mtsofficialpack:wind_med_outisde2",
           "mtsofficialpack:wind_on_outside"
         ],
         "activeAnimations": [
@@ -1087,6 +1186,10 @@
       },
       {
         "name": "mtsofficialpack:wind_high_outside",
+        "soundVariations": [
+          "mtsofficialpack:wind_high_outside",
+          "mtsofficialpack:wind_high_outside2"
+        ],
         "activeAnimations": [
           {
             "animationType": "visibility",
@@ -1550,6 +1653,238 @@
     "particles": [
     {
         "type": "generic",
+        "spawnEveryTick": true,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "fixed",
+        "quantity": 1,
+        "duration": 10,
+        "transparency": 1.0,
+        "toTransparency": 0.001,
+        "scale": 1.3,
+        "toScale": 1.3,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "textureList": [
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield0.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield1.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield2.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield3.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield4.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield5.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield6.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield7.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield8.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield9.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield10.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield11.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield12.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield13.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield14.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield15.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield16.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield17.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield18.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield19.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield20.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield21.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield22.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield23.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield24.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield25.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield26.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield27.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield28.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield29.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield30.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield31.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield32.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield33.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield34.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield35.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield36.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield37.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield38.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield39.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield40.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield41.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield42.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield43.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield44.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield45.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield46.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield47.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield48.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield49.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield50.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield51.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield52.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield53.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield54.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield55.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield56.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield57.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield58.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield59.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield60.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield61.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield62.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield63.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield64.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield65.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield66.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield67.png"
+        ],
+        "randomTexture": true,
+        "color": "8a9fb0",
+        "pos": [0.0,1.125,1.19],
+        "rot": [32,180.0,0.0],
+        "rotationVelocity": [0.0,0.0,0.0],
+        "initialVelocity": [0.00001,0.00001,0.00001],
+        "movementVelocity": [0.0,0.0,0.0],
+        "terminalVelocity": [00,0,0],
+        "relativeInheritedVelocityFactor": [1.0,1.0,1.0],
+        "spawningAnimations": [
+        ],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "rain_strength",
+            "clampMin": 1.0,
+            "clampMax": 2
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 0,
+            "clampMax": 15
+          },
+          {
+            "animationType": "inhibitor",
+            "variable": "speed",
+            "clampMin": 8,
+            "clampMax": 100
+          },
+          {
+            "animationType": "visibility",
+            "variable": "random",
+            "clampMin": 0.0,
+            "clampMax": 0.1
+          }
+        ]
+      },//windshield drop l PROTOTYPE slow
+      {
+        "type": "generic",
+        "spawnEveryTick": true,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "fixed",
+        "quantity": 2,
+        "duration": 4,
+        "transparency": 1.0,
+        "toTransparency": 0.001,
+        "scale": 1.0,
+        "toScale": 2,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "textureList": [
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield0.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield1.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield2.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield3.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield4.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield5.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield6.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield7.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield8.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield9.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield10.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield11.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield12.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield13.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield14.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield15.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield16.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield17.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield18.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield19.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield20.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield21.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield22.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield23.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield24.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield25.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield26.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield27.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield28.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield29.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield30.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield31.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield32.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield33.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield34.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield35.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield36.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield37.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield38.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield39.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield40.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield41.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield42.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield43.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield44.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield45.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield46.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield47.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield48.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield49.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield50.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield51.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield52.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield53.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield54.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield55.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield56.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield57.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield58.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield59.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield60.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield61.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield62.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield63.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield64.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield65.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield66.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield67.png"
+        ],
+        "randomTexture": true,
+        "color": "8a9fb0",
+        "pos": [0.0,1.125,1.19],
+        "rot": [32,180.0,0.0],
+        "rotationVelocity": [0.0,0.0,0.0],
+        "initialVelocity": [0.00001,0.00001,0.00001],
+        "movementVelocity": [0.0,0.0,0.0],
+        "terminalVelocity": [00,0,0],
+        "relativeInheritedVelocityFactor": [1.0,1.0,1.0],
+        "spawningAnimations": [
+        ],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "rain_strength",
+            "clampMin": 1.0,
+            "clampMax": 2
+          },
+          {
+            "animationType": "visibility",
+            "variable": "speed",
+            "clampMin": 15.0,
+            "clampMax": 1000.0
+          }
+        ]
+      },//windshield drop l PROTOTYPE fast
+      
+    //experimental vector
+    {
+        "type": "generic",
         "stopsOnGround": true,
         "spawnEveryTick": true,
         "spawningOrientation": "entity",
@@ -1569,6 +1904,248 @@
           {
             "animationType": "visibility",
             "variable": "AIM",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ]
+      },
+      
+      //strobe flash L
+    	{
+        "type": "generic",
+        "isBright": true,
+        "isBlended": true,
+        "color": "FFFFFF",
+        "daytimeReductionFactor": 1.0,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 2,
+        "duration": 3,
+        "fadeOutTransparencyTime": 2,
+        "transparency": 1.0,
+        "toTransparency": 0.1,
+        "scale": 35.0,
+        "toScale": 1.2,
+        "texture": "mtsofficialpack:textures/bullets/flash64_translucent.png",
+        "pos": [4.5,1.6875,0.6875],
+        "initialVelocity": [0.0,0.0,0.0],
+        "movementVelocity": [0.0,0.0,0.0],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "electric_power",
+            "clampMin": 6.5,
+            "clampMax": 20
+          },
+          {
+            "animationType": "visibility",
+            "variable": "strobe_light",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+          {
+            "animationType": "visibility",
+            "variable": "18_2_0_cycle",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ]
+      },
+      	{
+        "type": "generic",
+        "isBright": true,
+        "color": "FFFFFF",
+        "daytimeReductionFactor": 1.0,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 3,
+        "fadeOutTransparencyTime": 2,
+        "transparency": 0.5,
+        "toTransparency": 0.1,
+        "scale": 35.0,
+        "toScale": 1.2,
+        "texture": "mtsofficialpack:textures/bullets/flash64_translucent.png",
+        "pos": [4.5,1.6875,0.6875],
+        "initialVelocity": [0.0,0.0,0.0],
+        "movementVelocity": [0.0,0.0,0.0],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "electric_power",
+            "clampMin": 6.5,
+            "clampMax": 20
+          },
+          {
+            "animationType": "visibility",
+            "variable": "strobe_light",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+          {
+            "animationType": "visibility",
+            "variable": "18_2_0_cycle",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ]
+      },
+    //strobe flash R
+    	{
+        "type": "generic",
+        "isBright": true,
+        "isBlended": true,
+        "color": "FFFFFF",
+        "daytimeReductionFactor": 1.0,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 2,
+        "duration": 3,
+        "fadeOutTransparencyTime": 2,
+        "transparency": 1.0,
+        "toTransparency": 0.1,
+        "scale": 35.0,
+        "toScale": 1.2,
+        "texture": "mtsofficialpack:textures/bullets/flash64_translucent.png",
+        "pos": [-4.5,1.6875,0.6875],
+        "initialVelocity": [0.0001,0.0001,0.0001],
+        "movementVelocity": [0.0,0.0,0.0],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "electric_power",
+            "clampMin": 6.5,
+            "clampMax": 20
+          },
+          {
+            "animationType": "visibility",
+            "variable": "strobe_light",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+          {
+            "animationType": "visibility",
+            "variable": "18_2_0_cycle",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ]
+      },
+      	{
+        "type": "generic",
+        "isBright": true,
+        "color": "FFFFFF",
+        "daytimeReductionFactor": 1.0,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 3,
+        "fadeOutTransparencyTime": 2,
+        "transparency": 0.5,
+        "toTransparency": 0.1,
+        "scale": 35.0,
+        "toScale": 1.2,
+        "texture": "mtsofficialpack:textures/bullets/flash64_translucent.png",
+        "pos": [-4.5,1.6875,0.6875],
+        "initialVelocity": [0.0,0.0,0.0],
+        "movementVelocity": [0.0,0.0,0.0],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "electric_power",
+            "clampMin": 6.5,
+            "clampMax": 20
+          },
+          {
+            "animationType": "visibility",
+            "variable": "strobe_light",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+          {
+            "animationType": "visibility",
+            "variable": "18_2_0_cycle",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ]
+      },
+    //strobe flash red
+    	{
+        "type": "generic",
+        "isBright": true,
+        "isBlended": true,
+        "color": "FFFFFF",
+        "daytimeReductionFactor": 1.0,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 4,
+        "fadeOutTransparencyTime": 2,
+        "transparency": 1.0,
+        "toTransparency": 0.1,
+        "scale": 25.0,
+        "toScale": 1.2,
+        "texture": "mtsofficialpack:textures/bullets/flash64_translucent.png",
+        "pos": [0.0,2.08125,-3.875],
+        "initialVelocity": [0.0001,0.0001,0.0001],
+        "movementVelocity": [0.0,0.0,0.0],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "electric_power",
+            "clampMin": 6.5,
+            "clampMax": 20
+          },
+          {
+            "animationType": "visibility",
+            "variable": "strobe_light",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+          {
+            "animationType": "visibility",
+            "variable": "18_2_0_cycle",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ]
+      },
+      	{
+        "type": "generic",
+        "isBright": true,
+        "isBlended": false,
+        "color": "FF0000",
+        "daytimeReductionFactor": 1.0,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 4,
+        "fadeOutTransparencyTime": 2,
+        "transparency": 0.7,
+        "toTransparency": 0.1,
+        "scale": 25.0,
+        "toScale": 1.2,
+        "texture": "mtsofficialpack:textures/bullets/flash64_translucent.png",
+        "pos": [0.0,2.08125,-3.875],
+        "initialVelocity": [0.0,0.0,0.0],
+        "movementVelocity": [0.0,0.0,0.0],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "electric_power",
+            "clampMin": 6.5,
+            "clampMax": 20
+          },
+          {
+            "animationType": "visibility",
+            "variable": "strobe_light",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+          {
+            "animationType": "visibility",
+            "variable": "18_2_0_cycle",
             "clampMin": 1.0,
             "clampMax": 1.0
           }
@@ -1954,7 +2531,7 @@
         "distance": 4,
         "duration": 50,
         "transparency": 0.3,
-        "fadeTransparencyTime": 30,
+        "fadeOutTransparencyTime": 30,
         "scale": 13.0,
         "toScale": 25,
         "ignoreCollision": true,
@@ -2084,7 +2661,7 @@
         "quantity": 1,
         "duration": 100,
         "transparency": 0.5,
-        "fadeTransparencyTime": 50,
+        "fadeOutTransparencyTime": 50,
         "scale": 7.2,
         "toScale": 20,
         "ignoreCollision": true,
@@ -2137,7 +2714,7 @@
         "movementDuration": 205,
         "transparency": 0.05,
         "toTransparency": 0.3,
-        "fadeTransparencyTime": 200,
+        "fadeOutTransparencyTime": 200,
         "scale": 20.0,
         "toScale": 55.0,
         "hitboxSize": 0.2,
@@ -2216,7 +2793,7 @@
         "movementDuration": 205,
         "transparency": 0.05,
         "toTransparency": 0.3,
-        "fadeTransparencyTime": 200,
+        "fadeOutTransparencyTime": 200,
         "scale": 20.0,
         "toScale": 55.0,
         "hitboxSize": 0.2,
@@ -2617,7 +3194,7 @@
         "movementDuration": 25,
         "transparency": 1.0,
         "toTransparency": 0.0,
-        "fadeTransparencyTime": 15,
+        "fadeOutTransparencyTime": 15,
         "scale": 5.8,
         "toScale": 10.5,
         "ignoreCollision": true,
@@ -2663,7 +3240,7 @@
         "movementDuration": 35,
         "transparency": 1.0,
         "toTransparency": 0.0,
-        "fadeTransparencyTime": 25,
+        "fadeOutTransparencyTime": 25,
         "scale": 4.8,
         "toScale": 10.5,
         "ignoreCollision": true,
@@ -2908,9 +3485,9 @@
         "renderingOrientation": "fixed",
         "quantity": 6,
         "duration": 315,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 1.2,
-        "fadeScaleTime": 100,
+        "fadeOutScaleTime": 100,
         "hitboxSize": 0.1,
         "textureList": [
           "mtsofficialpack:textures/bullets/3dscrap/metalscrap1.png",
@@ -3025,7 +3602,7 @@
         "duration": 40,
         "scale": 7.0,
         "toScale": 10.0,
-        "fadeTransparencyTime": 25,
+        "fadeOutTransparencyTime": 25,
         "ignoreCollision": true,
         "hitboxSize": 0.1,
         "textureList": [
@@ -3132,9 +3709,9 @@
         "renderingOrientation": "fixed",
         "quantity": 16,
         "duration": 315,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 1.2,
-        "fadeScaleTime": 100,
+        "fadeOutScaleTime": 100,
         "hitboxSize": 0.1,
         "textureList": [
           "mtsofficialpack:textures/bullets/3dscrap/metalscrap1.png",
@@ -3186,7 +3763,7 @@
         "renderingOrientation": "fixed",
         "quantity": 15,
         "duration": 315,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 0.5,
         "hitboxSize": 0.2,
         "textureList": [
@@ -3239,7 +3816,7 @@
         "renderingOrientation": "fixed",
         "quantity": 1,
         "duration": 315,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 1.0,
         "hitboxSize": 0.1,
         "texture": "mtsofficialpack:textures/bullets/3dscrap/groundglass.png",
@@ -3281,7 +3858,7 @@
         "renderingOrientation": "fixed",
         "quantity": 2,
         "duration": 315,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 1.0,
         "hitboxSize": 0.23,
         "textureList": [
@@ -3330,7 +3907,7 @@
         "duration": 100,
         "scale": 12.0,
         "toScale": 19.0,
-        "fadeTransparencyTime": 55,
+        "fadeOutTransparencyTime": 55,
         "ignoreCollision": true,
         "hitboxSize": 0.1,
         "textureList": [
@@ -3572,7 +4149,7 @@
         "renderingOrientation": "fixed",
         "quantity": 6,
         "duration": 420,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 1.7,
         "hitboxSize": 0.23,
         "textureList": [
@@ -3618,9 +4195,9 @@
         "renderingOrientation": "fixed",
         "quantity": 20,
         "duration": 420,
-        "fadeTransparencyTime": 100,
+        "fadeOutTransparencyTime": 100,
         "scale": 1.8,
-        "fadeScaleTime": 100,
+        "fadeOutScaleTime": 100,
         "hitboxSize": 0.1,
         "textureList": [
           "mtsofficialpack:textures/bullets/3dscrap/metalscrap1.png",
@@ -3733,7 +4310,7 @@
             "clampMax": 1
           }
         ]
-      },
+      }, //main
       	{
         "type": "generic",
         "spawnEveryTick": true,
@@ -3800,7 +4377,7 @@
             "clampMax": 1
           }
         ]
-      },
+      }, //local
       	{
         "type": "generic",
         "spawnEveryTick": true,
@@ -3859,7 +4436,76 @@
             "clampMax": 1
           }
         ]
-      },
+      }, //fire
+        {
+        "type": "generic",
+        "spawnEveryTick": true,
+        "isBright": true,
+        "spawningOrientation": "entity",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 75,
+        "transparency": 1.0,
+        "scale": 0.5,
+        "toScale": 0.01,
+        "hitboxSize": 0.1,
+        "ignoreCollision": true,
+        "textureList": [
+          "mtsofficialpack:textures/bullets/bang0.png",
+          "mtsofficialpack:textures/bullets/bang0d.png",
+          "mtsofficialpack:textures/bullets/bang0b.png",
+          "mtsofficialpack:textures/bullets/bang0a.png",
+          "mtsofficialpack:textures/bullets/bang0c.png"
+        ],
+        "randomTexture": true,
+        "pos": [-1,0.2,0.0],
+        "spreadRandomness": [0.4,0.2,0.4],
+        "initialVelocity": [0.0,0.5,0.0],
+        "movementVelocity": [0.0,0.001,-0.001],
+        "relativeMovementVelocity": [0.0035,0.0001,0.0035],
+        "terminalVelocity": [20.0,20,20.0],
+        "spawningAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "random",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [2.0,0.0,0.0],
+            "offset": 0.0
+          },
+          {
+            "animationType": "translation",
+            "variable": "random",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0.0,0.0,1.5],
+            "offset": 0.0
+          }
+        ],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "blockmaterial_water",
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "damage_totaled",
+            "forwardsDelay": 1400
+          },
+          {
+            "animationType": "visibility",
+            "variable": "damage_totaled",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "terrain_distance",
+            "clampMin": -1,
+            "clampMax": 3
+          }
+        ]
+      }, //embers
             
       //scraptrails main
       	{
@@ -3870,9 +4516,9 @@
         "renderingOrientation": "fixed",
         "quantity": 1,
         "duration": 50,
-        "fadeTransparencyTime": 40,
+        "fadeOutTransparencyTime": 40,
         "scale": 1.0,
-        "fadeScaleTime": 40,
+        "fadeOutScaleTime": 40,
         "hitboxSize": 0.1,
         "textureList": [
           "mtsofficialpack:textures/bullets/3dscrap/metalscrap1.png",
@@ -4005,9 +4651,9 @@
         "renderingOrientation": "fixed",
         "quantity": 3,
         "duration": 100,
-        "fadeTransparencyTime": 40,
+        "fadeOutTransparencyTime": 40,
         "scale": 1.0,
-        "fadeScaleTime": 40,
+        "fadeOutScaleTime": 40,
         "hitboxSize": 0.1,
         "textureList": [
           "mtsofficialpack:textures/bullets/3dscrap/metalscrap1.png",
@@ -4131,9 +4777,9 @@
         "renderingOrientation": "fixed",
         "quantity": 5,
         "duration": 100,
-        "fadeTransparencyTime": 40,
+        "fadeOutTransparencyTime": 40,
         "scale": 1.0,
-        "fadeScaleTime": 40,
+        "fadeOutScaleTime": 40,
         "hitboxSize": 0.1,
         "textureList": [
           "mtsofficialpack:textures/bullets/3dscrap/metalscrap1.png",

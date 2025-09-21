@@ -170,6 +170,14 @@
             "offset": 0.75
           }
         ],
+        "volumeAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "velocity",
+            "axis": [0.0,0.2,0.0],
+            "offset": -0.2
+          }
+        ],
         "minDistance": 0.0,
         "minDistanceVolume": 1.0,
         "middleDistance": 8.0,
@@ -219,6 +227,14 @@
             "variable": "random",
             "axis": [0.0,0.5,0.0],
             "offset": 0.75
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "velocity",
+            "axis": [0.0,0.2,0.0],
+            "offset": -0.2
           }
         ],
         "minDistance": 0.0,
@@ -271,6 +287,14 @@
             "variable": "random",
             "axis": [0.0,0.5,0.0],
             "offset": 0.75
+          }
+        ],
+        "volumeAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "velocity",
+            "axis": [0.0,0.2,0.0],
+            "offset": -0.2
           }
         ],
         "minDistance": 0.0,
@@ -1319,7 +1343,7 @@
         "quantity": 1,
         "duration": 50,
         "transparency": 0.5,
-        "fadeTransparencyTime": 35,
+        "fadeOutTransparencyTime": 35,
         "scale": 1.2,
         "toScale": 7,
         "ignoreCollision": true,
@@ -1878,7 +1902,7 @@
     "materialLists": [
       [
         "mts:mtsofficialpack.metaltube:2",
-        "mts:mtsofficialpack.plating:2",
+        "mts:mtsofficialpack.plating:6",
         "minecraft:bucket:1"
       ]
     ],

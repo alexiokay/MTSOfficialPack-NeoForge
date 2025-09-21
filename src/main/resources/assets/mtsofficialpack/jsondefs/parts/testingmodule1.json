@@ -105,9 +105,9 @@
         "renderingOrientation": "fixed",
         "quantity": 1,
         "duration": 50,
-        "fadeTransparencyTime": 40,
+        "fadeOutTransparencyTime": 40,
         "scale": 1.0,
-        "fadeScaleTime": 40,
+        "fadeOutScaleTime": 40,
         "hitboxSize": 0.1,
         "textureList": [
           "mtsofficialpack:textures/bullets/3dscrap/metalscrap1.png",
@@ -236,7 +236,7 @@
         "duration": 690,
         "transparency": 0.05,
         "toTransparency": 0.2,
-        "fadeTransparencyTime": 420,
+        "fadeOutTransparencyTime": 420,
         "scale": 1.0,
         "toScale": 20.0,
         "ignoreCollision": true,
@@ -292,8 +292,8 @@
         "spawnEveryTick": true,
         "spawningOrientation": "entity",
         "renderingOrientation": "player",
-        "quantity": 100,
-        "duration": 20,
+        "quantity": 1,
+        "duration": 100,
         "transparency": 1.0,
         "scale": 2.0,
         "toScale": 2.0,
@@ -301,7 +301,6 @@
         "textureList": [
           "mtsofficialpack:textures/bullets/bang0.png"
         ],
-        "randomTexture": true,
         "pos": [7.0,0.3,2.5],
         "spreadRandomness": [1,2,1],
         "initialVelocity": [0.0,4.0,0.0],
@@ -533,48 +532,44 @@
       
       {
         "type": "generic",
-        "stopsOnGround": true,
-        "groundSounds": [
-          "mtsofficialpack:misc/metalpipe"
-        ],
+        "spawnEveryTick": true,
         "spawningOrientation": "world",
         "renderingOrientation": "fixed",
-        "quantity": 0,
-        "duration": 315,
-        "fadeTransparencyTime": 100,
-        "scale": 1.2,
-        "fadeScaleTime": 100,
+        //quantity 3
+        "quantity": 3,
+        "movementDuration": 20,
+        "duration": 30,
+        "transparency": 1,
+        "toTransparency": 0.001,
+        "scale": 0.75,
+        "ignoreCollision": true,
         "hitboxSize": 0.1,
         "textureList": [
-          "mtsofficialpack:textures/bullets/3dscrap/metalscrap1.png",
-          "mtsofficialpack:textures/bullets/3dscrap/metalscrap2.png",
-          "mtsofficialpack:textures/bullets/3dscrap/metalscrap3.png",
-          "mtsofficialpack:textures/bullets/3dscrap/metalscrap4.png",
-          "mtsofficialpack:textures/bullets/3dscrap/metalscrap5.png",
-          "mtsofficialpack:textures/bullets/3dscrap/metalscrap6.png",
-          "mtsofficialpack:textures/bullets/3dscrap/metalscrap7.png",
-          "mtsofficialpack:textures/bullets/3dscrap/metalscrap8.png",
-          "mtsofficialpack:textures/bullets/3dscrap/metalscrap9.png",
-          "mtsofficialpack:textures/bullets/3dscrap/metalscrap10.png"
+          "mtsofficialpack:textures/bullets/ground/grassblade0.png",
+          "mtsofficialpack:textures/bullets/ground/grassblade1.png",
+          "mtsofficialpack:textures/bullets/ground/grassblade2.png",
+          "mtsofficialpack:textures/bullets/ground/grassblade3.png",
+          "mtsofficialpack:textures/bullets/ground/grassblade4.png"
         ],
         "randomTexture": true,
-        "model": "mtsofficialpack:objmodels/bullets/3dscrap/metalscrap1.obj",
-        "rotationRandomness": [60.0,60.0,60.0],
-        "rotationVelocity": [20.0,20.0,20.0],
-        "pos": [0.0,4.5,0.0],
-        "initialVelocity": [0.0,8.0,0.0],
-        "spreadRandomness": [3.0,5.0,3.0],
-        "movementVelocity": [0.0,-0.08,0.0],
-        "terminalVelocity": [20.0,20.0,20.0],
+        "pos": [0.0,2.0,5.0],
+        "rotationRandomness": [70.0,50.0,50.0],
+        "rotationVelocity": [-20.0,0.0,0.0],
+        "spreadRandomness": [2.0,0.5,2.0],
+        "initialVelocity": [0.0,1.0,0.0],
+        "movementVelocity": [0.0,-0.0125,0.0],
+        "terminalVelocity": [100.0,0.5,100.0],
         "activeAnimations": [
-          {
+        {
             "animationType": "visibility",
             "variable": "blank",
-            "clampMin": 1,
-            "clampMax": 1
+            "clampMin": 1.0,
+            "clampMax": 1.0
           }
         ]
       }
+      
+      
       
     ],
     "modelType": "obj"

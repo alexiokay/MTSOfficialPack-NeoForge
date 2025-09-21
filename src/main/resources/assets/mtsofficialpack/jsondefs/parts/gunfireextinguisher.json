@@ -359,7 +359,7 @@
         "transparency": 1.0,
         "toTransparency": 0.001,
         "movementDuration": 30,
-        "fadeScaleTime": 15,
+        "fadeOutScaleTime": 15,
         "scale": 1,
         "toScale": 4.0,
         "ignoreCollision": false,

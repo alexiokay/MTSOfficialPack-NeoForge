@@ -1,0 +1,848 @@
+{
+  "generic": {
+    "type": "generic_ornament_mirror",
+    "width": 0.1,
+    "height": 0.25,
+    "movementAnimations": [
+      {
+        "animationType": "rotation",
+        "variable": "springpositionae",
+        "centerPoint": [0.0,0.0,0.0],
+        "axis": [1.0,0.0,0.0]
+      },
+	  {
+        "animationType": "rotation",
+        "variable": "springpositionae2",
+        "centerPoint": [0.0,0.0,0.0],
+        "axis": [0,0,1]
+      }
+    ]
+  },
+  "variableModifiers": [
+  //ALL CREDITS FOR ROPE & SPRING SIMULATION GO TO 
+  //=====>  BLAZEWOLF1122  <======
+  //DO NOT USE HIS PHYSICS CODE WITHOUT PERMISSION
+    {
+      "variable": "springpullae",
+	  "minValue" : -1000,
+	  "maxValue" : 1000,
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "parent_acceleration",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,0,10]
+        },
+		{
+          "animationType": "translation",
+          "variable": "parent_pitch",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,-0.05,0]
+        }
+      ]
+    },
+	{
+      "variable": "springpositionae",
+	  "clampMin": -180,
+	  "clampMax": 180,
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "springae",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,1,0]
+        }
+      ]
+    },
+	{
+      "variable": "springae",
+	  //"minValue" : -10,
+	  //"maxValue" : 10,
+      "animations": [
+		{
+          "animationType": "translation",
+          "variable": "springpositionae",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,-0.02,0] //0. 
+        },
+		{
+          "animationType": "translation",
+          "variable": "springpullae",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,1,0] //this can basically be considered a "global force multiplier" for the entries youve made. if youve made something too strong or too weak but dont wanna have to change a bunch of values, just tweak it here
+        },
+		{
+          "animationType": "translation",
+          "variable": "springae",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0.0,-0.02,0] //7. 
+        },
+		{
+          "animationType": "inhibitor", 
+          "variable": "springpositionae",
+		  "clampMax": 1, 
+		  "clampMin": 0.15 
+        },
+		{
+          "animationType": "inhibitor",
+          "variable": "springpositionae",
+		  "clampMax": -0.15, 
+          "clampMin": -1 
+        },
+		{
+          "animationType": "translation",
+          "variable": "springae",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0.0,-0.02,0]
+        }
+		
+      ]
+    },
+
+    {
+      "variable": "springpullae2",
+	  "minValue" : -1000,
+	  "maxValue" : 1000,
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "lateral_acceleration",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,0,0.03]
+        },
+		{
+          "animationType": "translation",
+          "variable": "parent_roll",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,-0.05,0]
+        }
+      ]
+    },
+	{
+      "variable": "springpositionae2",
+	  "clampMin": -180,
+	  "clampMax": 180,
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "springae2",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,1,0]
+        }
+      ]
+    },
+	{
+      "variable": "springae2",
+	  //"minValue" : -10,
+	  //"maxValue" : 10,
+      "animations": [
+		{
+          "animationType": "translation",
+          "variable": "springpositionae2",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,-0.02,0]
+        },	
+		{
+          "animationType": "translation",
+          "variable": "springpullae2",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0,1,0] 
+        },
+		{
+          "animationType": "translation",
+          "variable": "springae2",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0.0,-0.02,0] 
+        },
+		{
+          "animationType": "inhibitor", 
+          "variable": "springpositionae2",
+		  "clampMax": 1, 
+		  "clampMin": 0.15
+        },
+		{
+          "animationType": "inhibitor",
+          "variable": "springpositionae2",
+		  "clampMax": -0.15,
+          "clampMin": -1
+        },
+		{
+          "animationType": "translation",
+          "variable": "springae2",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0.0,-0.02,0]
+        }
+		
+      ]
+    } 
+  ],
+  "collisionGroups": [],
+  "definitions": [
+    {
+      "subName": "",
+      "name": "Dice Ornament",
+      "description": "The classic fuzzy dice. Fits any pimp mobile just as well as any serious racing car!",
+      "extraMaterialLists": [
+        [
+        	"tags:wool:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_pine",
+      "name": "Pine Ornament",
+      "description": "Makes your car smell like the taiga biome!",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:spruce_sapling:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_mogus",
+      "name": "Sus Ornament",
+      "description": "This is quite the suspiciously shaped ornament...",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:paper:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_snail",
+      "name": "Snail Ornament",
+      "description": "Snails are cute!",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:slime_ball:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_steak",
+      "name": "Steak Ornament",
+      "description": "For those moments where you feel like having a greasy slab of meat dangling in front of you.",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:cooked_beef:1"
+        ]
+      ]
+    },//5
+    {
+      "subName": "_heart",
+      "name": "Heart Ornament",
+      "description": "A paper heart cutout. Sweet!",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:paper:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_totem",
+      "name": "Totem Ornament",
+      "description": "Given your driving record, this thing might not be just for decoration.",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"tags:ingots/gold:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_diamond",
+      "name": "Diamond Ornament",
+      "description": "The pinnacle of reasonable financial decisions.",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:diamond:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_emerald",
+      "name": "Emerald Ornament",
+      "description": "Perfect for impressing that cute villager next door!",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:emerald:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_gapple",
+      "name": "Golden Apple Ornament",
+      "description": "You’ll need the regen after that last parking job...",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:golden_apple:1"
+        ]
+      ]
+    },//10
+    {
+      "subName": "_blockgrass",
+      "name": "Grass Block Ornament",
+      "description": "Damn, you sure love dirt in your car.",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:dirt:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_blocktnt",
+      "name": "TNT Block Ornament",
+      "description": "Totally safe. I promise...",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:tnt:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_creeper",
+      "name": "Creeper Ornament",
+      "description": "A cute creeper cutout. Smells like gunpowder and moss.",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:paper:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_anvil",
+      "name": "Anvil Ornament",
+      "description": "Adds 50 lbs of style. Goes well with some heavy metal music!",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"tags:ingots/iron:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_blockgold",
+      "name": "Gold Block Ornament",
+      "description": "I hope that mirror doenst break off...",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:gold_block:1"
+        ]
+      ]
+    },//15
+    {
+      "subName": "_blockacacia",
+      "name": "Acacia Log Ornament",
+      "description": "A wooden souvenir from your last safari!",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:acacia_log:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_potato",
+      "name": "Potato Ornament",
+      "description": "Looking at it warms your heart...",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:potato:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_nstar",
+      "name": "Nether Star Ornament",
+      "description": "A wither died for this...",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:nether_star:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_skull",
+      "name": "Skull Ornament",
+      "description": "Former passenger. Don’t ask.",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:bone:5"
+        ]
+      ]
+    },
+    {
+      "subName": "_car",
+      "name": "Car Ornament",
+      "description": "Polish dreams come true.",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"tags:ingots/iron:1"
+        ]
+      ]
+    },//20
+    {
+      "subName": "_nuts",
+      "name": "Nuts Ornament",
+      "description": "That's nuts! Who would do that?? Oh... it was Henri!",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"mts:mtsofficialpack.nuts:2"
+        ]
+      ]
+    },
+    {
+      "subName": "_saturn",
+      "name": "Saturn Ornament",
+      "description": "Even celestial bodies cant escape gizmo culture! Thanks Viktor.",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:clay_ball:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_aviators",
+      "name": "Aviators Ornament",
+      "description": "Worn by pilots. And apparently rearview mirrors too. Thanks Ray!",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:glass_pane:2"
+        ]
+      ]
+    },
+    {
+      "subName": "_cat",
+      "name": "Cat Ornament",
+      "description": "Purr... Thanks CosmicCowboy!",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"tags:wool:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_clock",
+      "name": "Clock Ornament",
+      "description": "Yes, it works. No, it won’t fix your terrible driving.",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:clock:1"
+        ]
+      ]
+    },//25
+    {
+      "subName": "_joystick",
+      "name": "Joystick Ornament",
+      "description": "Straight from the arcade. Straight into a tree...",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:lever:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_gmc",
+      "name": "GMC Ornament",
+      "description": "Im pretty sure whatever's in that dump can't fall out... I think...",
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"tags:ingots/iron:1",
+        	"minecraft:dirt:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_hc",
+      "name": "Heartcore Ornament",
+      "description": "Our love is complicated...",
+      "constants": [
+        "hceffects"
+      ],
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:heart_of_the_sea:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_rubix",
+      "name": "Rubix-Cube Ornament",
+      "description": "You either someone that solves these in 12 seconds or never at all. Theres no inbetween.",
+      "constants": [],
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"mts:mtsofficialpack.plastic:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_cactus",
+      "name": "Cactus Ornament",
+      "description": "Prickly!",
+      "constants": [],
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:cactus:1"
+        ]
+      ]
+    },//30
+    {
+      "subName": "_1911black",
+      "name": "Black 1911 Ornament",
+      "description": "Timeless. Reliable. Unloaded... Hopefully.",
+      "constants": [],
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"tags:ingots/iron:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_1911gray",
+      "name": "1911 Ornament",
+      "description": "Timeless. Reliable. Unloaded... Hopefully.",
+      "constants": [],
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"tags:ingots/iron:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_1911gold",
+      "name": "Golden 1911 Ornament",
+      "description": "Timeless. Reliable. Unloaded... Hopefully.",
+      "constants": [],
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"tags:ingots/gold:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_butter",
+      "name": "OCP Butter Ornament",
+      "description": "The beautiful fragnace of rancid butter...",
+      "constants": [],
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"mts:mtsofficialpack.ocpbutter:1"
+        ]
+      ]
+    },
+    {
+      "subName": "_wheel",
+      "name": "Octowheel Ornament",
+      "description": "It technically is a spare wheel...",
+      "constants": [],
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"mts:mtsofficialpack.wheelsmall:1"
+        ]
+      ]
+    },//35
+    {
+      "subName": "_piston",
+      "name": "Piston Ornament",
+      "description": "A rather dubious contraption. There are pieces of wool stuck to it...",
+      "constants": [],
+      "hideOnCreativeTab": true,
+      "extraMaterialLists": [
+        [
+        	"minecraft:piston:1"
+        ]
+      ]
+    }
+  ],
+  "rendering": {
+  	"sounds":[],
+  	"animatedObjects": [
+      //clock dial
+      {
+        "objectName": "clock_dial",
+        "animations": [
+    	  {
+        	"animationType": "rotation",
+        	"variable": "time",
+        	"centerPoint": [0.0,-0.21875,0.0],
+        	"axis": [0.0,0.0,0.015]
+      	  }
+        ]
+      },
+      //HC core
+      {
+        "objectName": "core",
+        "animations": [
+        {
+        	"animationType": "visibility",
+            "variable": "hceffects",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+      	  },
+    	  {
+        	"animationType": "rotation",
+        	"variable": "tick",
+        	"centerPoint": [0.0,-0.1875,0.0],
+        	"axis": [2.0,0.0,2.0]
+      	  }
+        ]
+      }
+    ],
+    "lightObjects": [
+      {
+        "objectName": "sphere",
+        "emissive": true,
+        "color": "c10b00",
+        "brightnessAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "hceffects",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "translation",
+            "variable": "hceffects",
+            "axis": [0.0,0.5,0.0]
+          },
+          {
+            "animationType": "translation",
+            "variable": "0_80_80_cycle",
+            "axis": [0.0,0.225,0.0],
+            "offset": 0.0,
+            "clampMin": 0.0,
+            "clampMax": 0.0,
+            "duration": 80
+          }
+        ],
+        "blendableComponents": []
+      },
+      {
+        "objectName": "core",
+        "emissive": false,
+        "covered": false,
+        "isElectric": false,
+        "brightnessAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "hceffects",
+            "clampMin": 0.0,
+            "clampMax": 1.0
+          }
+        ],
+        "blendableComponents": []
+      }
+    ],
+    "particles": [
+    {
+        "type": "generic",
+        "isBright": true,
+        "isBlended": true,
+        "spawnEveryTick":true,
+        "color": "FFFFFF",
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 2,
+        "duration": 3,
+        "transparency": 1.0,
+        "toTransparency": 0.1,
+        "scale": 0.2,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "textureList": [
+          "mtsofficialpack:textures/bullets/flareflare2_translucent.png",
+          "mtsofficialpack:textures/bullets/flareflare1_translucent.png",
+          "mtsofficialpack:textures/bullets/flareflare0_translucent.png"
+        ],
+        "randomTexture": true,
+        "pos": [0.0,-0.1875,0.0],
+        "initialVelocity": [0.00001,0.00001,0.00001],
+        "movementVelocity": [0.00001,0.00001,0.00001],
+        "terminalVelocity": [0.00001,0.00001,0.00001],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "hceffects",
+            "clampMin": 1,
+            "clampMax": 1
+          }
+        ]
+      },//blending flareflare 
+    {
+        "type": "generic",
+        "isBright": true,
+        "isBlended": false,
+        "spawnEveryTick":true,
+        "color": "ffffff",
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 10,
+        "transparency": 1.0,
+        "toTransparency": 1.0,
+        "scale": 0.2,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "textureList": [
+          "mtsofficialpack:textures/bullets/flareflare2_translucent.png"
+        ],
+        "randomTexture": true,
+        "pos": [0.0,-0.1875,0],
+        "initialVelocity": [0.00001,0.00001,0.00001],
+        "movementVelocity": [0.00001,0.00001,0.00001],
+        "terminalVelocity": [0.00001,0.00001,0.00001],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "hceffects",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+          {
+            "animationType": "visibility",
+            "variable": "0_2_7_cycle",
+            "clampMin": 1,
+            "clampMax": 1
+          }
+        ]
+      },//blending flareflare substitute
+    {
+    
+        "type": "generic",
+        "spawningOrientation": "entity",
+        "renderingOrientation": "player",
+        "isBright": true,
+        "quantity": 1,
+        "duration": 40,
+        "transparency": 1,
+        "fadeOutScaleTime": 20,
+        "scale": 0.02,
+        "toScale": 0.001,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "texture":"mtsofficialpack:textures/bullets/raindrop.png",
+        "pos": [0.0,-0.1875,0.0],
+        "spreadRandomness": [0.02,0.02,0.02],
+        "initialVelocity": [0.0,0.0,0.0],
+        "movementVelocity": [0.0,0.0,0.0],
+        "spawningAnimations": [],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "hceffects",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+          {
+            "animationType": "visibility",
+            "variable": "random",
+            "clampMin": 0.01,
+            "clampMax": 1.0
+          }
+        ]
+      },//passive sparks
+    {
+        "type": "generic",
+        "spawnEveryTick": true,
+        "isBright": true,
+        "isBlended": true,
+        "color": "FFFFFF",
+        "daytimeReductionFactor": 0.5,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 2,
+        "transparency": 1.0,
+        "toTransparency": 0.0,
+        "scale": 0.75,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "texture": "mtsofficialpack:textures/bullets/flash64_translucent.png",
+        "pos": [0.0,-0.1875,0.0],
+        "initialVelocity": [0.00001,0.00001,0.00001],
+        "movementVelocity": [0.00001,0.00001,0.00001],
+        "terminalVelocity": [0.00001,0.00001,0.00001],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "hceffects",
+            "clampMin": 1,
+            "clampMax": 1
+          }
+        ]
+      },//glow 
+    {
+        "type": "generic",
+        "spawnEveryTick": true,
+        "isBright": true,
+        "color": "FF0000",
+        "daytimeReductionFactor": 0.5,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 2,
+        "transparency": 0.55,
+        "toTransparency": 0.55,
+        "scale": 0.75,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "texture": "mtsofficialpack:textures/bullets/flash64_translucent.png",
+        "pos": [0.0,-0.1875,0.035],
+        "initialVelocity": [0.00001,0.00001,0.00001],
+        "movementVelocity": [0.00001,0.00001,0.00001],
+        "terminalVelocity": [0.00001,0.00001,0.00001],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "hceffects",
+            "clampMin": 1,
+            "clampMax": 1
+          }
+        ]
+      }//glow substitute  
+    ],
+    "modelType": "obj"
+  },
+  "general": {
+    "name": "Mirror Ornament",
+    "description": "",
+     "stackSize": 64,
+    "materialLists": [
+      [
+        "minecraft:string:1"
+      ]
+    ]
+  }
+} 

@@ -1,7 +1,7 @@
 {
   "generic": {
     "type": "effector",
-    "forwardsDamageMultiplier": 1.0,
+    "forwardsDamageMultiplier": 0.0,
     "width": 0.5,
     "height": 0.5
   },

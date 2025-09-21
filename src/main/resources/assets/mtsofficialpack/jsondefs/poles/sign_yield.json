@@ -18,7 +18,7 @@
   },
   "general": {
     "name": "Yield",
-    "stackSize": 32,
+    "stackSize": 64,
     "description": "No",
     "materialLists": [
       [

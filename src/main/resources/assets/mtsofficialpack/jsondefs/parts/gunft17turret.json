@@ -338,7 +338,7 @@
   "definitions": [
     {
       "subName": "",
-      "name": "Renualt FT 37mm Turret",
+      "name": "Renault FT 37mm Turret",
       "extraMaterialLists": [
         []
       ]
@@ -584,7 +584,7 @@
         ]
       },
       
-    	{
+    {
         "type": "generic",
         "daytimeReductionFactor": 0.6,
         "isBright": true,
@@ -774,7 +774,7 @@
     "modelType": "obj"
   },
   "general": {
-    "name": "Renualt FT 37mm Turret",
+    "name": "Renault FT 37mm Turret",
     "description": "A rotary turret with a built in 37mm snub breech-loading barrel. Load singular shells manually or from a crate.",
     "health": 100,
     "materialLists": [

@@ -38,6 +38,30 @@
   "rendering": {
   	"textObjects": [],
     "animatedObjects": [
+    {
+        "objectName": "frame",
+        "animations": [
+        {
+            "animationType": "rotation",
+            "variable": "gun_firing",
+            "duration": 5,
+            "centerPoint": [0.0,0.0,-0.01875],
+            "axis": [-365.0,0.0,0.0]
+          }
+        ]
+      },
+      {
+        "objectName": "cube",
+        "animations": [
+        {
+            "animationType": "rotation",
+            "variable": "gun_firing",
+            "duration": 5,
+            "centerPoint": [0.0,0.0,-0.01875],
+            "axis": [-365.0,0.0,0.0]
+          }
+        ]
+      },
       {
         "objectName": "hammer",
         "animations": [
@@ -114,9 +138,7 @@
           },
           {
             "animationType": "visibility",
-            "variable": "gun_firing",
-            "clampMin": 1.0,
-            "clampMax": 1.0
+            "variable": "!gun_firing"
           }
         ],
         "minDistance": 0.0,
@@ -132,7 +154,7 @@
         "type": "generic",
         "spawningOrientation": "entity",
         "renderingOrientation": "player",
-        "quantity": 40,
+        "quantity": 50,
         "duration": 100,
         "movementDuration": 10,
         "transparency": 1.0,
@@ -173,7 +195,7 @@
         "activeAnimations": [
           {
             "animationType": "visibility",
-            "variable": "gun_firing"
+            "variable": "!gun_firing"
           }
         ]
       }
@@ -181,7 +203,7 @@
     "modelType": "obj"
   },
   "general": {
-    "name": "§6§l[2M]Confetti Gun",
+    "name": "§6Confetti Gun",
     "description": "A harmless gun firing many small paper scraps everywhere! Partys on! Snail Dynamic tech makes it have infinite shots.",
     "materialLists": [
       [

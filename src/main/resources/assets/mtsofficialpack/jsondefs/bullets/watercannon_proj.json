@@ -59,7 +59,7 @@
         "quantity": 1,
         "duration": 10,
         "transparency": 1.0,
-        "fadeTransparencyTime": 5,
+        "fadeOutTransparencyTime": 5,
         "scale": 1.0,
         "toScale": 2.3,
         "hitboxSize": 0.2,

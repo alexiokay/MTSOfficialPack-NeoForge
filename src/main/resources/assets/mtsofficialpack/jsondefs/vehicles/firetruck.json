@@ -8,10 +8,14 @@
     "axleRatio": 3.55,
     "brakingFactor": 1.0,
     "dragCoefficient": 0.5,
+    "crashSpeedMin": 10,
+    "crashSpeedMax": 55,
+    "crashSpeedDestroyed": 60,
     "litVariable": "running_light",
     "panel": "mts:default_car"
   },
   "parts": [
+    //wheels 1-6
     {
       "pos": [-0.869926,0.0,-0.024218],
       "rot": [0.0,180.0,0.0],
@@ -88,6 +92,7 @@
         }
       ]
     },
+    //seats 7-10
     {
       "pos": [-0.78,0.7,4.7],
       "rot": [0.0,180.0,0.0],
@@ -114,13 +119,6 @@
       ]
     },
     {
-      "pos": [0.0,0.85,5.9],
-      "partScale": [0.8,0.9,0.9],
-      "types": [
-        "seat"
-      ]
-    },
-    {
       "pos": [0.6,0.85,5.9],
       "isController": true,
       "partScale": [0.8,0.9,0.9],
@@ -128,17 +126,24 @@
         "seat"
       ]
     },
+    //engine 11
     {
       "pos": [0.0,0.6,4.0],
-      "maxValue": 1.5,
+      "applyAfter": "body",
+      "minValue": 0.25,
+      "maxValue": 1.0,
+      "slotHeight": 2,
+      "slotWidth": 1.2,
       "types": [
         "engine_car"
       ],
       "linkedParts": [1,2,3,4]
     },
+    //watercannon 12
     {
       "pos": [0.0,2.0,1.390625],
       "rot": [0.0,0.0,0.0],
+      "applyAfter": "body",
       "isPermanent": true,
       "minValue": 101.01,
       "maxValue": 101.01,
@@ -148,8 +153,10 @@
       ],
       "linkedParts": [8]
     },
+    //extinguishers 13-14
     {
       "pos": [-1.25,0.0625,2.9375],
+      "applyAfter": "body",
       "rot": [0.0,180.0,0.0],
       "minValue": 10.01,
       "maxValue": 10.01,
@@ -160,6 +167,7 @@
     },
     {
       "pos": [-1.25,0.0625,1.925],
+      "applyAfter": "body",
       "rot": [0.0,180.0,0.0],
       "minValue": 10.01,
       "maxValue": 10.01,
@@ -168,54 +176,37 @@
         "gun_hand_extinguisher"
       ]
     },
-    //salesign
+    //salesign 15
     {
-      "pos": [-0.5625,1.53125,6.625],
+      "pos": [-0.5625,1.2,6.64],
+      "applyAfter": "body",
       "rot": [-15.12,-7.3,-1.95],
       "types": [
         "generic_sale_sign"
       ]
+    },
+    //ornament mirror 16
+    {
+      "pos": [0.0,1.9375,6.515625],
+      "applyAfter": "body",
+      "partScale": [1.0,1.0,1.0],
+      "rot": [0.0,0.0,0],
+      "types": [
+        "generic_ornament_mirror"
+      ]
+    },
+    //ornament grille 17
+    {
+      "pos": [0.0,1.0,7.0],
+      "applyAfter": "body",
+      "partScale": [1.0,1.0,1.0],
+      "rot": [0.0,0.0,0],
+      "types": [
+        "generic_ornament_grille"
+      ]
     }
   ],
   "collisionGroups": [
-    {
-      "isInterior": true,
-      "collisions": [
-        {
-          "pos": [1.04,1.0,6.2],
-          "width": 0.8,
-          "height": 2.0,
-          "variableName": "door_l",
-          "variableType": "toggle"
-        }
-      ],
-      "animations": [
-        {
-          "animationType": "translation",
-          "variable": "door_l",
-          "axis": [0.96,0.0,0.5]
-        }
-      ]
-    },
-    {
-      "isInterior": true,
-      "collisions": [
-        {
-          "pos": [-1.04,1.0,6.2],
-          "width": 0.8,
-          "height": 2.0,
-          "variableName": "door_r",
-          "variableType": "toggle"
-        }
-      ],
-      "animations": [
-        {
-          "animationType": "translation",
-          "variable": "door_r",
-          "axis": [-0.96,0.0,0.5]
-        }
-      ]
-    },
     {
       "isInterior": true,
       "collisions": [
@@ -379,6 +370,177 @@
             "height": 0.125
         }
       ]
+    },
+    
+    //doors
+    {
+      "isInterior": true,
+      "applyAfter": "$door_L",
+      "collisions": [
+        {
+          "pos": [1.25,1.15625,6.3125],
+          "width": 0.4,
+          "height": 0.8,
+          "variableName": "door_l",
+          "variableType": "toggle"
+        },
+        {
+          "pos": [1.25,1.15625,6.0625],
+          "width": 0.4,
+          "height": 0.8,
+          "variableName": "door_l",
+          "variableType": "toggle"
+        },
+        {
+          "pos": [1.25,1.15625,5.8125],
+          "width": 0.4,
+          "height": 0.8,
+          "variableName": "door_l",
+          "variableType": "toggle"
+        }
+      ],
+      "animations": []
+    },
+    {
+      "isInterior": true,
+      "applyAfter": "$door_R",
+      "collisions": [
+        {
+          "pos": [-1.25,1.15625,6.3125],
+          "width": 0.4,
+          "height": 0.8,
+          "variableName": "door_r",
+          "variableType": "toggle"
+        },
+        {
+          "pos": [-1.25,1.15625,6.0625],
+          "width": 0.4,
+          "height": 0.8,
+          "variableName": "door_r",
+          "variableType": "toggle"
+        },
+        {
+          "pos": [-1.25,1.15625,5.8125],
+          "width": 0.4,
+          "height": 0.8,
+          "variableName": "door_r",
+          "variableType": "toggle"
+        }
+      ],
+      "animations": []
+    },
+    
+    //key
+    {
+      "isInterior": true,
+      "collisionTypes": [
+        "attack",
+        "click"
+      ],
+      "collisions": [
+        {
+          "pos": [1.0296875, 0.96875, 6.453125],
+          "width": 0.08,
+          "height": 0.08,
+          "action": {
+            "action": "toggle",
+            "variable": "engine_magneto_1"
+          }
+        }
+      ],
+      "animations": [
+      {
+          "animationType": "visibility",
+          "variable": "engine_starter_1",
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        },
+      {
+          "animationType": "inhibitor",
+          "variable": "engine_running_1",
+          "clampMin": 1.0,
+          "clampMax": 1.0,
+          "forwardsDelay":100
+        },
+        {
+          "animationType": "visibility",
+          "variable": "engine_magneto_1",
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        }
+      ]
+    },
+    {
+      "isInterior": true,
+      "collisionTypes": [
+        "attack",
+        "click"
+      ],
+      "collisions": [
+        {
+          "pos": [1.0296875, 0.96875, 6.453125],
+          "width": 0.08,
+          "height": 0.08,
+          "action": {
+            "action": "button",
+            "variable": "engine_starter_1",
+            "value": 1.0
+          }
+        }
+      ],
+      "animations": [
+        {
+          "animationType": "visibility",
+          "variable": "engine_magneto_1",
+          "clampMin": 1.0,
+          "clampMax": 1.0
+        },
+        {
+          "animationType": "inhibitor",
+          "variable": "engine_starter_1",
+          "clampMin": 1.0,
+          "clampMax": 1.0
+        },
+        {
+          "animationType": "visibility",
+          "variable": "engine_running_1",
+          "clampMin": 0.0,
+          "clampMax": 0.0,
+          "forwardsDelay":100
+        }
+      ]
+    },
+    //shifter
+    {
+      "isInterior": true,
+      "applyAfter": "$gearshift",
+      "collisionTypes": [
+        "attack",
+        "click"
+      ],
+      "collisions": [
+        {
+          "pos": [0.03125, 1.1102, 6.219],
+          "width": 0.13,
+          "height": 0.13,
+          "action": {
+            "action": "increment",
+            "variable": "engine_shift_up_1",
+            "value": 1.0
+          }
+        },
+        {
+          "pos": [0.03125, 0.95, 6.219],
+          "width": 0.2,
+          "height": 0.2,
+          "action": {
+            "action": "increment",
+            "variable": "engine_shift_down_1",
+            "value": 1.0
+          }
+        }
+      ],
+      "animations": []
     }
   ],
   "connectionGroups": [
@@ -406,7 +568,25 @@
       "scale": 0.015625,
       "hudX": 72,
       "hudY": 36,
-      "hudScale": 0.45
+      "hudScale": 0.45,
+      "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "body_roll",
+            "centerPoint": [0.0,0.0625,2.625],
+            "axis": [0.0,0.0,-0.575],
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          },
+          {
+            "animationType": "rotation",
+            "variable": "body_pitch",
+            "centerPoint": [0.0,0.0625,2.625],
+            "axis": [7.0,0.0,0.0],
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          }
+        ]
     },
     {
       "pos": [0.78125,1.0625,6.4671875],
@@ -414,7 +594,25 @@
       "scale": 0.0234375,
       "hudX": 123,
       "hudY": 36,
-      "hudScale": 0.45
+      "hudScale": 0.45,
+      "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "body_roll",
+            "centerPoint": [0.0,0.0625,2.625],
+            "axis": [0.0,0.0,-0.575],
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          },
+          {
+            "animationType": "rotation",
+            "variable": "body_pitch",
+            "centerPoint": [0.0,0.0625,2.625],
+            "axis": [7.0,0.0,0.0],
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          }
+        ]
     },
     {
       "pos": [0.375,1.0625,6.4671875],
@@ -422,7 +620,25 @@
       "scale": 0.0234375,
       "hudX": 174,
       "hudY": 36,
-      "hudScale": 0.45
+      "hudScale": 0.45,
+      "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "body_roll",
+            "centerPoint": [0.0,0.0625,2.625],
+            "axis": [0.0,0.0,-0.575],
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          },
+          {
+            "animationType": "rotation",
+            "variable": "body_pitch",
+            "centerPoint": [0.0,0.0625,2.625],
+            "axis": [7.0,0.0,0.0],
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          }
+        ]
     },
     {
       "pos": [0.1875,1.09375,6.4671875],
@@ -430,7 +646,25 @@
       "scale": 0.015625,
       "hudX": 225,
       "hudY": 36,
-      "hudScale": 0.45
+      "hudScale": 0.45,
+      "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "body_roll",
+            "centerPoint": [0.0,0.0625,2.625],
+            "axis": [0.0,0.0,-0.575],
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          },
+          {
+            "animationType": "rotation",
+            "variable": "body_pitch",
+            "centerPoint": [0.0,0.0625,2.625],
+            "axis": [7.0,0.0,0.0],
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          }
+        ]
     },
     {
       "pos": [0.046875,1.09375,6.51406],
@@ -438,7 +672,25 @@
       "scale": 0.015625,
       "hudX": 276,
       "hudY": 36,
-      "hudScale": 0.45
+      "hudScale": 0.45,
+      "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "body_roll",
+            "centerPoint": [0.0,0.0625,2.625],
+            "axis": [0.0,0.0,-0.575],
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          },
+          {
+            "animationType": "rotation",
+            "variable": "body_pitch",
+            "centerPoint": [0.0,0.0625,2.625],
+            "axis": [7.0,0.0,0.0],
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          }
+        ]
     },
     {
       "pos": [-0.109375,1.09375,6.51406],
@@ -446,13 +698,35 @@
       "scale": 0.015625,
       "hudX": 327,
       "hudY": 36,
-      "hudScale": 0.45
+      "hudScale": 0.45,
+      "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "body_roll",
+            "centerPoint": [0.0,0.0625,2.625],
+            "axis": [0.0,0.0,-0.575],
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          },
+          {
+            "animationType": "rotation",
+            "variable": "body_pitch",
+            "centerPoint": [0.0,0.0625,2.625],
+            "axis": [7.0,0.0,0.0],
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          }
+        ]
     }
   ],
   "definitions": [
     {
       "subName": "",
       "name": "Fire Truck",
+      "textureNames": [
+      "firetruck",
+      "firetruck_burnt"
+      ],
       "extraMaterialLists": [
         []
       ]
@@ -480,29 +754,29 @@
         {
           "animationType": "translation",
           "variable": "rain_strength",
-          "axis": [0.0,0.025,0.0]
+          "axis": [0.0,0.0125,0.0]
         },
         //mud-adding blocks
         {
           "animationType": "translation",
           "variable": "terrain_blockmaterial_grass",
-          "axis": [0.0,0.01,0.0]
+          "axis": [0.0,0.005,0.0]
         },
         {
           "animationType": "translation",
           "variable": "terrain_blockmaterial_dirt",
-          "axis": [0.0,0.02,0.0]
+          "axis": [0.0,0.01,0.0]
         },
         {
           "animationType": "translation",
           "variable": "terrain_blockmaterial_clay",
-          "axis": [0.0,0.05,0.0]
+          "axis": [0.0,0.025,0.0]
         },
         //water + speed cleaning
         {
           "animationType": "translation",
           "variable": "blockmaterial_water",
-          "axis": [0.0,-0.8,0.0]
+          "axis": [0.0,-0.5,0.0]
         },
         //mud reduction logic gate
         {
@@ -521,13 +795,13 @@
         {
           "animationType": "translation",
           "variable": "rain_strength",
-          "axis": [0.0,-0.01,0.0]
+          "axis": [0.0,-0.0075,0.0]
         },
         //water cleaning
         {
           "animationType": "translation",
           "variable": "blockmaterial_water",
-          "axis": [0.0,-0.5,0.0]
+          "axis": [0.0,-0.4,0.0]
         },
         //sub 50% passive inhibitor gate
         {
@@ -540,7 +814,7 @@
         {
           "animationType": "translation",
           "variable": "!piss",
-          "axis": [0.0,-0.00185,0.0]
+          "axis": [0.0,-0.00125,0.0]
         }
       ]
     },
@@ -560,7 +834,138 @@
           "axis": [0.0,1.0,0.0]
         }
       ]
-    }
+    },
+    
+    //totaled texture
+    {
+      "variable": "textureIndex",
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "damage_totaled",
+          "axis": [0.0,0.0,1.0]
+        }
+      ]
+    },
+    
+    //bodyroll system
+    {
+      "variable": "acceleration_modified",
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "acceleration",
+          "axis": [0.0,0.75,0.0],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        },
+        {
+          "animationType": "translation",
+          "variable": "acceleration_modified",
+          "axis": [0.0,-0.75,0.0],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        }
+      ]
+    },//accel mod
+    {
+      "variable": "acceleration_math",
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "acceleration_modified",
+          "axis": [0.0,0.0,1.0],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        },
+        {
+          "animationType": "translation",
+          "variable": "engine_reversed_1",
+          "axis": [-2.0,0.0,0.0],
+          "offset": 1.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        }
+      ]
+    },//accel math
+    {
+      "variable": "sideways_movement_math",
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "slip_degreesnt",
+          "axis": [0.0,0.0,0.011],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        },
+        {
+          "animationType": "translation",
+          "variable": "lateral_acceleration",
+          "axis": [0.0,-0.5,0.0],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        },
+        {
+          "animationType": "translation",
+          "variable": "turn_indicator",
+          "axis": [0.0,0.005,0.0],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        }
+      ]
+    },//side mov math
+    {
+      "variable": "body_roll",
+      "minValue": -12,
+      "maxValue": 12,
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "body_roll",
+          "axis": [0.0,-0.25,0.0],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        },
+        {
+          "animationType": "translation",
+          "variable": "sideways_movement_math",
+          "axis": [0.0,-0.25,0.0],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        }
+      ]
+    },//core roll
+    {
+      "variable": "body_pitch",
+      "minValue": -12,
+      "maxValue": 12,
+      "animations": [
+        {
+          "animationType": "translation",
+          "variable": "body_pitch",
+          "axis": [0.0,-0.25,0.0],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        },
+        {
+          "animationType": "translation",
+          "variable": "acceleration_math",
+          "axis": [0.0,-2,0.0],
+          "offset": 0.0,
+          "clampMin": 0.0,
+          "clampMax": 0.0
+        }
+      ]
+    } //core pitch
   ],
   "rendering": {
   	"textObjects": [
@@ -576,8 +981,31 @@
       }
     ],
     "animatedObjects": [
+    {
+        "objectName": "body",
+        "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "body_roll",
+            "centerPoint": [0.0,0.0625,2.625],
+            "axis": [0.0,0.0,-0.575],
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          },
+          {
+            "animationType": "rotation",
+            "variable": "body_pitch",
+            "centerPoint": [0.0,0.0625,2.625],
+            "axis": [7.0,0.0,0.0],
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          }
+        ]
+      },//body + lean
+      
       {
         "objectName": "$door_L",
+        "applyAfter": "body",
         "animations": [
           {
             "animationType": "rotation",
@@ -593,6 +1021,7 @@
       },
       {
         "objectName": "$door_R",
+        "applyAfter": "body",
         "animations": [
           {
             "animationType": "rotation",
@@ -607,7 +1036,51 @@
         ]
       },
       {
+        "objectName": "key",
+        "applyAfter": "body",
+        "animations": [
+        {
+            "animationType": "visibility",
+            "variable": "engine_magneto_1",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+          {
+            "animationType": "rotation",
+            "variable": "engine_starter_1",
+            "centerPoint": [1.0296875, 0.96875, 6.453125],
+            "axis": [0.0,0.0,45],
+            "clampMax":45,
+            "clampMin":0,
+            "duration": 5
+          },
+          {
+            "animationType": "rotation",
+            "variable": "engine_running_1",
+            "centerPoint": [1.0296875, 0.96875, 6.453125],
+            "axis": [0.0,0.0,90.0],
+            "clampMax":90,
+            "clampMin":0,
+            "duration": 5
+          }
+        
+        ]
+      },//key
+      {
+        "objectName": "$gearshift",
+        "applyAfter": "body",
+        "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "engine_gearshift_1",
+            "centerPoint": [0.0,0.8125,6.390625],
+            "axis": [2.0,0.0,0.0]
+          }
+        ]
+      },//gearshift
+      {
         "objectName": "$gas",
+        "applyAfter": "body",
         "animations": [
           {
             "animationType": "rotation",
@@ -620,6 +1093,7 @@
       },
       {
         "objectName": "$brake",
+        "applyAfter": "body",
         "animations": [
           {
             "animationType": "translation",
@@ -631,6 +1105,7 @@
       },
       {
         "objectName": "$parkingbrake",
+        "applyAfter": "body",
         "animations": [
           {
             "animationType": "rotation",
@@ -643,28 +1118,19 @@
       },
       {
         "objectName": "$steeringwheel",
+        "applyAfter": "body",
         "animations": [
           {
             "animationType": "rotation",
             "variable": "rudder",
             "centerPoint": [0.578125,1.228968,6.39105],
-            "axis": [0.0,-2.5,2.5]
-          }
-        ]
-      },
-      {
-        "objectName": "$gearshift",
-        "animations": [
-          {
-            "animationType": "rotation",
-            "variable": "engine_gearshift_1",
-            "centerPoint": [0.316657,0.950173,5.40932],
-            "axis": [0.75,0.0,0.0]
+            "axis": [0.0,-4.0,2.5]
           }
         ]
       },
       {
         "objectName": "#translucent_mudAcc_main",
+        "applyAfter": "body",
         "blendedAnimations": true,
         "animations": [
           {
@@ -676,6 +1142,7 @@
       },
       {
         "objectName": "#$translucent_mudAcc_door_r",
+        "applyAfter": "body",
         "blendedAnimations": true,
         "animations": [
           {
@@ -689,13 +1156,13 @@
             "centerPoint": [-1.25,0.0,6.578125],
             "axis": [0.0,80.0,0.0],
             "duration": 10,
-            "reverseEasing": "easeinback",
-            "reverseEndSound": "mtsofficialpack:doorcarclose"
+            "reverseEasing": "easeinback"
           }
         ]
       },
       {
         "objectName": "#$translucent_mudAcc_door_l",
+        "applyAfter": "body",
         "blendedAnimations": true,
         "animations": [
           {
@@ -709,10 +1176,183 @@
             "centerPoint": [1.25,0.0,6.578125],
             "axis": [0.0,-80.0,0.0],
             "duration": 10,
-            "reverseEasing": "easeinback",
-            "reverseEndSound": "mtsofficialpack:doorcarclose"
+            "reverseEasing": "easeinback"
           }
         ]
+      },
+      //axle discs
+      {
+        "objectName": "disc_l",
+        "animations": [
+        {
+            "animationType": "visibility",
+            "variable": "part_present_6",
+            "clampMin": 0,
+            "clampMax": 0
+          }
+        ]
+      },
+      {
+        "objectName": "disc_r",
+        "animations": [
+        {
+            "animationType": "visibility",
+            "variable": "part_present_5",
+            "clampMin": 0,
+            "clampMax": 0
+          }
+        ]
+      },
+      //windows
+      {
+        "objectName": "windshield_interior",
+        "applyAfter": "body",
+        "animations": [
+          {
+            "animationType": "visibility",
+            "variable": "config_innerwindows",
+            "clampMin": 1,
+            "clampMax": 1
+          }
+        ]
+      },
+      {
+        "objectName": "door_l_wlndow",
+        "applyAfter": "$door_L",
+        "animations": [
+          {
+            "animationType": "visibility",
+            "variable": "config_innerwindows",
+            "clampMin": 1,
+            "clampMax": 1
+          }
+        ]
+      },
+      {
+        "objectName": "door_r_wlndow",
+        "applyAfter": "$door_R",
+        "animations": [
+          {
+            "animationType": "visibility",
+            "variable": "config_innerwindows",
+            "clampMin": 1,
+            "clampMax": 1
+          }
+        ]
+      },
+      
+      //nine billion light objects of ishu
+      {
+        "objectName": "&blinker_sideR_f",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&blinker_sideL_f",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&emergencylightbumper",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&headlights",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&headlights_short",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&lights",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&emergencylightfront",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&blinker_frontR",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&blinker_frontL",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&emergencylightroof",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&RunningLight",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&auxlight_cabin",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&blinker_sideL",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&blinker_sideR",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&emergencylightrear",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&auxlight_rear",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&brakelights",
+        "applyAfter": "body",
+        "animations": [
+          {
+            "animationType": "visibility",
+            "variable": "brake",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ]
+      },
+      {
+        "objectName": "&taillights",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&blinker_rearR",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&blinker_rearL",
+        "applyAfter": "body",
+        "animations": []
+      },
+      {
+        "objectName": "&backuplight",
+        "applyAfter": "body",
+        "animations": []
       }
     ],
     "lightObjects": [
@@ -950,10 +1590,63 @@
         "color": "FFFFFF",
         "brightnessAnimations": [
           {
-            "animationType": "visibility",
+            "animationType": "translation",
             "variable": "headlight",
-            "clampMin": 1.0,
-            "clampMax": 1.0
+            "axis": [0.0,0.8,0.0],
+            "duration": 13,
+            "forwardsEasing": "easeoutelastic",
+            "reverseEasing": "easeoutexpo"
+          }
+        ],
+        "blendableComponents": [
+          
+          {
+            "pos": [0.75,0.53125,7.05],
+            "axis": [0.0,0.0,1.0],
+            "beamDiameter": 5.0,
+            "beamLength": 3.0,
+            "flareHeight": 1.65,
+            "flareWidth": 2.0
+          },
+          {
+            "pos": [-0.75,0.53125,7.05],
+            "axis": [0.0,0.0,1.0],
+            "beamDiameter": 5.0,
+            "beamLength": 3.0,
+            "flareHeight": 1.65,
+            "flareWidth": 2.0
+          },
+          {
+            "pos": [0.75,0.53125,7.05],
+            "axis": [0.0,0.0,1.0],
+            "beamDiameter": 6.0,
+            "beamLength": 3.0,
+            "flareHeight": 0.65,
+            "flareWidth": 3.0
+          },
+          {
+            "pos": [-0.75,0.53125,7.05],
+            "axis": [0.0,0.0,1.0],
+            "beamDiameter": 6.0,
+            "beamLength": 3.0,
+            "flareHeight": 0.65,
+            "flareWidth": 3.0
+          }
+        ]
+      },
+      {
+        "objectName": "&headlights_short",
+        "emissive": true,
+        "isElectric": true,
+        "color": "FFFFFF",
+        "brightnessAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "headlight",
+            "axis": [0.0,0.1,0.0],
+            "duration": 13,
+            "forwardsEasing": "easeoutelastic",
+            "reverseEasing": "easeoutexpo"
           }
         ],
         "blendableComponents": [
@@ -964,44 +1657,58 @@
             "beamLength": 42.0
           },
           {
-            "pos": [0.75,0.53125,7.0625],
-            "axis": [0.0,0.0,1.0],
-            "flareHeight": 1.65,
-            "flareWidth": 2.0
-          },
-          {
-            "pos": [0.75,0.53125,7.0],
-            "axis": [0.0,0.0,1.0],
-            "beamDiameter": 5.0,
-            "beamLength": 3.0
-          },
-          {
             "pos": [-0.75,0.53125,7.0],
             "axis": [0.0,0.0,1.0],
             "beamDiameter": 30.0,
             "beamLength": 42.0
-          },
-          {
-            "pos": [-0.75,0.53125,7.0],
-            "axis": [0.0,0.0,1.0],
-            "beamDiameter": 5.0,
-            "beamLength": 3.0
-          },
-          {
-            "pos": [-0.75,0.53125,7.0625],
-            "axis": [0.0,0.0,1.0],
-            "flareHeight": 1.65,
-            "flareWidth": 2.0
           }
         ]
       },
       
+      {
+        "objectName": "&taillights",
+        "isElectric": true,
+        "color": "FF0000",
+        "brightnessAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "engine_magneto_1",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "translation",
+            "variable": "engine_magneto_1",
+            "axis": [0.0,0.75,0.0]
+          }
+        ],
+        "blendableComponents": [
+          {
+            "pos": [-1.234375,0.71875,-1.82],
+            "axis": [0.0,0.0,-1.0],
+            "flareHeight": 0.45,
+            "flareWidth": 0.45
+          },
+          {
+            "pos": [1.234375,0.71875,-1.82],
+            "axis": [0.0,0.0,-1.0],
+            "flareHeight": 0.45,
+            "flareWidth": 0.45
+          }
+        ]
+      },
       {
         "objectName": "&brakelights",
         "emissive": true,
         "isElectric": true,
         "color": "FF0000",
         "brightnessAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "engine_magneto_1",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
           {
             "animationType": "visibility",
             "variable": "brake",
@@ -1024,6 +1731,7 @@
           }
         ]
       },
+      
       {
         "objectName": "&backuplight",
         "emissive": true,
@@ -1839,10 +2547,8 @@
         "isInterior": true,
         "pos": [0.0,0.46875,2.34375],
         "minDistance": 0.0,
-        "minDistanceVolume": 0.0,
-        "middleDistance": 0.0,
-        "middleDistanceVolume": 0.0,
-        "maxDistance": 0.0,
+        "minDistanceVolume": 0.6,
+        "maxDistance": 24.0,
         "maxDistanceVolume": 0.0
       },
       {
@@ -1860,10 +2566,8 @@
         "isInterior": true,
         "pos": [0.0,0.46875,2.34375],
         "minDistance": 0.0,
-        "minDistanceVolume": 0.0,
-        "middleDistance": 0.0,
-        "middleDistanceVolume": 0.0,
-        "maxDistance": 0.0,
+        "minDistanceVolume": 0.6,
+        "maxDistance": 24.0,
         "maxDistanceVolume": 0.0
       },
       {
@@ -1884,10 +2588,8 @@
         "isInterior": true,
         "pos": [0.0,0.46875,2.34375],
         "minDistance": 0.0,
-        "minDistanceVolume": 0.0,
-        "middleDistance": 0.0,
-        "middleDistanceVolume": 0.0,
-        "maxDistance": 0.0,
+        "minDistanceVolume": 0.6,
+        "maxDistance": 24.0,
         "maxDistanceVolume": 0.0
       },
       {
@@ -1905,10 +2607,8 @@
         "isInterior": true,
         "pos": [0.0,0.46875,2.34375],
         "minDistance": 0.0,
-        "minDistanceVolume": 0.0,
-        "middleDistance": 0.0,
-        "middleDistanceVolume": 0.0,
-        "maxDistance": 0.0,
+        "minDistanceVolume": 0.6,
+        "maxDistance": 24.0,
         "maxDistanceVolume": 0.0
       },
       
@@ -2143,6 +2843,421 @@
       }
     ],
     "particles": [
+    //fancy brake lights
+    	{
+        "type": "generic",
+        "spawnEveryTick": true,
+        "isBright": true,
+        "isBlended": true,
+        "color": "FFFFFF",
+        "daytimeReductionFactor": 1.0,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 2,
+        "transparency": 1.0,
+        "toTransparency": 0.0,
+        "scale": 15.0,
+        "toScale": 15,
+        "texture": "mtsofficialpack:textures/bullets/flash64_translucent.png",
+        "pos": [1.2345, 0.71875, -1.85],
+        "initialVelocity": [0.0,0.0,0.0],
+        "movementVelocity": [0.0,0.0,0.0],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "engine_magneto_1",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+        {
+            "animationType": "visibility",
+            "variable": "light_total",
+            "clampMin": 0,
+            "clampMax": 7
+          },
+          {
+            "animationType": "visibility",
+            "variable": "brake",
+            "clampMin": 1,
+            "clampMax": 1
+          }
+        ]
+      },
+      	{
+        "type": "generic",
+        "spawnEveryTick": true,
+        "isBright": true,
+        "color": "FF0000",
+        "daytimeReductionFactor": 1.0,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 2,
+        "transparency": 0.5,
+        "toTransparency": 0.5,
+        "scale": 15.0,
+        "toScale": 15,
+        "texture": "mtsofficialpack:textures/bullets/flash64_translucent.png",
+        "pos": [1.2345, 0.71875, -1.85],
+        "initialVelocity": [0.0,0.0,0.0],
+        "movementVelocity": [0.0,0.0,0.0],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "engine_magneto_1",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+        {
+            "animationType": "visibility",
+            "variable": "light_total",
+            "clampMin": 0,
+            "clampMax": 7
+          },
+          {
+            "animationType": "visibility",
+            "variable": "brake",
+            "clampMin": 1,
+            "clampMax": 1
+          }
+        ]
+      },
+      	{
+        "type": "generic",
+        "spawnEveryTick": true,
+        "isBright": true,
+        "isBlended": true,
+        "color": "FFFFFF",
+        "daytimeReductionFactor": 1.0,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 2,
+        "transparency": 1.0,
+        "toTransparency": 0.0,
+        "scale": 15.0,
+        "toScale": 15,
+        "texture": "mtsofficialpack:textures/bullets/flash64_translucent.png",
+        "pos": [-1.2345, 0.71875, -1.85],
+        "initialVelocity": [0.0,0.0,0.0],
+        "movementVelocity": [0.0,0.0,0.0],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "engine_magneto_1",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+        {
+            "animationType": "visibility",
+            "variable": "light_total",
+            "clampMin": 0,
+            "clampMax": 7
+          },
+          {
+            "animationType": "visibility",
+            "variable": "brake",
+            "clampMin": 1,
+            "clampMax": 1
+          }
+        ]
+      },
+      	{
+        "type": "generic",
+        "spawnEveryTick": true,
+        "isBright": true,
+        "color": "FF0000",
+        "daytimeReductionFactor": 1.0,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 2,
+        "transparency": 0.5,
+        "toTransparency": 0.5,
+        "scale": 15.0,
+        "toScale": 15,
+        "texture": "mtsofficialpack:textures/bullets/flash64_translucent.png",
+        "pos": [-1.2345, 0.71875, -1.85],
+        "initialVelocity": [0.0,0.0,0.0],
+        "movementVelocity": [0.0,0.0,0.0],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "engine_magneto_1",
+            "clampMin": 1,
+            "clampMax": 1
+          },
+        {
+            "animationType": "visibility",
+            "variable": "light_total",
+            "clampMin": 0,
+            "clampMax": 7
+          },
+          {
+            "animationType": "visibility",
+            "variable": "brake",
+            "clampMin": 1,
+            "clampMax": 1
+          }
+        ]
+      },
+      
+      {
+        "type": "generic",
+        "spawnEveryTick": true,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "fixed",
+        "quantity": 1,
+        "duration": 10,
+        "transparency": 1.0,
+        "toTransparency": 0.001,
+        "scale": 0.8,
+        "toScale": 0.8,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "textureList": [
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield0.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield1.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield2.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield3.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield4.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield5.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield6.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield7.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield8.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield9.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield10.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield11.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield12.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield13.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield14.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield15.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield16.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield17.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield18.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield19.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield20.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield21.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield22.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield23.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield24.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield25.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield26.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield27.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield28.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield29.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield30.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield31.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield32.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield33.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield34.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield35.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield36.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield37.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield38.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield39.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield40.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield41.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield42.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield43.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield44.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield45.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield46.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield47.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield48.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield49.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield50.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield51.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield52.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield53.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield54.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield55.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield56.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield57.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield58.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield59.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield60.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield61.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield62.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield63.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield64.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield65.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield66.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield67.png"
+        ],
+        "randomTexture": true,
+        "color": "8a9fb0",
+        "pos": [0.5,1.5625,6.7],
+        "rot": [15,188.25,0.0],
+        "rotationVelocity": [0.0,0.0,0.0],
+        "initialVelocity": [0.00001,0.00001,0.00001],
+        "movementVelocity": [0.0,0.0,0.0],
+        "terminalVelocity": [00,0,0],
+        "relativeInheritedVelocityFactor": [1.0,1.0,1.0],
+        "spawningAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "body_roll",
+            "centerPoint": [0.0,0.0625,2.625],
+            "axis": [0.0,0.0,-0.575]
+          },
+          {
+            "animationType": "rotation",
+            "variable": "body_pitch",
+            "centerPoint": [0.0,0.0625,2.625],
+            "axis": [7.0,0.0,0.0]
+          }
+        ],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "rain_strength",
+            "clampMin": 1.0,
+            "clampMax": 2
+          },
+          {
+            "animationType": "inhibitor",
+            "variable": "speed",
+            "clampMin": 14,
+            "clampMax": 100
+          },
+          {
+            "animationType": "visibility",
+            "variable": "random",
+            "clampMin": 0.0,
+            "clampMax": 0.1
+          }
+        ]
+      },//windshield drop l PROTOTYPE
+      {
+        "type": "generic",
+        "spawnEveryTick": true,
+        "spawningOrientation": "attached",
+        "renderingOrientation": "fixed",
+        "quantity": 1,
+        "duration": 10,
+        "transparency": 1.0,
+        "toTransparency": 0.001,
+        "scale": 0.8,
+        "toScale": 0.8,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "textureList": [
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield0.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield1.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield2.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield3.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield4.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield5.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield6.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield7.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield8.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield9.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield10.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield11.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield12.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield13.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield14.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield15.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield16.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield17.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield18.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield19.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield20.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield21.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield22.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield23.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield24.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield25.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield26.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield27.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield28.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield29.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield30.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield31.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield32.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield33.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield34.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield35.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield36.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield37.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield38.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield39.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield40.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield41.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield42.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield43.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield44.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield45.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield46.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield47.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield48.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield49.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield50.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield51.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield52.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield53.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield54.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield55.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield56.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield57.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield58.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield59.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield60.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield61.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield62.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield63.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield64.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield65.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield66.png",
+          "mtsofficialpack:textures/bullets/raindrops/rain_windshield67.png"
+        ],
+        "randomTexture": true,
+        "color": "8a9fb0",
+        "pos": [-0.5,1.5625,6.7],
+        "rot": [15,171.75,0.0],
+        "rotationVelocity": [0.0,0.0,0.0],
+        "initialVelocity": [0.00001,0.00001,0.00001],
+        "movementVelocity": [0.0,0.0,0.0],
+        "terminalVelocity": [00,0,0],
+        "relativeInheritedVelocityFactor": [1.0,1.0,1.0],
+        "spawningAnimations": [
+          {
+            "animationType": "rotation",
+            "variable": "body_roll",
+            "centerPoint": [0.0,0.0625,2.625],
+            "axis": [0.0,0.0,-0.575]
+          },
+          {
+            "animationType": "rotation",
+            "variable": "body_pitch",
+            "centerPoint": [0.0,0.0625,2.625],
+            "axis": [7.0,0.0,0.0]
+          }
+        ],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "rain_strength",
+            "clampMin": 1.0,
+            "clampMax": 2
+          },
+          {
+            "animationType": "inhibitor",
+            "variable": "speed",
+            "clampMin": 14,
+            "clampMax": 100
+          },
+          {
+            "animationType": "visibility",
+            "variable": "random",
+            "clampMin": 0.0,
+            "clampMax": 0.1
+          }
+        ]
+      },//windshield drop l PROTOTYPE
+      
       //watercrash (small)
       {
         "type": "generic",
@@ -2153,7 +3268,7 @@
         "duration": 30,
         "movementDuration": 25,
         "transparency": 1.0,
-        "fadeTransparencyTime": 15,
+        "fadeOutTransparencyTime": 15,
         "scale": 5.8,
         "toScale": 10.5,
         "hitboxSize": 0.1,
@@ -2197,7 +3312,7 @@
         "duration": 50,
         "movementDuration": 35,
         "transparency": 1.0,
-        "fadeTransparencyTime": 25,
+        "fadeOutTransparencyTime": 25,
         "scale": 4.8,
         "toScale": 10.5,
         "hitboxSize": 0.1,
@@ -2536,7 +3651,7 @@
         "distance": 2.0,
         "duration": 100,
         "transparency": 0.5,
-        "fadeTransparencyTime": 50,
+        "fadeOutTransparencyTime": 50,
         "scale": 3.2,
         "toScale": 15.0,
         "hitboxSize": 0.1,
@@ -2676,7 +3791,7 @@
         "movementDuration": 205,
         "transparency": 0.05,
         "toTransparency": 0.3,
-        "fadeTransparencyTime": 200,
+        "fadeOutTransparencyTime": 200,
         "scale": 20.0,
         "toScale": 55.0,
         "hitboxSize": 0.2,
@@ -2747,7 +3862,7 @@
         "movementDuration": 205,
         "transparency": 0.05,
         "toTransparency": 0.3,
-        "fadeTransparencyTime": 200,
+        "fadeOutTransparencyTime": 200,
         "scale": 20.0,
         "toScale": 55.0,
         "hitboxSize": 0.2,
@@ -3002,7 +4117,76 @@
             "clampMax": 1.0
           }
         ]
-      }
+      },
+      {
+        "type": "generic",
+        "spawnEveryTick": true,
+        "isBright": true,
+        "spawningOrientation": "entity",
+        "renderingOrientation": "player",
+        "quantity": 1,
+        "duration": 75,
+        "transparency": 1.0,
+        "scale": 0.5,
+        "toScale": 0.01,
+        "hitboxSize": 0.1,
+        "ignoreCollision": true,
+        "textureList": [
+          "mtsofficialpack:textures/bullets/bang0.png",
+          "mtsofficialpack:textures/bullets/bang0d.png",
+          "mtsofficialpack:textures/bullets/bang0b.png",
+          "mtsofficialpack:textures/bullets/bang0a.png",
+          "mtsofficialpack:textures/bullets/bang0c.png"
+        ],
+        "randomTexture": true,
+        "pos": [-1,0.2,2.5],
+        "spreadRandomness": [0.4,0.2,0.4],
+        "initialVelocity": [0.0,0.5,0.0],
+        "movementVelocity": [0.0,0.001,-0.001],
+        "relativeMovementVelocity": [0.0035,0.0001,0.0035],
+        "terminalVelocity": [20.0,20,20.0],
+        "spawningAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "random",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [2.0,0.0,0.0],
+            "offset": 0.0
+          },
+          {
+            "animationType": "translation",
+            "variable": "random",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0.0,0.0,1.5],
+            "offset": 0.0
+          }
+        ],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "terrain_blockmaterial_water",
+            "clampMin": 0.0,
+            "clampMax": 0.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "damage_totaled",
+            "forwardsDelay": 1400
+          },
+          {
+            "animationType": "visibility",
+            "variable": "damage_totaled",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "terrain_distance",
+            "clampMin": -1.0,
+            "clampMax": 3.0
+          }
+        ]
+      } //embers
     ],
     "modelType": "obj"
   },
@@ -3011,9 +4195,9 @@
     "health": 200,
     "materialLists": [
       [
-        "mts:mtsofficialpack.plating:40",
+        "mts:mtsofficialpack.plating:64",
         "tags:ingots/iron:5",
-        "mts:mtsofficialpack.screws:50",
+        "mts:mtsofficialpack.screws:58",
         "mts:mtsofficialpack.spring:8",
         "minecraft:glass_pane:10",
         "mts:mtsofficialpack.copperwire:14",

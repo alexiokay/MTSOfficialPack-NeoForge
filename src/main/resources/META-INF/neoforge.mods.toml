@@ -13,7 +13,7 @@ license="All rights reserved"
 # The ID of your pack.
 modId="mtsofficialpack"
 # Version number.  Must start with a number or Forge complains.
-version="24"
+version="28"
  # Display name for the pack in the in-game mods list.
 displayName="Immersive Vehicles (MTS/IV) - Official Content Pack"
 # A URL for the "homepage" for this pack, displayed in the mod UI.
@@ -24,7 +24,7 @@ logoFile="vingette.png"
 description='''
 A small selection of content made by the core Immersive Vehicles (MTS) team.  This pack aims to show a little of all the things the mod can do, but not focus in any one area too heavily.  A good all-around starter pack.
 
-Credits go to Don Bruce, Limit, Wolfvanox, Cactus, Fsendventd, and last, but certianly not least, Mr Mulle.
+Credits go to Mr.Mulle, Conman180, Cactus & BlazeWolf1122.
 '''
 
 [[dependencies.mtsofficialpack]]
@@ -44,6 +44,6 @@ Credits go to Don Bruce, Limit, Wolfvanox, Cactus, Fsendventd, and last, but cer
 [[dependencies.mtsofficialpack]]
     modId="mts"
     type="required"
-    versionRange="[22.6.0,)"
+    versionRange="[22.18.0,)"
     ordering="NONE"
     side="BOTH"

@@ -6,7 +6,7 @@ plugins {
 }
 
 //Set file name.
-version = "V25"
+version = "V28.1"
 group = "minecrafttransportsimulator"
 archivesBaseName = "MTS Official Pack"
 

@@ -90,7 +90,7 @@
     {
       "subName": "",
       "name": "Brigadier Dump Bed",
-      "description": "Filled to the brim with Gravel.",
+      "description": "Filled to the brim with gravel.",
       "extraMaterialLists": [
         []
       ]
@@ -134,7 +134,7 @@
     {
       "subName": "_gold",
       "name": "Brigadier Dump Bed",
-      "description": "Contains the golden motherlode. Or just oversized corn.",
+      "description": "Contains whats left of the states gold reserves. Or just oversized corn.",
       "hideOnCreativeTab": true,
       "extraMaterialLists": [
         []
@@ -170,7 +170,7 @@
     {
       "subName": "_nether",
       "name": "Brigadier Dump Bed",
-      "description": "Filled with raw meat. Or beets. Or Netherrack. Ill let you decide.",
+      "description": "Filled with raw meat. Or beets. Or netherrack. Ill let you decide.",
       "hideOnCreativeTab": true,
       "extraMaterialLists": [
         []
@@ -179,7 +179,7 @@
     {
       "subName": "_podzol",
       "name": "Brigadier Dump Bed",
-      "description": "Its Podzol. I hope its Podzol. Good thing Steve doesnt have a nose.",
+      "description": "Its podzol. I hope its podzol. Good thing Steve doesnt have a nose...",
       "hideOnCreativeTab": true,
       "extraMaterialLists": [
         []
@@ -188,7 +188,7 @@
     {
       "subName": "_sand",
       "name": "Brigadier Dump Bed",
-      "description": "Enough material for very ambitious Sandcastles.",
+      "description": "Enough material for very ambitious sand castles.",
       "hideOnCreativeTab": true,
       "extraMaterialLists": [
         []
@@ -448,7 +448,7 @@
         "transparency": 1.0,
         "scale": 5.5,
         "toScale": 5.0,
-        "fadeScaleTime": 10,
+        "fadeOutScaleTime": 10,
         "ignoreCollision": false,
         "textureList": [
           "mtsofficialpack:textures/bullets/ground/gravel0.png",
@@ -505,7 +505,7 @@
         "transparency": 1.0,
         "scale": 5.5,
         "toScale": 5.0,
-        "fadeScaleTime": 10,
+        "fadeOutScaleTime": 10,
         "ignoreCollision": false,
         "textureList": [
           "mtsofficialpack:textures/bullets/ground/gravel0.png",
@@ -562,7 +562,7 @@
       [
         "mts:mtsofficialpack.plating:28",
         "mts:mtsofficialpack.metaltube:4",
-        "minecraft:piston:1",
+        "mts:mtsofficialpack.hydraulics:1",
         "mts:mtsofficialpack.copperwire:6"
       ]
     ],

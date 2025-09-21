@@ -10,25 +10,7 @@
     "width": 0.8,
     "height": 0.5
   },
-  "variableModifiers":[
-    {
-      "variable": "door_lid",
-      "maxValue": 1,
-      "animations": [
-      {
-          "animationType": "visibility",
-          "variable": "part_present_1",
-          "clampMin": 1.0,
-          "clampMax": 1.0
-        },
-        {
-          "animationType": "translation",
-          "variable": "part_present_1",
-          "axis": [0.0,0.0,-1.0]
-        }
-    ]
-    }
-  ],
+  "variableModifiers":[],
   "parts": [
     {
       "pos": [0.0,0.5,0.0],
@@ -47,13 +29,45 @@
   ],
   "collisionGroups": [
     {
-      "isInterior": true,
+      "collisionTypes": [
+        "click"
+      ],
       "collisions": [
         {
           "pos": [0.0,0.4,0.4],
           "width": 0.3,
           "height": 0.3125,
-          "variableName": "door_lid",
+          "action": {
+            "action": "toggle",
+            "variable": "door_lid",
+            "value": 0.0
+          }
+        }
+      ],
+      "animations": [
+        {
+          "animationType": "visibility",
+          "variable": "part_present_1"
+        },
+        {
+          "animationType": "translation",
+          "variable": "door_lid",
+          "axis": [0.0,0.6,-0.6]
+        }
+      ]
+    }, //lock
+    {
+      "isInterior": true,
+      "collisionTypes": [
+      "entity",
+        "click"
+      ],
+      "collisions": [
+        {
+          "pos": [0.0,0.2,0.0],
+          "width": 0.9,
+          "height": 0.525,
+          "variableName": "piss",
           "variableType": "toggle"
         }
       ],
@@ -61,19 +75,17 @@
       {
           "animationType": "visibility",
           "variable": "part_present_1",
-          "clampMin": 0.0,
-            "clampMax": 0.0
-        },
-        {
-          "animationType": "translation",
-          "variable": "door_lid",
-          "duration": 0,
-          "axis": [0.0,0.6,-0.6]
+          "clampMin": 1.0,
+            "clampMax": 1.0
         }
       ]
-    },
+    }, //blocker crateontop
     {
       "isInterior": true,
+      "collisionTypes": [
+      "entity",
+        "click"
+      ],
       "collisions": [
         {
           "pos": [0.0,0.2,0.0],
@@ -91,11 +103,12 @@
             "clampMax": 0.0
         }
       ]
-    }
+    } //blocker lidclosed
   ],
   "interactable": {
     "interactionType": "crate",
     "feedsVehicles": true,
+    "inventoryTexture": "mtsofficialpack:textures/guis/inventory_ammocrate_gray.png",
     "inventoryUnits": 0.25
   },
   "definitions": [
@@ -112,27 +125,17 @@
       {
         "objectName": "lid",
         "animations": [
-        {
-            "animationType": "rotation",
-            "variable": "door_lid",
-            "reverseDelay": 0,
-            "duration": 16,
-        	"centerPoint": [0,0.375,-0.3125],
-        	"axis": [-100.0,0.0,0.0],
-        	"forwardsEasing": "easeoutback",
-            "reverseEasing": "easeoutbounce"
-          },
           {
             "animationType": "inhibitor",
-            "variable": "door_lid",
+            "variable": "part_present_1",
             "clampMin":1,
             "clampMax":1
           },
           {
             "animationType": "rotation",
-            "variable": "player_interacting",
+            "variable": "door_lid",
             "reverseDelay": 0,
-            "duration": 10,
+            "duration": 16,
         	"centerPoint": [0,0.375,-0.3125],
         	"axis": [-100.0,0.0,0.0],
         	"forwardsEasing": "easeoutback",

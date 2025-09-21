@@ -16,6 +16,7 @@
     {
       "subName": "",
       "name": "Blank Crate",
+      "inventoryTexture": "mtsofficialpack:textures/guis/inventory_crateblank.png",
       "extraMaterialLists": [
         []
       ]
@@ -23,6 +24,7 @@
     {
       "subName": "_white",
       "name": "White Crate",
+      "inventoryTexture": "mtsofficialpack:textures/guis/inventory_cratewhite.png",
       "extraMaterialLists": [
         [
           "tags:dyes/white:1"
@@ -32,6 +34,7 @@
     {
       "subName": "_blue",
       "name": "Blue Crate",
+      "inventoryTexture": "mtsofficialpack:textures/guis/inventory_crateblue.png",
       "extraMaterialLists": [
         [
           "tags:dyes/blue:1"
@@ -41,6 +44,7 @@
     {
       "subName": "_red",
       "name": "Red Crate",
+      "inventoryTexture": "mtsofficialpack:textures/guis/inventory_cratered.png",
       "extraMaterialLists": [
         [
           "tags:dyes/red:1"
@@ -50,6 +54,7 @@
     {
       "subName": "_green",
       "name": "Green Crate",
+      "inventoryTexture": "mtsofficialpack:textures/guis/inventory_crategreen.png",
       "extraMaterialLists": [
         [
           "tags:dyes/green:1"

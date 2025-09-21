@@ -24,6 +24,11 @@
       "types": [
         "interactable_crate"
       ],
+      "customTypes": [
+      "crate_medium",
+      ""
+      ],
+      "maxPartLevels": 2,
       "linkedParts": [1]
     }
   ],
@@ -96,7 +101,7 @@
   },
   "general": {
     "name": "AA Base Plate",
-    "description": "The base of operation. SnailDynamics Anti Air systems require this sturdy baseplate to function properly.",
+    "description": "The base of operation. SnailDynamics Anti Air systems require this sturdy baseplate to function properly. Add a crate to load ammo automatically.",
     "health": 50,
     "materialLists": [
       [

@@ -200,7 +200,7 @@
         "quantity": 1,
         "duration": 6,
         "transparency": 1.0,
-        "fadeTransparencyTime": 2,
+        "fadeOutTransparencyTime": 2,
         "scale": 1.0,
         "toScale": 40.0,
         "ignoreCollision": true,

@@ -29,7 +29,7 @@
   },
   "general": {
     "name": "Route",
-    "stackSize": 32,
+    "stackSize": 64,
     "materialLists": [
       [
         "mts:mtsofficialpack.plating:1"

@@ -41,6 +41,24 @@
       }
     ]
   },
+  "variableModifiers":[
+    {
+      "variable": "gun_yaw",
+      "animations": [
+      {
+          "animationType": "visibility",
+          "variable": "spin",
+          "clampMin": 1.0,
+          "clampMax": 1.0
+        },
+        {
+          "animationType": "translation",
+          "variable": "spin",
+          "axis": [0.0,1.0,0.0]
+        }
+    ]
+    }
+  ],
   "parts": [
     {
       "pos": [0.8825,0.625,-0.305],
@@ -64,9 +82,22 @@
       "collisions": [
         {
           "pos": [0.95,0.7781,0.6227875],
-          "width": 0.3,
-          "height": 0.3125,
+          "width": 0.15,
+          "height": 0.15,
           "variableName": "switch",
+          "variableType": "toggle"
+        }
+      ]
+    },
+    {
+      "isInterior": true,
+      "applyAfter": "spinlever",
+      "collisions": [
+        {
+          "pos": [0.9375,0.52968125,0.52968125],
+          "width": 0.2,
+          "height": 0.2,
+          "variableName": "spin",
           "variableType": "toggle"
         }
       ]
@@ -83,6 +114,17 @@
   ],
   "rendering": {
     "animatedObjects": [
+      {
+        "objectName": "spinlever",
+        "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "spin",
+            "centerPoint": [0.9375,0.375,0.375],
+            "axis": [-45.0,0.0,0.0]
+          }
+        ]
+      },
       {
         "objectName": "$wheel",
         "animations": [
@@ -273,6 +315,35 @@
             "variable": "switch",
             "clampMin": 0.0,
             "clampMax": 0.0
+          }
+        ],
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "maxDistance": 10.0,
+        "maxDistanceVolume": 0.0
+      },
+    //spin lever
+    	{
+        "name": "mtsofficialpack:blinkerleverdown",
+        "pos": [0.95,0.78,0.62],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "!spin"
+          }
+        ],
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "maxDistance": 10.0,
+        "maxDistanceVolume": 0.0
+      },
+      {
+        "name": "mtsofficialpack:blinkerleverdown",
+        "pos": [0.95,0.78,0.62],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "spin"
           }
         ],
         "minDistance": 0.0,
