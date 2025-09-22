@@ -1,6 +1,1 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "mtsofficialpack:item/bell206_gray"
-  }
-}
+{"parent":"mts:item/basic","textures":{"layer0": "mtsofficialpack:item/bell206_gray"}}

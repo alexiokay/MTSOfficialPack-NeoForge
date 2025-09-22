@@ -1,6 +1,1 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "mtsofficialpack:item/mirrorornament_1911gray"
-  }
-}
+{"parent":"mts:item/basic","textures":{"layer0": "mtsofficialpack:item/mirrorornament_1911gray"}}

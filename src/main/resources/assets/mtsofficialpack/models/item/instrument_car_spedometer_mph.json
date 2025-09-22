@@ -1,6 +1,1 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "mtsofficialpack:item/instrument_car_spedometer_mph"
-  }
-}
+{"parent":"mts:item/basic","textures":{"layer0": "mtsofficialpack:item/instrument_car_spedometer_mph"}}

@@ -1,6 +1,1 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "mtsofficialpack:item/instrument_aircraft_attitude"
-  }
-}
+{"parent":"mts:item/basic","textures":{"layer0": "mtsofficialpack:item/instrument_aircraft_attitude"}}

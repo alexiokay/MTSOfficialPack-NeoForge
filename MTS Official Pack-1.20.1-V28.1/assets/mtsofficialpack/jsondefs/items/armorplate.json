@@ -1,9 +1,0 @@
-{
-    "general": {
-        "name": "Armored Plating",
-        "stackSize": 64,
-        "description": "Composite armor plating made from durable materials. Made to resist more than just arrows and swords...",
-        "materials": [],
-        "type": "none"
-    }
-}

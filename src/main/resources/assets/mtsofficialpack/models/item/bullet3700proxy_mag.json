@@ -1,6 +1,1 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "mtsofficialpack:item/bullet3700proxy_mag"
-  }
-}
+{"parent":"mts:item/basic","textures":{"layer0": "mtsofficialpack:item/bullet3700proxy_mag"}}

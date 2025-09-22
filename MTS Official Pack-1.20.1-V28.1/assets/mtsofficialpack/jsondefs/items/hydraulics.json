@@ -1,9 +1,0 @@
-{
-    "general": {
-        "name": "Hydraulic System",
-        "stackSize": 64,
-        "description": "A fluids incompressible nature allows for its utilisation in mechanical systems and heavy machinery.",
-        "materials": [],
-        "type": "none"
-    }
-}

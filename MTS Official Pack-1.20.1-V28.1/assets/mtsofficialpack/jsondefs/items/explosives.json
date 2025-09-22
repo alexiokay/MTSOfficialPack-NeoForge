@@ -1,9 +1,0 @@
-{
-    "general": {
-        "name": "Explosives",
-        "description": "Cyclotrimethylentrinitramin.",
-        "stackSize": 64,
-        "materials": [],
-        "type": "none"
-    }
-}

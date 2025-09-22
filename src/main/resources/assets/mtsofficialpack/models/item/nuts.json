@@ -1,6 +1,7 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "mtsofficialpack:item/nuts"
-  }
+    "parent": "mts:item/mtsofficialpack.snacks",
+	"textures": {
+		"0": "mtsofficialpack:item/nuts",
+		"particle": "mtsofficialpack:item/nuts"
+	}
 }
