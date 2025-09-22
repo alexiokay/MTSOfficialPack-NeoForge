@@ -95,15 +95,8 @@ public class PackCompiler {
             System.out.println("All files checked, compiling.");
             result = runCommand(onWindows ? "gradlew.bat build" : "./gradlew build");
 
-            //Re-name compiled file, we know there will only be one, but not what it's called.
-            for (File file : libsDir.listFiles()) {
-                file.renameTo(new File(libsDir, "Pack-1.16.5.jar"));
-            }
-
-            //Now make a 1.12.2 compliant pack by zipping everything in the assets folder.
-            ZipOutputStream pack = new ZipOutputStream(new FileOutputStream(new File(libsDir, "Pack-1.12.2.jar")));
-            addToZip(packAssetRootDir, pack, packAssetRootDir.getAbsolutePath().length() - "assets".length());
-            pack.close();
+            //The modern gradlew build already creates the correct JAR with proper namespace structure
+            //No need to create legacy JARs that break the namespace system
 
             System.out.println("Your pack is located in " + libsDir.getAbsolutePath().toString());
             System.out.println("If you haven't already, please edit the mods.toml file, located in " + (new File(currentDir, "src/main/resources/META-INF").getAbsolutePath()));
