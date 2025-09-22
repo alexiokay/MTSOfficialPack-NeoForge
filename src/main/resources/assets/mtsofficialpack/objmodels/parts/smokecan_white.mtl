@@ -1,0 +1,16 @@
+# MTL file for smokecan_white
+# Fixed for NeoForge 1.21.1
+
+newmtl none
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 0.000000
+map_Kd mtsofficialpack:item/smokecan_white
+
+newmtl material0
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 0.000000
+map_Kd mtsofficialpack:item/smokecan_white

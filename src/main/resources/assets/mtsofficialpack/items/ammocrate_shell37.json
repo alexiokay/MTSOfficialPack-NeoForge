@@ -1,0 +1,11 @@
+{
+  "__comment": "NeoForge item definition - simplified for texture fix",
+  "model": {
+    "loader": "neoforge:obj",
+    "model": "mtsofficialpack:objmodels/parts/ammocrate_shell37.obj",
+    "automatic_culling": true
+  },
+  "textures": {
+    "texture": "mtsofficialpack:item/ammocrate_shell37"
+  }
+}

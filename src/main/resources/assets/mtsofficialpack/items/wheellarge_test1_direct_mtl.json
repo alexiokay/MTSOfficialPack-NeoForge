@@ -1,0 +1,11 @@
+{
+  "__comment": "Test 1: Direct MTL texture paths",
+  "model": {
+    "loader": "neoforge:obj",
+    "model": "mtsofficialpack:objmodels/parts/wheellarge.obj",
+    "automatic_culling": true
+  },
+  "textures": {
+    "texture": "mtsofficialpack:item/wheellarge"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "__comment": "Test 3: Texture0 + FlipV - should show wheel texture",
+  "loader": "neoforge:obj",
+  "model": "mtsofficialpack:objmodels/parts/wheellarge_test3_flipv.obj",
+  "flip_v": true,
+  "automatic_culling": false,
+  "textures": {
+    "texture0": "mtsofficialpack:item/wheellarge",
+    "particle": "mtsofficialpack:item/wheellarge"
+  },
+  "display": {
+    "gui": {
+      "rotation": [
+        30,
+        45,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.6,
+        0.6,
+        0.6
+      ]
+    },
+    "ground": {
+      "rotation": [
+        0,
+        0,
+        90
+      ],
+      "translation": [
+        0,
+        1,
+        0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  }
+}

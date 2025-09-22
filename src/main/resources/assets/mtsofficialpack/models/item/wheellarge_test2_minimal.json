@@ -1,0 +1,44 @@
+{
+  "__comment": "Test 2: Particle texture reference - should show wheel texture",
+  "loader": "neoforge:obj",
+  "model": "mtsofficialpack:objmodels/parts/wheellarge_test2_minimal.obj",
+  "textures": {
+    "particle": "mtsofficialpack:item/wheellarge"
+  },
+  "display": {
+    "gui": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "ground": {
+      "rotation": [
+        0,
+        0,
+        90
+      ],
+      "translation": [
+        0,
+        1,
+        0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  }
+}

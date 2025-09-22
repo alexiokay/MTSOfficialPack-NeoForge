@@ -1,0 +1,11 @@
+{
+  "__comment": "NeoForge item definition - simplified for texture fix",
+  "model": {
+    "loader": "neoforge:obj",
+    "model": "mtsofficialpack:objmodels/parts/basicbomb_hardpoint.obj",
+    "automatic_culling": true
+  },
+  "textures": {
+    "texture": "mtsofficialpack:item/basicbomb_hardpoint"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "__comment": "NeoForge item definition - simplified for texture fix",
+  "model": {
+    "loader": "neoforge:obj",
+    "model": "mtsofficialpack:objmodels/parts/propellerlarge2blade.obj",
+    "automatic_culling": true
+  },
+  "textures": {
+    "texture": "mtsofficialpack:item/propellerlarge2blade"
+  }
+}

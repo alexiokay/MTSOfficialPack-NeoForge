@@ -1,0 +1,12 @@
+{
+  "__comment": "Test 3: FlipV and texture settings",
+  "model": {
+    "loader": "neoforge:obj",
+    "model": "mtsofficialpack:objmodels/parts/wheellarge.obj",
+    "flip_v": true,
+    "automatic_culling": false
+  },
+  "textures": {
+    "texture": "mtsofficialpack:item/wheellarge"
+  }
+}
