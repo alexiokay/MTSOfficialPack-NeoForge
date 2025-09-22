@@ -11,7 +11,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 public class PackCompiler {
-    private static final String BASE_COMPILED_FILE = "package packID;\r\n" + "import net.minecraftforge.fml.common.Mod;\r\n" + "@Mod(\"packID\")\r\n" + "public class ForgePackLoader {public ForgePackLoader() {}}";
+    private static final String BASE_COMPILED_FILE = "package packID;\r\n" + "import net.neoforged.fml.common.Mod;\r\n" + "@Mod(\"packID\")\r\n" + "public class ForgePackLoader {public ForgePackLoader() {}}";
     private static int killedDSStores = 0;
 
     public static void main(String[] args) {
