@@ -1,0 +1,309 @@
+{
+  "generic": {
+    "type": "generic",
+    "canBePlacedOnGround": true,
+    "canBeRemovedByHand": true,
+    "width": 0.1,
+    "height": 0.1
+  },
+  "collisionGroups": [
+    {
+      "isInterior": true,
+      "collisionTypes": [
+        "click"
+      ],
+      "collisions": [
+        {
+          "pos": [0.0,0.5,-0.8],
+          "width": 1.0,
+          "height": 1.0,
+          "action": {
+            "action": "button",
+            "variable": "pray",
+            "value": 1.0
+          }
+        },
+        {
+          "pos": [0.0,0.8,-0.6],
+          "width": 0.2,
+          "height": 0.1,
+          "action": {
+            "action": "toggle",
+            "variable": "activate",
+            "value": 1.0
+          }
+        }
+      ]
+    }
+  ],
+  "definitions": [
+    {
+      "subName": "",
+      "name": "§6don_bruce™ Icon",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {
+  	"sounds":[
+  	//place-remove
+      	{
+        "name": "mtsofficialpack:misc/don_place0",
+        "soundVariations": [
+        	"mtsofficialpack:misc/don_place0",
+        	"mtsofficialpack:misc/don_place1",
+        	"mtsofficialpack:misc/don_place2"
+        ],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "activate",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+        {
+            "animationType": "visibility",
+            "variable": "part_added_ground",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "maxDistance": 24.0,
+        "maxDistanceVolume": 0.0
+      },
+      
+      {
+        "name": "mtsofficialpack:misc/don_place0",
+        "soundVariations": [
+        	"mtsofficialpack:misc/don_interact0",
+        	"mtsofficialpack:misc/don_interact1",
+        	"mtsofficialpack:misc/don_interact2"
+        ],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "activate",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+        {
+            "animationType": "visibility",
+            "variable": "pray",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "minDistance": 0.0,
+        "minDistanceVolume": 0.5,
+        "maxDistance": 24.0,
+        "maxDistanceVolume": 0.0
+      }
+  	],
+  	"particles": [
+  	{
+    
+        "type": "generic",
+        "spawningOrientation": "entity",
+        "renderingOrientation": "player",
+        "isBright": true,
+        "quantity": 1,
+        "duration": 66,
+        "transparency": 1,
+        "fadeOutScaleTime": 20,
+        "scale": 0.05,
+        "toScale": 0.001,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "texture":"mtsofficialpack:textures/bullets/raindrop.png",
+        "pos": [0.5,0.0,0.0],
+        "spreadRandomness": [0.1,0.1,0.1],
+        "initialVelocity": [0.0,0.0,0.0],
+        "movementVelocity": [0.0,0.0001,0.0],
+        "terminalVelocity": [1.0,1.0,1.0],
+        "spawningAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "random",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-1.0,0.0,0.0],
+            "offset": 0.0
+          },
+          {
+            "animationType": "translation",
+            "variable": "random",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0.0,0.0,-0.5],
+            "offset": 0.0
+          },
+          {
+            "animationType": "translation",
+            "variable": "random",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0.0,1.0,0.0],
+            "offset": 0.0
+          }
+        ],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "activate",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "40_2_0_cycle",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ]
+      },//passive
+    {
+    
+        "type": "generic",
+        "spawningOrientation": "entity",
+        "renderingOrientation": "player",
+        "isBright": true,
+        "quantity": 15,
+        "duration": 66,
+        "transparency": 1,
+        "fadeOutScaleTime": 20,
+        "scale": 0.05,
+        "toScale": 0.001,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "texture":"mtsofficialpack:textures/bullets/raindrop.png",
+        "pos": [0.5,0.0,0.0],
+        "spreadRandomness": [0.1,0.1,0.1],
+        "initialVelocity": [0.0,0.0,0.0],
+        "movementVelocity": [0.0,0.0001,0.0],
+        "terminalVelocity": [1.0,1.0,1.0],
+        "spawningAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "random",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-1.0,0.0,0.0],
+            "offset": 0.0
+          },
+          {
+            "animationType": "translation",
+            "variable": "random",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0.0,0.0,-0.5],
+            "offset": 0.0
+          },
+          {
+            "animationType": "translation",
+            "variable": "random",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0.0,1.0,0.0],
+            "offset": 0.0
+          }
+        ],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "activate",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "pray",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ]
+      },//interact
+    {
+    
+        "type": "generic",
+        "spawningOrientation": "entity",
+        "renderingOrientation": "player",
+        "isBright": true,
+        "quantity": 35,
+        "duration": 66,
+        "transparency": 1,
+        "fadeOutScaleTime": 20,
+        "scale": 0.05,
+        "toScale": 0.001,
+        "ignoreCollision": true,
+        "hitboxSize": 0.1,
+        "texture":"mtsofficialpack:textures/bullets/raindrop.png",
+        "pos": [0.5,0.0,0.0],
+        "spreadRandomness": [0.3,0.3,0.3],
+        "initialVelocity": [0.0,0.0,0.0],
+        "movementVelocity": [0.0,0.0004,0.0],
+        "terminalVelocity": [1.0,1.0,1.0],
+        "spawningAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "random",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [-1.0,0.0,0.0],
+            "offset": 0.0
+          },
+          {
+            "animationType": "translation",
+            "variable": "random",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0.0,0.0,-0.5],
+            "offset": 0.0
+          },
+          {
+            "animationType": "translation",
+            "variable": "random",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0.0,1.0,0.0],
+            "offset": 0.0
+          }
+        ],
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "activate",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          },
+          {
+            "animationType": "visibility",
+            "variable": "part_added_ground",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ]
+      }//place
+  	],
+  	 "animatedObjects": [
+      {
+        "objectName": "cube",
+        "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "activate",
+            "centerPoint": [0.078125,0.8078125,-0.515625],
+            "duration": 1,
+            "axis": [0.0,0.0,45.0]
+          }
+        ]
+      }
+    ],
+    "lightObjects": [],
+    "modelType": "obj"
+  },
+  "general": {
+    "name": "§6Don_Bruce™ Icon",
+    "description": "A gilded picture of our holy god of MTS/IV, don_bruce™ the allmighty.",
+     "stackSize": 64,
+     "hideOnCreativeTab": true,
+    "materialLists": [
+      []
+    ],
+    "radarWidth": 0.0,
+    "radarRange": 0.0
+  }
+}

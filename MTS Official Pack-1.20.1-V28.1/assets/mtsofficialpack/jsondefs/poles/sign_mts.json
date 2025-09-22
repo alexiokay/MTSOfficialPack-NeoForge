@@ -1,0 +1,30 @@
+{
+  "pole": {
+    "type": "sign"
+  },
+  "definitions": [
+    {
+      "subName": "",
+      "modelName": "sign",
+      "name": "MTS (AKA Free Product Placement)",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {
+    "lightObjects": [],
+    "modelType": "obj"
+  },
+  "general": {
+    "name": "MTS (AKA Free Product Placement)",
+    "stackSize": 64,
+    "materialLists": [
+      [
+        "mts:mtsofficialpack.plating:1"
+      ]
+    ],
+    "radarWidth": 0.0,
+    "radarRange": 0.0
+  }
+}

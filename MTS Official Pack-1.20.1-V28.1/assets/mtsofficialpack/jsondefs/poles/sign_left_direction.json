@@ -1,0 +1,31 @@
+{
+  "pole": {
+    "type": "sign"
+  },
+  "definitions": [
+    {
+      "subName": "",
+      "modelName": "sign",
+      "name": "Curve Chevron (Left)",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {
+    "lightObjects": [],
+    "modelType": "obj"
+  },
+  "general": {
+    "name": "Curve Chevron (Left)",
+    "stackSize": 64,
+    "description": "",
+    "materialLists": [
+      [
+        "mts:mtsofficialpack.plating:1"
+      ]
+    ],
+    "radarWidth": 0.0,
+    "radarRange": 0.0
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "components": [
+    {
+      "scale": 1.0,
+      "textureXCenter": 960,
+      "textureYCenter": 704,
+      "textureWidth": 128,
+      "textureHeight": 128,
+      "lightUpTexture": true
+    },
+    {
+      "scale": 1.0,
+      "textureXCenter": 981,
+      "textureYCenter": 192,
+      "textureWidth": 8,
+      "textureHeight": 128,
+      "lightUpTexture": true,
+      "animations": [
+        {
+          "animationType": "rotation",
+          "variable": "time",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0.0,0.0,0.03]
+        }
+      ]
+    },
+    {
+      "scale": 1.0,
+      "textureXCenter": 970,
+      "textureYCenter": 192,
+      "textureWidth": 8,
+      "textureHeight": 128,
+      "lightUpTexture": true,
+      "animations": [
+        {
+          "animationType": "rotation",
+          "variable": "time",
+          "centerPoint": [0.0,0.0,0.0],
+          "axis": [0.0,0.0,0.36]
+        }
+      ]
+    },
+    {
+      "scale": 1.0,
+      "textureXCenter": 960,
+      "textureYCenter": 320,
+      "textureWidth": 128,
+      "textureHeight": 128,
+      "lightUpTexture": true,
+      "overlayTexture": true
+    },
+    {
+      "scale": 1.0,
+      "textureXCenter": 576,
+      "textureYCenter": 704,
+      "textureWidth": 128,
+      "textureHeight": 128,
+      "lightUpTexture": false
+    }
+  ],
+  "textureName": "instruments.png",
+  "general": {
+    "name": "Automobile Clock",
+    "description": "For when you need to know the time on the go",
+    "stackSize": 64,
+    "materialLists": [
+      [
+        "mts:mtsofficialpack.plating:1",
+        "mts:mtsofficialpack.screws:1",
+        "tags:dyes/black:1",
+        "tags:dyes/white:1",
+        "minecraft:glass_pane:1"
+      ]
+    ],
+    "radarWidth": 0.0,
+    "radarRange": 0.0
+  }
+}

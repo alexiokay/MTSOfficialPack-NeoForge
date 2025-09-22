@@ -1,0 +1,35 @@
+{
+  "decor": {
+    "type": "item_unloader",
+    "width": 1.0,
+    "height": 1.0,
+    "depth": 1.0,
+    "inventoryUnits": 0.11111111
+  },
+  "definitions": [
+    {
+      "subName": "",
+      "name": "Item Unloader",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {
+    "lightObjects": [],
+    "modelType": "obj"
+  },
+  "general": {
+    "name": "Item Unloader",
+    "description": "Removes items from crates on vehicles.",
+    "materialLists": [
+      [
+        "minecraft:hopper:1",
+        "tags:ingots/iron:5",
+        "tags:dusts/redstone:5"
+      ]
+    ],
+    "radarWidth": 0.0,
+    "radarRange": 0.0
+  }
+}

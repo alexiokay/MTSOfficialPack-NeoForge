@@ -1,0 +1,33 @@
+{
+  "decor": {
+    "type": "generic",
+    "width": 0.6,
+    "height": 0.3,
+    "depth": 0.6
+  },
+  "definitions": [
+    {
+      "subName": "",
+      "name": "37mm Magazine Pile",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {
+    "lightObjects": [],
+    "modelType": "obj"
+  },
+  "general": {
+    "name": "37mm Magazine Pile",
+    "description": "A pile of decorative 37mm magazines. They smell like oily metal.",
+    "stackSize": 8,
+    "materialLists": [
+      [
+        "tags:ingots/iron:1"
+      ]
+    ],
+    "radarWidth": 0.0,
+    "radarRange": 0.0
+  }
+}

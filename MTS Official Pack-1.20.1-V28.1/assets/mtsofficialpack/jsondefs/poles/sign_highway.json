@@ -1,0 +1,31 @@
+{
+  "pole": {
+    "type": "sign"
+  },
+  "definitions": [
+    {
+      "subName": "",
+      "modelName": "sign",
+      "name": "Highway",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {
+    "lightObjects": [],
+    "modelType": "obj"
+  },
+  "general": {
+    "name": "Highway",
+    "stackSize": 64,
+    "description": "",
+    "materialLists": [
+      [
+        "mts:mtsofficialpack.plating:1"
+      ]
+    ],
+    "radarWidth": 0.0,
+    "radarRange": 0.0
+  }
+}

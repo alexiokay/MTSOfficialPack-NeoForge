@@ -1,0 +1,249 @@
+{
+  "generic": {
+    "type": "gun_spotlight",
+    "forwardsDamageMultiplier": 1.0,
+    "destroyable": false,
+    "width": 0.5,
+    "height": 0.5,
+    "movementAnimations": []
+  },
+  "gun": {
+    "lockOnType": "default",
+    "targetType": "all",
+    "autoReload": false,
+    "capacity": 0,
+    "reloadTime": 120,
+    "muzzleVelocity": 2,
+    "fireDelay": 10.0,
+    "bulletSpreadFactor": 0.4,
+    "minYaw": -180.0,
+    "maxYaw": 180.0,
+    "minPitch": -90.0,
+    "maxPitch": 15.0,
+    "diameter": 7.0,
+    "yawSpeed": 7.7,
+    "pitchSpeed": 7.7,
+    "lockMaxAngle": 0.0,
+    "muzzleGroups": [
+      {
+        "muzzles": [
+          {
+            "pos": [0.0,1.5,2.93],
+            "rot": [0.0,0.0,0.0],
+            "center": [-0.03125,1.5,-0.2187]
+          }
+        ]
+      }
+    ]
+  },
+  "parts": [],
+  "collisionGroups": [],
+  "definitions": [
+    {
+      "subName": "",
+      "name": "Bell 206 Spotlight",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {
+    "customVariables": [
+      "SPOT"
+    ],
+    "animatedObjects": [
+      {
+        "objectName": "main",
+        "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "gun_yaw",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0.0,1.0,0.0]
+          }
+        ]
+      },
+      {
+        "objectName": "projector",
+        "applyAfter": "main",
+        "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "gun_pitch",
+            "centerPoint": [0.0,-0.3125,0.0],
+            "axis": [1.0,0.0,0.0]
+          }
+        ]
+      },
+      {
+        "objectName": "light",
+        "applyAfter": "projector",
+        "animations": [
+          {
+            "animationType": "visibility",
+            "variable": "SPOT",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ]
+      }
+    ],
+    "lightObjects": [
+      {
+        "objectName": "light",
+        "color": "FFFFFF",
+        "brightnessAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "SPOT",
+            "axis": [0.0,0.85,0.0],
+            "duration": 8,
+            "forwardsEasing": "easeinoutback",
+            "reverseEasing": "easeoutexpo"
+          }
+        ],
+        "blendableComponents": [
+          {
+            "pos": [0.0,-0.3125,0.3],
+            "axis": [0.0,0.0,1.0],
+            "flareHeight": 3.7,
+            "flareWidth": 3.7
+          },
+          {
+            "pos": [0.0,-0.3125,0.3],
+            "axis": [0.0,0.0,1.0],
+            "flareHeight": 2.7,
+            "flareWidth": 2.7
+          },
+          {
+            "pos": [0.0,-0.3125,0.125],
+            "axis": [0.0,0.0,1.0],
+            "beamDiameter": 7.0,
+            "beamLength": 5.0
+          },
+          {
+            "pos": [0.0,-0.3125,0.125],
+            "axis": [0.0,0.0,1.0],
+            "beamDiameter": 60.0,
+            "beamLength": 150.0
+          },
+          {
+            "pos": [0.0,-0.3125,0.125],
+            "axis": [0.0,0.0,1.0],
+            "beamDiameter": 35.0,
+            "beamLength": 150.0
+          }
+        ]
+      }
+    ],
+    "cameraObjects": [
+      {
+        "pos": [0.0,-0.55,0.3],
+        "rot": [0.0,0.0,0.0],
+        "overlay": "mtsofficialpack:textures/bullets/camera_translucent",
+        "animations": [
+        {
+            "animationType": "rotation",
+            "variable": "gun_yaw",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [0.0,1.0,0.0]
+          },
+          {
+            "animationType": "rotation",
+            "variable": "gun_pitch",
+            "centerPoint": [0.0,0.0,0.0],
+            "axis": [1.0,0.0,0.0]
+          }
+        
+        ]
+      }
+    ],
+    "sounds": [
+    //place-remove
+    	{
+        "name": "mtsofficialpack:placesound/AA_place0",
+        "soundVariations": [
+        	"mtsofficialpack:placesound/AA_place0",
+        	"mtsofficialpack:placesound/AA_place1"
+        ],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "part_added_ground",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "maxDistance": 24.0,
+        "maxDistanceVolume": 0.0
+      },
+      	{
+        "name": "mtsofficialpack:placesound/AA_place0",
+        "soundVariations": [
+        	"mtsofficialpack:placesound/AA_place0",
+        	"mtsofficialpack:placesound/AA_place1"
+        ],
+        "activeAnimations": [
+        {
+            "animationType": "visibility",
+            "variable": "part_removed_ground",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "maxDistance": 16.0,
+        "maxDistanceVolume": 0.0
+      },
+    //servo
+    	{
+        "name": "mtsofficialpack:aa_yawservo",
+        "activeAnimations": [
+          {
+            "animationType": "visibility",
+            "variable": "gun_yawing",
+            "clampMin": 1.0,
+            "clampMax": 1.0
+          }
+        ],
+        "pitchAnimations": [
+          {
+            "animationType": "translation",
+            "variable": "!piss",
+            "axis": [0.0,0.0,0.0],
+            "offset": 0.85
+          }
+        ],
+        "looping": true,
+        "isExterior": true,
+        "minDistance": 0.0,
+        "minDistanceVolume": 1.0,
+        "middleDistance": 6.0,
+        "middleDistanceVolume": 0.1,
+        "maxDistance": 16.0,
+        "maxDistanceVolume": 0.0
+      }
+    ],
+    "particles": [],
+    "modelType": "obj"
+  },
+  "general": {
+    "name": "Bell 206 Spotlight",
+    "description": "A smaller version of the Snail Dynamics Spotlight, designed to be mounted to lighter airframes. Point out baddies in style!",
+    "health": 50,
+    "materialLists": [
+      [
+      	"mts:mtsofficialpack.screws:4",
+        "mts:mtsofficialpack.plating:4",
+        "mts:mtsofficialpack.copperwire:8",
+        "mts:mtsofficialpack.headlight:1",
+        "minecraft:glass:1"
+      ]
+    ],
+    "radarWidth": 0.0,
+    "radarRange": 0.0
+  }
+}

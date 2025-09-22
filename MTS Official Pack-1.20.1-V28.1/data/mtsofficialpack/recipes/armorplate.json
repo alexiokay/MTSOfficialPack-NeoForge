@@ -1,0 +1,27 @@
+
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "aaa",
+        "bcb",
+        "d d"
+    ],
+    "key": {
+        "a": {
+            "item": "mts:mtsofficialpack.plating"
+        },
+        "b": {
+            "item": "minecraft:diamond"
+        },
+        "c": {
+            "item": "minecraft:terracotta"
+        },
+        "d": {
+            "item": "mts:mtsofficialpack.screws"
+        }
+    },
+    "result": {
+        "item": "mts:mtsofficialpack.armorplate",
+        "count": 4
+    }
+}

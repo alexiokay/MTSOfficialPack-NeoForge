@@ -1,0 +1,9 @@
+{
+    "general": {
+        "name": "Infrared Sensor",
+        "stackSize": 64,
+        "description": "A small, delicate, optoelectronic component. It can sense your body heat.",
+        "materials": [],
+        "type": "none"
+    }
+}

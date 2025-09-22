@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "cfc",
+        "beb",
+        "dad"
+    ],
+    "key": {
+        "a": {
+            "item": "mts:mtsofficialpack.plating"
+        },
+        "b": {
+            "item": "mts:mtsofficialpack.copperwire"
+        },
+        "c": {
+            "item": "mts:mtsofficialpack.screws"
+        },
+        "d": {
+            "tag": "forge:dusts/redstone"
+        },
+        "e": {
+            "item": "mts:mtsofficialpack.circuit"
+        },
+        "f": {
+            "item": "minecraft:amethyst_shard"
+        }
+    },
+    "result": {
+        "item": "mts:mtsofficialpack.processor",
+        "count": 1
+    }
+}

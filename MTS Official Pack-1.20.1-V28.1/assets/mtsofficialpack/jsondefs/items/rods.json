@@ -1,0 +1,22 @@
+{
+  "item": {
+    "type": "food"
+  },
+  "food": {
+    "timeToEat": 20,
+    "hungerAmount": 5,
+    "saturationAmount": 0.6
+  },
+  "general": {
+    "name": "Rods",
+    "stackSize": 64,
+    "materialLists": [
+      [
+        "minecraft:bread:1",
+        "tags:dyes/blue:1"
+      ]
+    ],
+    "radarWidth": 0.0,
+    "radarRange": 0.0
+  }
+}

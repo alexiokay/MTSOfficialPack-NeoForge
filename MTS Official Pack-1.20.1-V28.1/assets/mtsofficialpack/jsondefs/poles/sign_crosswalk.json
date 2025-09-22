@@ -1,0 +1,31 @@
+{
+  "pole": {
+    "type": "sign"
+  },
+  "definitions": [
+    {
+      "subName": "",
+      "modelName": "sign",
+      "name": "Crosswalk",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {
+    "lightObjects": [],
+    "modelType": "obj"
+  },
+  "general": {
+    "name": "Crosswalk",
+    "stackSize": 64,
+    "description": "Why did the chicken...",
+    "materialLists": [
+      [
+        "mts:mtsofficialpack.plating:1"
+      ]
+    ],
+    "radarWidth": 0.0,
+    "radarRange": 0.0
+  }
+}

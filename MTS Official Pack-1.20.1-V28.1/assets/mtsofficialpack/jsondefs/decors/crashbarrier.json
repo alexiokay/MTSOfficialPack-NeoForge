@@ -1,0 +1,32 @@
+{
+  "decor": {
+    "type": "generic",
+    "width": 1.0,
+    "height": 0.84375,
+    "depth": 0.5625
+  },
+  "definitions": [
+    {
+      "subName": "",
+      "name": "Crash Barrier",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {
+    "lightObjects": [],
+    "modelType": "obj"
+  },
+  "general": {
+    "name": "Crash Barrier",
+    "stackSize": 64,
+    "materialLists": [
+      [
+        "minecraft:cobblestone_wall:2"
+      ]
+    ],
+    "radarWidth": 0.0,
+    "radarRange": 0.0
+  }
+}

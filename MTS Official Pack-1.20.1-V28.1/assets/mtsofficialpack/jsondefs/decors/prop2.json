@@ -1,0 +1,33 @@
+{
+  "decor": {
+    "type": "generic",
+    "width": 0.4,
+    "height": 0.6,
+    "depth": 0.4
+  },
+  "definitions": [
+    {
+      "subName": "",
+      "name": "AP Shell Pile",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {
+    "lightObjects": [],
+    "modelType": "obj"
+  },
+  "general": {
+    "name": "AP Shell Pile",
+    "description": "A couple of decorative 37mm shells. They dont do much other than being pointy.",
+    "stackSize": 8,
+    "materialLists": [
+      [
+        "mts:mtsofficialpack.bullet3700solid:1"
+      ]
+    ],
+    "radarWidth": 0.0,
+    "radarRange": 0.0
+  }
+}

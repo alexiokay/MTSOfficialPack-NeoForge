@@ -1,0 +1,31 @@
+{
+  "pole": {
+    "type": "sign"
+  },
+  "definitions": [
+    {
+      "subName": "",
+      "modelName": "sign",
+      "name": "End of Restrictions",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {
+    "lightObjects": [],
+    "modelType": "obj"
+  },
+  "general": {
+    "name": "End of Restrictions",
+    "stackSize": 64,
+    "description": "Marks the end of any imposed speed limit.",
+    "materialLists": [
+      [
+        "mts:mtsofficialpack.plating:1"
+      ]
+    ],
+    "radarWidth": 0.0,
+    "radarRange": 0.0
+  }
+}

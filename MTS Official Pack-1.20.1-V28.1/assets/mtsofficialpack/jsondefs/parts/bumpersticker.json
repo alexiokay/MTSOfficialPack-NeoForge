@@ -1,0 +1,36 @@
+{
+  "generic": {
+    "type": "generic_bumpersticker",
+    "forwardsDamageMultiplier": 1.0,
+    "canBeRemovedByHand": true,
+    "width": 0.125,
+    "height": 0.125
+  },
+  "definitions": [
+    {
+      "subName": "_roostair",
+      "name": "Roost Air Bumper Sticker",
+      "description": "Semi-Reliable Air Charter",
+      "extraMaterialLists": [
+        [
+          "tags:dyes/yellow:1"
+        ]
+      ]
+    }
+  ],
+  "rendering": {
+    "lightObjects": [],
+    "particles": [],
+    "modelType": "obj"
+  },
+  "general": {
+    "stackSize": 64,
+    "materialLists": [
+      [
+        "minecraft:paper:1"
+      ]
+    ],
+    "radarWidth": 0.0,
+    "radarRange": 0.0
+  }
+}
