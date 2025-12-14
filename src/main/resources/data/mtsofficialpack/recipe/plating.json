@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "pattern": [
+        "aba",
+        "bbb",
+        "aba"
+    ],
+    "key": {
+        "a": {"item": "mts:mtsofficialpack.screws"},
+        "b": {"tag": "c:ingots/iron"}
+    },
+    "result": {
+        "id": "mts:mtsofficialpack.plating",
+        "count": 10
+    }
+}

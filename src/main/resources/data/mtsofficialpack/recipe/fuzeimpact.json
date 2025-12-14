@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "pattern": [
+        " a ",
+        " b ",
+        " c "
+    ],
+    "key": {
+        "a": {"item": "minecraft:flint"},
+        "b": {"item": "minecraft:gunpowder"},
+        "c": {"tag": "c:ingots/iron"}
+    },
+    "result": {
+        "id": "mts:mtsofficialpack.fuzeimpact",
+        "count": 8
+    }
+}

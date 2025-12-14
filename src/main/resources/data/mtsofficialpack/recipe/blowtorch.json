@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        {"item": "mts:mtsofficialpack.metaltube"},
+        {"item": "mts:mtsofficialpack.solidfuel"}
+    ],
+    "result": {
+        "id": "mts:mtsofficialpack.blowtorch",
+        "count": 1
+    }
+}

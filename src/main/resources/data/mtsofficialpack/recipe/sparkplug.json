@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "pattern": [
+        " a ",
+        " b ",
+        " c "
+    ],
+    "key": {
+        "a": {"tag": "c:gems/quartz"},
+        "b": {"tag": "c:nuggets/iron"},
+        "c": {"item": "minecraft:flint_and_steel"}
+    },
+    "result": {
+        "id": "mts:mtsofficialpack.sparkplug",
+        "count": 2
+    }
+}
