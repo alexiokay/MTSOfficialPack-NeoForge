@@ -12,7 +12,8 @@
     "gravitationalVelocity": 0.0315,
     //100
     "despawnTime": 8,
-    "impactDespawnTime": 5
+    "impactDespawnTime": 5,
+    "hudIcon": "mtsofficialpack:textures/hud/foam_icon"
   },
   "definitions": [
     {

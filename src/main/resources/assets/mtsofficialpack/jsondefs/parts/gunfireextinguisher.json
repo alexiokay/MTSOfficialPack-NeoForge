@@ -34,6 +34,23 @@
       }
     ]
   },
+  "gunHUD": {
+    "enabled": true,
+    "weaponDisplay": {
+      "showIcon": true,
+      "iconTexture": "mtsofficialpack:textures/gun_icon/fireextinguisher_icon.png",
+      "showName": true,
+      "nameColor": "FFFFFF"
+    },
+    "ammoDisplay": {
+      "showCount": true,
+      "countColor": "FFFFFF",
+      "countEmptyColor": "FF0000",
+      "showBar": false,
+      "showBackupAmmo": true,
+      "backupAmmoColor": "00FFFF"
+    }
+  },
   "collisionGroups": [
     {
       "isInterior": true,
