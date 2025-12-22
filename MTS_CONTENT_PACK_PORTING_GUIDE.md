@@ -317,3 +317,51 @@ Or simply zip all files and rename `.zip` to `.jar`.
 - Use `c:` tags instead of `forge:`
 - Use `"id":` instead of `"item":` in result
 - Add `"category": "misc"`
+
+---
+
+## Example: What Each Pack Needed
+
+### Official Content Pack (mtsofficialpack)
+
+The official pack required ALL steps:
+
+| Step | Required | Details |
+|------|----------|---------|
+| 1. NeoForge mod descriptor | Yes | Created `neoforge.mods.toml`, deleted `mods.toml` and `.class` files |
+| 2. Remove MTL files | Yes | Deleted 88 `.mtl` files from `objmodels/parts/` |
+| 3. Item model JSONs | Yes | Created 472 model files in `assets/mts/models/item/` |
+| 4. Flat item textures | Yes | Created `textures/item/` with all item icons |
+| 5. Language migration | Yes | Moved from `language/bratwurst/` to `lang/` |
+| 6. Recipe migration | Yes | Updated 19 recipes in `data/mtsofficialpack/recipe/` |
+
+**Recipes updated:** basecartridge, blowtorch, circuit, copperwire, explosives, fuzeimpact, fuzeproxy, headlight, metaltube, piston, plastic, plating, processor, repairkit, screws, smallarmscartridge, solidfuel, sparkplug, spring
+
+---
+
+### Golden Aerotransport Pack (ivairlinerpack)
+
+This pack required fewer steps:
+
+| Step | Required | Details |
+|------|----------|---------|
+| 1. NeoForge mod descriptor | Yes | Created `neoforge.mods.toml`, deleted `mods.toml` and `.class` files |
+| 2. Remove MTL files | Yes | Deleted 2 `.mtl` files (q400.mtl, q400_renewal.mtl) |
+| 3. Item model JSONs | Yes | Created 359 model files in `assets/mts/models/item/` |
+| 4. Flat item textures | Yes | Created `textures/item/` with 359 item icons |
+| 5. Language migration | No | Pack has no language files |
+| 6. Recipe migration | No | Pack uses MTS crafting (materialLists), no vanilla recipes |
+
+---
+
+## Quick Reference: What to Check
+
+Before porting, check if your pack has:
+
+| Check | Location | If exists, do Step |
+|-------|----------|-------------------|
+| Language files | `assets/{packid}/language/` | Step 5 |
+| Vanilla recipes | `data/{packid}/recipes/` | Step 6 |
+| MTL files | `objmodels/**/*.mtl` | Step 2 |
+
+All packs need Steps 1, 3, and 4. Steps 2, 5, 6 depend on pack content.
