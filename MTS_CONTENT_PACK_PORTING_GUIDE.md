@@ -365,3 +365,51 @@ Before porting, check if your pack has:
 | MTL files | `objmodels/**/*.mtl` | Step 2 |
 
 All packs need Steps 1, 3, and 4. Steps 2, 5, 6 depend on pack content.
+
+---
+
+## Optional: New MTS 1.21.1 Features
+
+These are **not required for porting**, but are new features available in MTS 22.18.0+ for NeoForge 1.21.1.
+
+### Gun Fire Modes
+
+You can now specify fire modes for guns:
+
+```json
+"gun": {
+    "fireModes": ["semi", "auto", "burst"],
+    "defaultFireMode": "auto",
+    "burstCount": 3
+}
+```
+
+Available modes: `"semi"`, `"auto"`, `"burst"`
+
+### Gun HUD Customization
+
+Custom weapon icons and colors for the HUD:
+
+```json
+"gunHUD": {
+    "enabled": true,
+    "weaponDisplay": {
+        "iconTexture": "yourpackid:textures/gun_icon/yourgun_icon.png",
+        "nameColor": "FFD700"
+    }
+}
+```
+
+Requires creating icon textures in `textures/gun_icon/` folder.
+
+### Ammo HUD Icons
+
+Custom icons for ammo types:
+
+```json
+"bullet": {
+    "hudIcon": "yourpackid:textures/hud/ammo_icon"
+}
+```
+
+Requires creating icon textures in `textures/hud/` folder.
